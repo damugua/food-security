@@ -8,6 +8,9 @@
 
 #import "homeViewController.h"
 #import "AFNetworking.h"
+#import "communicateViewController.h"
+#import "cookbookViewController.h"
+#import "videoViewController.h"
 
 @interface homeViewController ()
 
@@ -45,6 +48,23 @@
 }
 
 
+- (IBAction)videoClick:(id)sender {
+    videoViewController *video = [[videoViewController alloc]init];
+    [self.navigationController pushViewController:video animated:NO];
+}
+
+
+- (IBAction)communicateClick:(id)sender {
+    communicateViewController *communicate = [[communicateViewController alloc]init];
+    [self.navigationController pushViewController:communicate animated:NO];
+
+}
+
+- (IBAction)cookbookClick:(id)sender {
+    cookbookViewController *cookbook = [[cookbookViewController alloc]init];
+    [self.navigationController pushViewController:cookbook animated:NO];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

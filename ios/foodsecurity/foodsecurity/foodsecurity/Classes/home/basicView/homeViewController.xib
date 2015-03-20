@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="homeViewController">
             <connections>
+                <outlet property="communicateBtn" destination="D9V-Qv-6hw" id="75B-Q1-E9p"/>
+                <outlet property="cookbookBtn" destination="37o-Kr-4K4" id="Rml-nu-uzp"/>
+                <outlet property="videoBtn" destination="dTG-tu-rdt" id="XFh-fe-4J7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +16,122 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-tu-rdt">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="Beh-LG-Xg2"/>
+                        <constraint firstAttribute="height" constant="30" id="oIw-NO-VEG"/>
+                    </constraints>
+                    <state key="normal" title="1">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Beh-LG-Xg2"/>
+                            <exclude reference="oIw-NO-VEG"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Beh-LG-Xg2"/>
+                            <include reference="oIw-NO-VEG"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="videoClick:" destination="-1" eventType="touchUpInside" id="zi8-wr-Tfm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-Qv-6hw">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZYY-Z5-4uz"/>
+                        <constraint firstAttribute="width" constant="46" id="mcB-AB-GLv"/>
+                    </constraints>
+                    <state key="normal" title="2">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZYY-Z5-4uz"/>
+                            <exclude reference="mcB-AB-GLv"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZYY-Z5-4uz"/>
+                            <include reference="mcB-AB-GLv"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="communicateClick:" destination="-1" eventType="touchUpInside" id="cwB-gC-Kyo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37o-Kr-4K4">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Rnc-nV-jla"/>
+                        <constraint firstAttribute="width" constant="46" id="nuk-17-hMI"/>
+                    </constraints>
+                    <state key="normal" title="3">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Rnc-nV-jla"/>
+                            <exclude reference="nuk-17-hMI"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Rnc-nV-jla"/>
+                            <include reference="nuk-17-hMI"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="cookbookClick:" destination="-1" eventType="touchUpInside" id="0Pj-ag-Xyb"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="D9V-Qv-6hw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="1E4-b7-Z67"/>
+                <constraint firstItem="dTG-tu-rdt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1SE-hX-4VZ"/>
+                <constraint firstItem="dTG-tu-rdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="EkW-fy-dVQ"/>
+                <constraint firstItem="37o-Kr-4K4" firstAttribute="leading" secondItem="D9V-Qv-6hw" secondAttribute="trailing" constant="18" id="JlF-Ql-MaC"/>
+                <constraint firstItem="D9V-Qv-6hw" firstAttribute="leading" secondItem="dTG-tu-rdt" secondAttribute="trailing" constant="27" id="eLV-yt-8J1"/>
+                <constraint firstItem="37o-Kr-4K4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="h3v-A0-T9a"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="dTG-tu-rdt"/>
+                    <exclude reference="D9V-Qv-6hw"/>
+                    <exclude reference="37o-Kr-4K4"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="1SE-hX-4VZ"/>
+                    <exclude reference="EkW-fy-dVQ"/>
+                    <exclude reference="1E4-b7-Z67"/>
+                    <exclude reference="eLV-yt-8J1"/>
+                    <exclude reference="JlF-Ql-MaC"/>
+                    <exclude reference="h3v-A0-T9a"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="dTG-tu-rdt"/>
+                    <include reference="D9V-Qv-6hw"/>
+                    <include reference="37o-Kr-4K4"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="1SE-hX-4VZ"/>
+                    <include reference="EkW-fy-dVQ"/>
+                    <include reference="1E4-b7-Z67"/>
+                    <include reference="eLV-yt-8J1"/>
+                    <include reference="JlF-Ql-MaC"/>
+                    <include reference="h3v-A0-T9a"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

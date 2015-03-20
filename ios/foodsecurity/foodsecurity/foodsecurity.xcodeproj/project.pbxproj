@@ -33,6 +33,12 @@
 		82AABC7E1ABC038A0004306C /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC6B1ABC038A0004306C /* UIProgressView+AFNetworking.m */; };
 		82AABC7F1ABC038A0004306C /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC6D1ABC038A0004306C /* UIRefreshControl+AFNetworking.m */; };
 		82AABC801ABC038A0004306C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC6F1ABC038A0004306C /* UIWebView+AFNetworking.m */; };
+		82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC821ABC0EB60004306C /* communicateViewController.m */; };
+		82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC831ABC0EB60004306C /* communicateViewController.xib */; };
+		82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC871ABC0ED10004306C /* cookbookViewController.m */; };
+		82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC881ABC0ED10004306C /* cookbookViewController.xib */; };
+		82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC8C1ABC0EE00004306C /* videoViewController.m */; };
+		82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC8D1ABC0EE00004306C /* videoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +104,15 @@
 		82AABC6D1ABC038A0004306C /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		82AABC6E1ABC038A0004306C /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		82AABC6F1ABC038A0004306C /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		82AABC811ABC0EB60004306C /* communicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = communicateViewController.h; sourceTree = "<group>"; };
+		82AABC821ABC0EB60004306C /* communicateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = communicateViewController.m; sourceTree = "<group>"; };
+		82AABC831ABC0EB60004306C /* communicateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = communicateViewController.xib; sourceTree = "<group>"; };
+		82AABC861ABC0ED10004306C /* cookbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookbookViewController.h; sourceTree = "<group>"; };
+		82AABC871ABC0ED10004306C /* cookbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cookbookViewController.m; sourceTree = "<group>"; };
+		82AABC881ABC0ED10004306C /* cookbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cookbookViewController.xib; sourceTree = "<group>"; };
+		82AABC8B1ABC0EE00004306C /* videoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoViewController.h; sourceTree = "<group>"; };
+		82AABC8C1ABC0EE00004306C /* videoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videoViewController.m; sourceTree = "<group>"; };
+		82AABC8D1ABC0EE00004306C /* videoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +245,9 @@
 		82AABC3A1ABBFD2E0004306C /* communicate */ = {
 			isa = PBXGroup;
 			children = (
+				82AABC811ABC0EB60004306C /* communicateViewController.h */,
+				82AABC821ABC0EB60004306C /* communicateViewController.m */,
+				82AABC831ABC0EB60004306C /* communicateViewController.xib */,
 			);
 			path = communicate;
 			sourceTree = "<group>";
@@ -237,6 +255,9 @@
 		82AABC3B1ABBFD2E0004306C /* cookbook */ = {
 			isa = PBXGroup;
 			children = (
+				82AABC861ABC0ED10004306C /* cookbookViewController.h */,
+				82AABC871ABC0ED10004306C /* cookbookViewController.m */,
+				82AABC881ABC0ED10004306C /* cookbookViewController.xib */,
 			);
 			path = cookbook;
 			sourceTree = "<group>";
@@ -244,6 +265,9 @@
 		82AABC3C1ABBFD2E0004306C /* video */ = {
 			isa = PBXGroup;
 			children = (
+				82AABC8B1ABC0EE00004306C /* videoViewController.h */,
+				82AABC8C1ABC0EE00004306C /* videoViewController.m */,
+				82AABC8D1ABC0EE00004306C /* videoViewController.xib */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -408,10 +432,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
 				82AABC1F1ABBF5590004306C /* LaunchScreen.xib in Resources */,
 				82AABC491ABC02A30004306C /* commonNavigation.xib in Resources */,
+				82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */,
 				82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */,
+				82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
 				82AABC7E1ABC038A0004306C /* UIProgressView+AFNetworking.m in Sources */,
 				82AABC7C1ABC038A0004306C /* UIButton+AFNetworking.m in Sources */,
+				82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */,
 				82AABC7F1ABC038A0004306C /* UIRefreshControl+AFNetworking.m in Sources */,
 				82AABC7B1ABC038A0004306C /* UIAlertView+AFNetworking.m in Sources */,
 				82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */,
@@ -441,6 +470,7 @@
 				82AABC7D1ABC038A0004306C /* UIImageView+AFNetworking.m in Sources */,
 				82AABC701ABC038A0004306C /* AFHTTPRequestOperation.m in Sources */,
 				82AABC7A1ABC038A0004306C /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */,
 				82AABC481ABC02A30004306C /* commonNavigation.m in Sources */,
 				82AABC761ABC038A0004306C /* AFURLRequestSerialization.m in Sources */,
 				82AABC721ABC038A0004306C /* AFHTTPSessionManager.m in Sources */,

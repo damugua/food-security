@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface homeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *videoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *communicateBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cookbookBtn;
 
 @end
