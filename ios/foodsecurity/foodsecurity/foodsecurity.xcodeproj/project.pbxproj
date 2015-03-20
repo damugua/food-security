@@ -76,6 +76,7 @@
 		82AABC131ABBF5590004306C /* foodsecurity */ = {
 			isa = PBXGroup;
 			children = (
+				82AABC341ABBFD2E0004306C /* Classes */,
 				82AABC181ABBF5590004306C /* AppDelegate.h */,
 				82AABC191ABBF5590004306C /* AppDelegate.m */,
 				82AABC1B1ABBF5590004306C /* Images.xcassets */,
@@ -109,6 +110,85 @@
 				82AABC291ABBF5590004306C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82AABC341ABBFD2E0004306C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				82AABC351ABBFD2E0004306C /* account */,
+				82AABC391ABBFD2E0004306C /* home */,
+				82AABC3D1ABBFD2E0004306C /* Libs */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		82AABC351ABBFD2E0004306C /* account */ = {
+			isa = PBXGroup;
+			children = (
+				82AABC361ABBFD2E0004306C /* login */,
+				82AABC371ABBFD2E0004306C /* manage */,
+				82AABC381ABBFD2E0004306C /* regist */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
+		82AABC361ABBFD2E0004306C /* login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		82AABC371ABBFD2E0004306C /* manage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = manage;
+			sourceTree = "<group>";
+		};
+		82AABC381ABBFD2E0004306C /* regist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = regist;
+			sourceTree = "<group>";
+		};
+		82AABC391ABBFD2E0004306C /* home */ = {
+			isa = PBXGroup;
+			children = (
+				82AABC3A1ABBFD2E0004306C /* communicate */,
+				82AABC3B1ABBFD2E0004306C /* cookbook */,
+				82AABC3C1ABBFD2E0004306C /* video */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		82AABC3A1ABBFD2E0004306C /* communicate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = communicate;
+			sourceTree = "<group>";
+		};
+		82AABC3B1ABBFD2E0004306C /* cookbook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cookbook;
+			sourceTree = "<group>";
+		};
+		82AABC3C1ABBFD2E0004306C /* video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		82AABC3D1ABBFD2E0004306C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +474,7 @@
 				82AABC301ABBF5590004306C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82AABC311ABBF5590004306C /* Build configuration list for PBXNativeTarget "foodsecurityTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +483,7 @@
 				82AABC331ABBF5590004306C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
