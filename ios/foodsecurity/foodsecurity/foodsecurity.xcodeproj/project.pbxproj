@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
+		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
+		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
 		82AABC171ABBF5590004306C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC161ABBF5590004306C /* main.m */; };
 		82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC191ABBF5590004306C /* AppDelegate.m */; };
 		82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC1B1ABBF5590004306C /* Images.xcassets */; };
@@ -52,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82201BB51ABE9E1C004DA4E8 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		82201BB61ABE9E1C004DA4E8 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
+		82201BBD1ABEBA75004DA4E8 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		82201BBE1ABEBA75004DA4E8 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		82AABC111ABBF5590004306C /* foodsecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodsecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AABC151ABBF5590004306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82AABC161ABBF5590004306C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +141,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82201BBA1ABEB26D004DA4E8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				82201BB51ABE9E1C004DA4E8 /* loginViewController.h */,
+				82201BB61ABE9E1C004DA4E8 /* loginViewController.m */,
+				82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		82201BBB1ABEB28D004DA4E8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		82201BBC1ABEB297004DA4E8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		82AABC081ABBF5590004306C = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +245,9 @@
 		82AABC361ABBFD2E0004306C /* login */ = {
 			isa = PBXGroup;
 			children = (
+				82201BBC1ABEB297004DA4E8 /* views */,
+				82201BBB1ABEB28D004DA4E8 /* model */,
+				82201BBA1ABEB26D004DA4E8 /* controllers */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -298,6 +333,8 @@
 				82AABC451ABC02A30004306C /* commonNavigation.h */,
 				82AABC461ABC02A30004306C /* commonNavigation.m */,
 				82AABC471ABC02A30004306C /* commonNavigation.xib */,
+				82201BBD1ABEBA75004DA4E8 /* API.h */,
+				82201BBE1ABEBA75004DA4E8 /* API.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -432,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */,
 				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
 				82AABC1F1ABBF5590004306C /* LaunchScreen.xib in Resources */,
@@ -457,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
+				82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */,
 				82AABC7E1ABC038A0004306C /* UIProgressView+AFNetworking.m in Sources */,
 				82AABC7C1ABC038A0004306C /* UIButton+AFNetworking.m in Sources */,
 				82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */,
@@ -475,6 +514,7 @@
 				82AABC761ABC038A0004306C /* AFURLRequestSerialization.m in Sources */,
 				82AABC721ABC038A0004306C /* AFHTTPSessionManager.m in Sources */,
 				82AABC731ABC038A0004306C /* AFNetworkReachabilityManager.m in Sources */,
+				82201BBF1ABEBA75004DA4E8 /* API.m in Sources */,
 				82AABC771ABC038A0004306C /* AFURLResponseSerialization.m in Sources */,
 				82AABC801ABC038A0004306C /* UIWebView+AFNetworking.m in Sources */,
 				82AABC781ABC038A0004306C /* AFURLSessionManager.m in Sources */,

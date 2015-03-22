@@ -22,30 +22,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    [self test];
+    [self setNavigationBar];
+
 }
 
--(void)test
+-(void)setNavigationBar
 {
-    NSString *url = @"http://123.130.113.6:7000/RecipeWcfService.svc/GetInfoByKindergartenId?kindergartenId=1&pageIndex=1&pageSize=5";
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        NSString * str = [dic objectForKey:@"Data"];
-        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *dic2 = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-
-        NSLog(@"%@",dic2);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
-    }];
-
+    self.navigationItem.title = @"主页";
 }
+
+
 
 
 - (IBAction)videoClick:(id)sender {

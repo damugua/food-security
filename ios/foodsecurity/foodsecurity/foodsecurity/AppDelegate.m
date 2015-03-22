@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "homeViewController.h"
 #import "commonNavigation.h"
+#import "loginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,9 +22,12 @@
     // Override point for customization after application launch.
 
     homeViewController *home = [[homeViewController alloc]init];
+
+    loginViewController *login = [[loginViewController alloc]init];
+
     commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
 
-    self.window.rootViewController = nav;
+    self.window.rootViewController = login;
 
 
 
