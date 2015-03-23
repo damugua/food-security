@@ -10,6 +10,9 @@
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
 		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
+		82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BC11ABFADF6004DA4E8 /* loginModel.m */; };
+		82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BCA1ABFB69D004DA4E8 /* registOne.m */; };
+		82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BCB1ABFB69D004DA4E8 /* registOne.xib */; };
 		82AABC171ABBF5590004306C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC161ABBF5590004306C /* main.m */; };
 		82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC191ABBF5590004306C /* AppDelegate.m */; };
 		82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC1B1ABBF5590004306C /* Images.xcassets */; };
@@ -60,6 +63,11 @@
 		82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
 		82201BBD1ABEBA75004DA4E8 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		82201BBE1ABEBA75004DA4E8 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		82201BC01ABFADF6004DA4E8 /* loginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginModel.h; sourceTree = "<group>"; };
+		82201BC11ABFADF6004DA4E8 /* loginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginModel.m; sourceTree = "<group>"; };
+		82201BC91ABFB69D004DA4E8 /* registOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registOne.h; sourceTree = "<group>"; };
+		82201BCA1ABFB69D004DA4E8 /* registOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registOne.m; sourceTree = "<group>"; };
+		82201BCB1ABFB69D004DA4E8 /* registOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = registOne.xib; sourceTree = "<group>"; };
 		82AABC111ABBF5590004306C /* foodsecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodsecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AABC151ABBF5590004306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82AABC161ABBF5590004306C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +162,8 @@
 		82201BBB1ABEB28D004DA4E8 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				82201BC01ABFADF6004DA4E8 /* loginModel.h */,
+				82201BC11ABFADF6004DA4E8 /* loginModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -163,6 +173,46 @@
 			children = (
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		82201BC41ABFB4EC004DA4E8 /* rigistOne */ = {
+			isa = PBXGroup;
+			children = (
+				82201BC81ABFB681004DA4E8 /* model */,
+				82201BC71ABFB67A004DA4E8 /* controller */,
+			);
+			name = rigistOne;
+			sourceTree = "<group>";
+		};
+		82201BC51ABFB4F8004DA4E8 /* registTwo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = registTwo;
+			sourceTree = "<group>";
+		};
+		82201BC61ABFB4FF004DA4E8 /* registThree */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = registThree;
+			sourceTree = "<group>";
+		};
+		82201BC71ABFB67A004DA4E8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				82201BC91ABFB69D004DA4E8 /* registOne.h */,
+				82201BCA1ABFB69D004DA4E8 /* registOne.m */,
+				82201BCB1ABFB69D004DA4E8 /* registOne.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		82201BC81ABFB681004DA4E8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		82AABC081ABBF5590004306C = {
@@ -262,6 +312,9 @@
 		82AABC381ABBFD2E0004306C /* regist */ = {
 			isa = PBXGroup;
 			children = (
+				82201BC41ABFB4EC004DA4E8 /* rigistOne */,
+				82201BC51ABFB4F8004DA4E8 /* registTwo */,
+				82201BC61ABFB4FF004DA4E8 /* registThree */,
 			);
 			path = regist;
 			sourceTree = "<group>";
@@ -473,6 +526,7 @@
 				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
 				82AABC1F1ABBF5590004306C /* LaunchScreen.xib in Resources */,
+				82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */,
 				82AABC491ABC02A30004306C /* commonNavigation.xib in Resources */,
 				82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */,
 				82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */,
@@ -512,12 +566,14 @@
 				82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */,
 				82AABC481ABC02A30004306C /* commonNavigation.m in Sources */,
 				82AABC761ABC038A0004306C /* AFURLRequestSerialization.m in Sources */,
+				82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */,
 				82AABC721ABC038A0004306C /* AFHTTPSessionManager.m in Sources */,
 				82AABC731ABC038A0004306C /* AFNetworkReachabilityManager.m in Sources */,
 				82201BBF1ABEBA75004DA4E8 /* API.m in Sources */,
 				82AABC771ABC038A0004306C /* AFURLResponseSerialization.m in Sources */,
 				82AABC801ABC038A0004306C /* UIWebView+AFNetworking.m in Sources */,
 				82AABC781ABC038A0004306C /* AFURLSessionManager.m in Sources */,
+				82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */,
 				82AABC791ABC038A0004306C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				82AABC421ABC022E0004306C /* homeViewController.m in Sources */,
 			);

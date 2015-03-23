@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "homeViewController.h"
 #import "commonNavigation.h"
+#import "API.h"
 #import "loginViewController.h"
 @interface AppDelegate ()
 
@@ -21,13 +22,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
+
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"url"]) {
+        [defaults setObject:BASE_URL forKey:@"url"];
+    }else{
+        NSLog(@"%@",[defaults objectForKey:@"url"]);
+    }
+
+
+
+
+
+
+
+
     homeViewController *home = [[homeViewController alloc]init];
-
     loginViewController *login = [[loginViewController alloc]init];
-
     commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
 
-    self.window.rootViewController = login;
+    self.window.rootViewController = nav;
 
 
 

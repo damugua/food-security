@@ -36,19 +36,19 @@
 
 - (IBAction)videoClick:(id)sender {
     videoViewController *video = [[videoViewController alloc]init];
-    [self.navigationController pushViewController:video animated:NO];
+    [self.navigationController pushViewController:video animated:YES];
 }
 
 
 - (IBAction)communicateClick:(id)sender {
     communicateViewController *communicate = [[communicateViewController alloc]init];
-    [self.navigationController pushViewController:communicate animated:NO];
+    [self.navigationController pushViewController:communicate animated:YES];
 
 }
 
 - (IBAction)cookbookClick:(id)sender {
     cookbookViewController *cookbook = [[cookbookViewController alloc]init];
-    [self.navigationController pushViewController:cookbook animated:NO];
+    [self.navigationController pushViewController:cookbook animated:YES];
 
 }
 

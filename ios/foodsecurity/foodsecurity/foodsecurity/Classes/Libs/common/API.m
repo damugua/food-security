@@ -11,9 +11,5 @@
 @implementation API
 
 
-#define BASE_URL @"http://192.168.17.10:7000"
-
-#define LOGIN @"/ParentInfoWcfService.svc/CheckLogin"
-
 
 @end

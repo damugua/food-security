@@ -10,4 +10,11 @@
 
 @interface API : NSObject
 
+
+
+#define BASE_URL @"http://123.130.113.6:7000"
+
+#define LOGIN @"/ParentInfoWcfService.svc/CheckLogin"
+
+
 @end
