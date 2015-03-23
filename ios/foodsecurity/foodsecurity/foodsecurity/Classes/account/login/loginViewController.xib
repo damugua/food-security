@@ -85,7 +85,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="yxU-PM-DEq" firstAttribute="top" secondItem="hyZ-h2-xXi" secondAttribute="top" constant="10" id="1me-P3-Gnv"/>
                         <constraint firstItem="yxU-PM-DEq" firstAttribute="leading" secondItem="hyZ-h2-xXi" secondAttribute="leading" id="A4y-lK-nBv"/>
@@ -160,7 +160,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="1Un-mb-kgt"/>
                         <constraint firstAttribute="trailing" secondItem="K5f-BW-iKP" secondAttribute="trailing" id="6C7-Ry-Mtd"/>

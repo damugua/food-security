@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "homeViewController.h"
-#import "commonNavigation.h"
 #import "API.h"
 #import "loginViewController.h"
 @interface AppDelegate ()
@@ -23,7 +21,7 @@
     // Override point for customization after application launch.
 
 
-
+//判断是否存有ip
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"url"]) {
         [defaults setObject:BASE_URL forKey:@"url"];
@@ -31,18 +29,8 @@
         NSLog(@"%@",[defaults objectForKey:@"url"]);
     }
 
-
-
-
-
-
-
-
-    homeViewController *home = [[homeViewController alloc]init];
     loginViewController *login = [[loginViewController alloc]init];
-    commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
-
-    self.window.rootViewController = nav;
+    self.window.rootViewController = login;
 
 
 

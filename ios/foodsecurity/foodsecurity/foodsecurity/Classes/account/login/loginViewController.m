@@ -11,6 +11,9 @@
 #import "API.h"
 #import "registOne.h"
 #import "loginModel.h"
+#import "homeViewController.h"
+#import "commonNavigation.h"
+#import <CommonCrypto/CommonDigest.h>
 
 
 @interface loginViewController ()
@@ -47,21 +50,37 @@
 - (IBAction)loginClick:(id)sender {
     //创建联网
 
-    if (_cellphoneNumber.text==nil&&_password.text) {
+    if ([_cellphoneNumber.text isEqualToString:@""]&&[_password.text isEqualToString:@""]) {
         //非空警告
         NSLog(@"error");
+        return;
     }
 
 
 
-    [self loginConnect];
+    [self loginConnectWithMd5Password:[self md5:_password.text]];
 
 }
 
--(void)loginConnect
+-(NSString *)md5:(NSString *)password
+{
+    const char *cStr = [password UTF8String];
+    unsigned char result[16];
+    CC_MD5( cStr, strlen(cStr), result );
+    NSString *resultStr =  [NSString stringWithFormat:@"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
+    NSString *reStr = [resultStr substringWithRange:NSMakeRange(8, 16)];
+    return reStr;
+}
+
+-(void)loginConnectWithMd5Password:(NSString *)password
 {
     //参数后缀
-    NSString *paramater = [NSString stringWithFormat:@"?phone=%@&password=%@",_cellphoneNumber.text,_password.text];
+    NSString *paramater = [NSString stringWithFormat:@"?phone=%@&password=%@",_cellphoneNumber.text,password];
     //地址
     NSString *url = [NSString stringWithFormat:@"%@%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"url"],LOGIN,paramater];
 
@@ -71,8 +90,10 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         model = [[loginModel alloc]init];
+
         [model setModel:responseObject];
         //返回处理
+        [self dealResponse];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
     }];
@@ -83,7 +104,13 @@
 //返回处理
 -(void)dealResponse
 {
-
+    if (model.statue) {
+        UIApplication *application=[UIApplication sharedApplication];
+        UIWindow *window=application.keyWindow;
+        homeViewController *home = [[homeViewController alloc]init];
+        commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
+        window.rootViewController=nav;
+    }
 }
 
 
