@@ -29,6 +29,15 @@
 -(void)setNavigationBar
 {
     self.navigationItem.title = @"主页";
+    UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [menuBtn addTarget:self action:@selector(nemuBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc]initWithCustomView:menuBtn];
+    self.navigationItem.rightBarButtonItem = barbtn;
+}
+
+-(void)nemuBtnClick
+{
+    
 }
 
 

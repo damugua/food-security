@@ -30,7 +30,13 @@
 
 -(void)setParameter:(NSDictionary *)userData
 {
+    //存住用户名密码
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[userData objectForKey:@"Phone"] forKey:@"username"];
+
+
     _statue = [userData objectForKey:@"Status"];
+
 }
 
 @end

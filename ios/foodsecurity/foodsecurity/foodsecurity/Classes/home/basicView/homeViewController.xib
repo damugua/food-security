@@ -20,10 +20,10 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-tu-rdt">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="Beh-LG-Xg2"/>
+                        <constraint firstAttribute="width" constant="80" id="Beh-LG-Xg2"/>
                         <constraint firstAttribute="height" constant="30" id="oIw-NO-VEG"/>
                     </constraints>
-                    <state key="normal" title="1">
+                    <state key="normal" title="查看视频">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -46,9 +46,9 @@
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ZYY-Z5-4uz"/>
-                        <constraint firstAttribute="width" constant="46" id="mcB-AB-GLv"/>
+                        <constraint firstAttribute="width" constant="80" id="mcB-AB-GLv"/>
                     </constraints>
-                    <state key="normal" title="2">
+                    <state key="normal" title="信息互通">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -71,9 +71,9 @@
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Rnc-nV-jla"/>
-                        <constraint firstAttribute="width" constant="46" id="nuk-17-hMI"/>
+                        <constraint firstAttribute="width" constant="80" id="nuk-17-hMI"/>
                     </constraints>
-                    <state key="normal" title="3">
+                    <state key="normal" title="查看食谱">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">

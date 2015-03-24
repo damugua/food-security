@@ -37,6 +37,12 @@
 {
     //界面处理
 
+    //是否存有用户密码
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"username"]) {
+        _cellphoneNumber.text =[defaults objectForKey:@"username"];
+    }
+
 }
 
 
@@ -111,6 +117,10 @@
         commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
         window.rootViewController=nav;
     }
+
+    
+
+
 }
 
 

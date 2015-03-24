@@ -29,6 +29,7 @@
         NSLog(@"%@",[defaults objectForKey:@"url"]);
     }
 
+
     loginViewController *login = [[loginViewController alloc]init];
     self.window.rootViewController = login;
 

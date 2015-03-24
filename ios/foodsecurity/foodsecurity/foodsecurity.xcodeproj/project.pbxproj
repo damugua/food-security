@@ -13,6 +13,12 @@
 		82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BC11ABFADF6004DA4E8 /* loginModel.m */; };
 		82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BCA1ABFB69D004DA4E8 /* registOne.m */; };
 		82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BCB1ABFB69D004DA4E8 /* registOne.xib */; };
+		82519C041AC100E2008422D2 /* EzvizOpenSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82519BE71AC100E2008422D2 /* EzvizOpenSDKBundle.bundle */; };
+		82519C051AC100E2008422D2 /* libEzvizRealPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519BE81AC100E2008422D2 /* libEzvizRealPlay.a */; };
+		82519C061AC100E2008422D2 /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519BE91AC100E2008422D2 /* libPods-AFNetworking.a */; };
+		82519C071AC100E2008422D2 /* libPods-SSKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519BEA1AC100E2008422D2 /* libPods-SSKeychain.a */; };
+		82519C081AC100E2008422D2 /* libPods-ZBarSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82519BEB1AC100E2008422D2 /* libPods-ZBarSDK.a */; };
+		82519C0F1AC10781008422D2 /* menuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82519C0E1AC10781008422D2 /* menuView.m */; };
 		82AABC171ABBF5590004306C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC161ABBF5590004306C /* main.m */; };
 		82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC191ABBF5590004306C /* AppDelegate.m */; };
 		82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC1B1ABBF5590004306C /* Images.xcassets */; };
@@ -68,6 +74,34 @@
 		82201BC91ABFB69D004DA4E8 /* registOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registOne.h; sourceTree = "<group>"; };
 		82201BCA1ABFB69D004DA4E8 /* registOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registOne.m; sourceTree = "<group>"; };
 		82201BCB1ABFB69D004DA4E8 /* registOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = registOne.xib; sourceTree = "<group>"; };
+		82519BE71AC100E2008422D2 /* EzvizOpenSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EzvizOpenSDKBundle.bundle; sourceTree = "<group>"; };
+		82519BE81AC100E2008422D2 /* libEzvizRealPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEzvizRealPlay.a; sourceTree = "<group>"; };
+		82519BE91AC100E2008422D2 /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-AFNetworking.a"; sourceTree = "<group>"; };
+		82519BEA1AC100E2008422D2 /* libPods-SSKeychain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-SSKeychain.a"; sourceTree = "<group>"; };
+		82519BEB1AC100E2008422D2 /* libPods-ZBarSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-ZBarSDK.a"; sourceTree = "<group>"; };
+		82519BEC1AC100E2008422D2 /* NSData+AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES128.h"; sourceTree = "<group>"; };
+		82519BEF1AC100E2008422D2 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		82519BF01AC100E2008422D2 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		82519BF21AC100E2008422D2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		82519BF31AC100E2008422D2 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		82519BF41AC100E2008422D2 /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
+		82519BF51AC100E2008422D2 /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCameraSimulator.h; sourceTree = "<group>"; };
+		82519BF61AC100E2008422D2 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
+		82519BF71AC100E2008422D2 /* ZBarCVImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCVImage.h; sourceTree = "<group>"; };
+		82519BF81AC100E2008422D2 /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
+		82519BF91AC100E2008422D2 /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
+		82519BFA1AC100E2008422D2 /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
+		82519BFB1AC100E2008422D2 /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
+		82519BFC1AC100E2008422D2 /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
+		82519BFD1AC100E2008422D2 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
+		82519BFE1AC100E2008422D2 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
+		82519BFF1AC100E2008422D2 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
+		82519C001AC100E2008422D2 /* YSConstStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSConstStrings.h; sourceTree = "<group>"; };
+		82519C011AC100E2008422D2 /* YSHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHTTPClient.h; sourceTree = "<group>"; };
+		82519C021AC100E2008422D2 /* YSMobilePages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMobilePages.h; sourceTree = "<group>"; };
+		82519C031AC100E2008422D2 /* YSPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPlayerController.h; sourceTree = "<group>"; };
+		82519C0D1AC10781008422D2 /* menuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuView.h; sourceTree = "<group>"; };
+		82519C0E1AC10781008422D2 /* menuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuView.m; sourceTree = "<group>"; };
 		82AABC111ABBF5590004306C /* foodsecurity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodsecurity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AABC151ABBF5590004306C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82AABC161ABBF5590004306C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +170,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82519C061AC100E2008422D2 /* libPods-AFNetworking.a in Frameworks */,
+				82519C071AC100E2008422D2 /* libPods-SSKeychain.a in Frameworks */,
+				82519C051AC100E2008422D2 /* libEzvizRealPlay.a in Frameworks */,
+				82519C081AC100E2008422D2 /* libPods-ZBarSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +251,72 @@
 			children = (
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		82519BE61AC100E2008422D2 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				82519BE71AC100E2008422D2 /* EzvizOpenSDKBundle.bundle */,
+				82519BE81AC100E2008422D2 /* libEzvizRealPlay.a */,
+				82519BE91AC100E2008422D2 /* libPods-AFNetworking.a */,
+				82519BEA1AC100E2008422D2 /* libPods-SSKeychain.a */,
+				82519BEB1AC100E2008422D2 /* libPods-ZBarSDK.a */,
+				82519BEC1AC100E2008422D2 /* NSData+AES128.h */,
+				82519BED1AC100E2008422D2 /* Public */,
+				82519C001AC100E2008422D2 /* YSConstStrings.h */,
+				82519C011AC100E2008422D2 /* YSHTTPClient.h */,
+				82519C021AC100E2008422D2 /* YSMobilePages.h */,
+				82519C031AC100E2008422D2 /* YSPlayerController.h */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		82519BED1AC100E2008422D2 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				82519BEE1AC100E2008422D2 /* SSKeychain */,
+				82519BF11AC100E2008422D2 /* ZBarSDK */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		82519BEE1AC100E2008422D2 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				82519BEF1AC100E2008422D2 /* SSKeychain.h */,
+				82519BF01AC100E2008422D2 /* SSKeychainQuery.h */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
+		82519BF11AC100E2008422D2 /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				82519BF21AC100E2008422D2 /* config.h */,
+				82519BF31AC100E2008422D2 /* debug.h */,
+				82519BF41AC100E2008422D2 /* zbar.h */,
+				82519BF51AC100E2008422D2 /* ZBarCameraSimulator.h */,
+				82519BF61AC100E2008422D2 /* ZBarCaptureReader.h */,
+				82519BF71AC100E2008422D2 /* ZBarCVImage.h */,
+				82519BF81AC100E2008422D2 /* ZBarHelpController.h */,
+				82519BF91AC100E2008422D2 /* ZBarImage.h */,
+				82519BFA1AC100E2008422D2 /* ZBarImageScanner.h */,
+				82519BFB1AC100E2008422D2 /* ZBarReaderController.h */,
+				82519BFC1AC100E2008422D2 /* ZBarReaderView.h */,
+				82519BFD1AC100E2008422D2 /* ZBarReaderViewController.h */,
+				82519BFE1AC100E2008422D2 /* ZBarSDK.h */,
+				82519BFF1AC100E2008422D2 /* ZBarSymbol.h */,
+			);
+			path = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		82519C091AC1073F008422D2 /* nemuView */ = {
+			isa = PBXGroup;
+			children = (
+				82519C0D1AC10781008422D2 /* menuView.h */,
+				82519C0E1AC10781008422D2 /* menuView.m */,
+			);
+			name = nemuView;
 			sourceTree = "<group>";
 		};
 		82AABC081ABBF5590004306C = {
@@ -363,6 +467,7 @@
 		82AABC3D1ABBFD2E0004306C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				82519BE61AC100E2008422D2 /* SDK */,
 				82AABC4A1ABC038A0004306C /* AFNetworking */,
 				82AABC5E1ABC038A0004306C /* UIKit+AFNetworking */,
 				82AABC441ABC027D0004306C /* common */,
@@ -373,6 +478,7 @@
 		82AABC3E1ABC02170004306C /* basicView */ = {
 			isa = PBXGroup;
 			children = (
+				82519C091AC1073F008422D2 /* nemuView */,
 				82AABC3F1ABC022E0004306C /* homeViewController.h */,
 				82AABC401ABC022E0004306C /* homeViewController.m */,
 				82AABC411ABC022E0004306C /* homeViewController.xib */,
@@ -531,6 +637,7 @@
 				82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */,
 				82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */,
 				82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */,
+				82519C041AC100E2008422D2 /* EzvizOpenSDKBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +658,7 @@
 				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
 				82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */,
 				82AABC7E1ABC038A0004306C /* UIProgressView+AFNetworking.m in Sources */,
+				82519C0F1AC10781008422D2 /* menuView.m in Sources */,
 				82AABC7C1ABC038A0004306C /* UIButton+AFNetworking.m in Sources */,
 				82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */,
 				82AABC7F1ABC038A0004306C /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -691,6 +799,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/foodsecurity/Classes/Libs/SDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -701,6 +813,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/foodsecurity/Classes/Libs/SDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
