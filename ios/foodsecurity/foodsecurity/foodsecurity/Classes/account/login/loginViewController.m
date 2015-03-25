@@ -101,8 +101,10 @@
         //返回处理
         [self dealResponse];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
+        NSLog(@"%@",error);
     }];
+
+    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@
 
 
 }
@@ -110,13 +112,13 @@
 //返回处理
 -(void)dealResponse
 {
-    if (model.statue) {
+//    if (model.statue) {
         UIApplication *application=[UIApplication sharedApplication];
         UIWindow *window=application.keyWindow;
         homeViewController *home = [[homeViewController alloc]init];
         commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
         window.rootViewController=nav;
-    }
+//    }
 
     
 
