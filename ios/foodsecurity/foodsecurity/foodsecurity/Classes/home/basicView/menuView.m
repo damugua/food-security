@@ -22,9 +22,24 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-
+        [self createUI:frame];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
+}
+
+-(void)createUI:(CGRect)frame
+{
+    UIButton * accountManager = [[UIButton alloc]initWithFrame:CGRectMake(0, 10, frame.size.width, (frame.size.width-10)/2)];
+    [accountManager setTitle:@"账户管理" forState:UIControlStateNormal];
+    [accountManager addTarget:self action:@selector(accountManagerClick) forControlEvents:UIControlEventTouchUpInside];
+    accountManager.showsTouchWhenHighlighted = YES;
+    [self addSubview:accountManager];
+}
+
+-(void)accountManagerClick
+{
+    [self.delegate accountManagerClick];
 }
 
 

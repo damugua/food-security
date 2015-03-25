@@ -51,6 +51,8 @@
 		82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC881ABC0ED10004306C /* cookbookViewController.xib */; };
 		82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC8C1ABC0EE00004306C /* videoViewController.m */; };
 		82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC8D1ABC0EE00004306C /* videoViewController.xib */; };
+		82F645FF1AC29879004EB124 /* accountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F645FD1AC29879004EB124 /* accountManager.m */; };
+		82F646001AC29879004EB124 /* accountManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F645FE1AC29879004EB124 /* accountManager.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,9 @@
 		82AABC8B1ABC0EE00004306C /* videoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoViewController.h; sourceTree = "<group>"; };
 		82AABC8C1ABC0EE00004306C /* videoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videoViewController.m; sourceTree = "<group>"; };
 		82AABC8D1ABC0EE00004306C /* videoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videoViewController.xib; sourceTree = "<group>"; };
+		82F645FC1AC29879004EB124 /* accountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountManager.h; sourceTree = "<group>"; };
+		82F645FD1AC29879004EB124 /* accountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountManager.m; sourceTree = "<group>"; };
+		82F645FE1AC29879004EB124 /* accountManager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = accountManager.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +414,9 @@
 		82AABC371ABBFD2E0004306C /* manage */ = {
 			isa = PBXGroup;
 			children = (
+				82F645FC1AC29879004EB124 /* accountManager.h */,
+				82F645FD1AC29879004EB124 /* accountManager.m */,
+				82F645FE1AC29879004EB124 /* accountManager.xib */,
 			);
 			path = manage;
 			sourceTree = "<group>";
@@ -635,6 +643,7 @@
 				82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */,
 				82AABC491ABC02A30004306C /* commonNavigation.xib in Resources */,
 				82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */,
+				82F646001AC29879004EB124 /* accountManager.xib in Resources */,
 				82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */,
 				82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */,
 				82519C041AC100E2008422D2 /* EzvizOpenSDKBundle.bundle in Resources */,
@@ -676,6 +685,7 @@
 				82AABC761ABC038A0004306C /* AFURLRequestSerialization.m in Sources */,
 				82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */,
 				82AABC721ABC038A0004306C /* AFHTTPSessionManager.m in Sources */,
+				82F645FF1AC29879004EB124 /* accountManager.m in Sources */,
 				82AABC731ABC038A0004306C /* AFNetworkReachabilityManager.m in Sources */,
 				82201BBF1ABEBA75004DA4E8 /* API.m in Sources */,
 				82AABC771ABC038A0004306C /* AFURLResponseSerialization.m in Sources */,

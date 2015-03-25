@@ -236,6 +236,7 @@
                         <constraint firstAttribute="width" constant="100" id="1Yp-cV-VFb"/>
                         <constraint firstAttribute="height" constant="40" id="YOh-21-YQe"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="无法登陆？">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -261,6 +262,7 @@
                         <constraint firstAttribute="width" constant="100" id="7pM-um-8pj"/>
                         <constraint firstAttribute="height" constant="40" id="bEA-1v-K9D"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="新用户注册">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
