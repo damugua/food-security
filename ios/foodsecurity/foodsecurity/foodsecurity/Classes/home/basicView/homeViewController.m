@@ -11,12 +11,18 @@
 #import "communicateViewController.h"
 #import "cookbookViewController.h"
 #import "videoViewController.h"
+#import "menuView.h"
+#import "accountManager.h"
 
-@interface homeViewController ()
+@interface homeViewController ()<sendButtonClickEvent>
 
 @end
 
 @implementation homeViewController
+{
+    UIView *backShadow;
+    menuView *menu;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,14 +36,41 @@
 {
     self.navigationItem.title = @"主页";
     UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [menuBtn addTarget:self action:@selector(nemuBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [menuBtn addTarget:self action:@selector(menuBtnClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barbtn = [[UIBarButtonItem alloc]initWithCustomView:menuBtn];
     self.navigationItem.rightBarButtonItem = barbtn;
 }
 
--(void)nemuBtnClick
+-(void)menuBtnClick
 {
-    
+    menu = [[menuView alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.6-10, 50,self.view.frame.size.width*0.4,self.view.frame.size.width*0.4*0.8)];
+    menu.delegate = self;
+    [self.view.window addSubview:menu];
+
+    backShadow = [[UIView alloc]initWithFrame:self.view.frame];
+    backShadow.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+    [self.view addSubview:backShadow];
+}
+
+-(void)accountManagerClick
+{
+    [backShadow removeFromSuperview];
+    [menu removeFromSuperview];
+    accountManager *manager = [[accountManager alloc]init];
+    [self.navigationController pushViewController:manager animated:YES];
+}
+
+
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if (touch.view == backShadow) {
+        [backShadow removeFromSuperview];
+        [menu removeFromSuperview];
+    }
 }
 
 
