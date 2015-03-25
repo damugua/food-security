@@ -56,7 +56,7 @@
 - (IBAction)loginClick:(id)sender {
     //创建联网
 
-    if ([_cellphoneNumber.text isEqualToString:@""]&&[_password.text isEqualToString:@""]) {
+    if ([_cellphoneNumber.text isEqualToString:@""]||[_password.text isEqualToString:@""]) {
         //非空警告
         NSLog(@"error");
         return;
@@ -101,10 +101,10 @@
         //返回处理
         [self dealResponse];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
+
     }];
 
-    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@
+//    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@
 
 
 }
