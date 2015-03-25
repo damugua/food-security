@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_top_bar"
+    android:id="@+id/title"
+    android:background="@color/top_bar_normal_bg"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_left"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/titlebar_selector"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/title_left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="5dip"
+            android:clickable="false"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/title_left"
+        android:layout_toLeftOf="@+id/title_right"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bottom_text_color_normal"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_right"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/titlebar_selector"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/title_right_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/common_tab_bg"
+            android:clickable="true"
+            android:scaleType="centerInside" />
+
+
+        <TextView
+            android:id="@+id/title_right_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>
