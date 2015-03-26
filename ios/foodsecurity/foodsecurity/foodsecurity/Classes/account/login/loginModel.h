@@ -13,6 +13,6 @@
 
 @property(nonatomic,assign)BOOL statue;
 
--(void)setModel:(NSData *)data;
+-(void)setParameter:(NSDictionary *)userData;
 
 @end

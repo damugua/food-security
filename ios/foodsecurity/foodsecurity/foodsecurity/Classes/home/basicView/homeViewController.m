@@ -7,7 +7,6 @@
 //
 
 #import "homeViewController.h"
-#import "AFNetworking.h"
 #import "communicateViewController.h"
 #import "cookbookViewController.h"
 #import "videoViewController.h"
@@ -50,12 +49,16 @@
     backShadow = [[UIView alloc]initWithFrame:self.view.frame];
     backShadow.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
     [self.view addSubview:backShadow];
+
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 -(void)accountManagerClick
 {
     [backShadow removeFromSuperview];
     [menu removeFromSuperview];
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+    
     accountManager *manager = [[accountManager alloc]init];
     [self.navigationController pushViewController:manager animated:YES];
 }
@@ -70,6 +73,8 @@
     if (touch.view == backShadow) {
         [backShadow removeFromSuperview];
         [menu removeFromSuperview];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+
     }
 }
 
