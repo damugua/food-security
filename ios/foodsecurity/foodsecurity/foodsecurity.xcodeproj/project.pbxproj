@@ -53,6 +53,8 @@
 		82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC8D1ABC0EE00004306C /* videoViewController.xib */; };
 		82F645FF1AC29879004EB124 /* accountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F645FD1AC29879004EB124 /* accountManager.m */; };
 		82F646001AC29879004EB124 /* accountManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F645FE1AC29879004EB124 /* accountManager.xib */; };
+		82F6460A1AC3947F004EB124 /* cameraList.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F646091AC3947F004EB124 /* cameraList.m */; };
+		82F6460D1AC394A6004EB124 /* getAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F6460C1AC394A6004EB124 /* getAccessToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,10 @@
 		82F645FC1AC29879004EB124 /* accountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountManager.h; sourceTree = "<group>"; };
 		82F645FD1AC29879004EB124 /* accountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountManager.m; sourceTree = "<group>"; };
 		82F645FE1AC29879004EB124 /* accountManager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = accountManager.xib; sourceTree = "<group>"; };
+		82F646081AC3947F004EB124 /* cameraList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraList.h; sourceTree = "<group>"; };
+		82F646091AC3947F004EB124 /* cameraList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraList.m; sourceTree = "<group>"; };
+		82F6460B1AC394A6004EB124 /* getAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getAccessToken.h; sourceTree = "<group>"; };
+		82F6460C1AC394A6004EB124 /* getAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getAccessToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +471,7 @@
 		82AABC3C1ABBFD2E0004306C /* video */ = {
 			isa = PBXGroup;
 			children = (
+				82F646071AC39446004EB124 /* network */,
 				82AABC8B1ABC0EE00004306C /* videoViewController.h */,
 				82AABC8C1ABC0EE00004306C /* videoViewController.m */,
 				82AABC8D1ABC0EE00004306C /* videoViewController.xib */,
@@ -554,6 +561,17 @@
 				82AABC6F1ABC038A0004306C /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		82F646071AC39446004EB124 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				82F646081AC3947F004EB124 /* cameraList.h */,
+				82F646091AC3947F004EB124 /* cameraList.m */,
+				82F6460B1AC394A6004EB124 /* getAccessToken.h */,
+				82F6460C1AC394A6004EB124 /* getAccessToken.m */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -665,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
+				82F6460A1AC3947F004EB124 /* cameraList.m in Sources */,
 				82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */,
 				82AABC7E1ABC038A0004306C /* UIProgressView+AFNetworking.m in Sources */,
 				82519C0F1AC10781008422D2 /* menuView.m in Sources */,
@@ -693,6 +712,7 @@
 				82AABC781ABC038A0004306C /* AFURLSessionManager.m in Sources */,
 				82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */,
 				82AABC791ABC038A0004306C /* AFNetworkActivityIndicatorManager.m in Sources */,
+				82F6460D1AC394A6004EB124 /* getAccessToken.m in Sources */,
 				82AABC421ABC022E0004306C /* homeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
