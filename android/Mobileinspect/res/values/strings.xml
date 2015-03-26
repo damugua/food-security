@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">移动巡查</string>
+    <string name="hello_world">Hello world!</string>
+     <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="Is_landing">正在登录...</string>
+    <string name="network_isnot_available">网络不可用</string>
+
+</resources>
