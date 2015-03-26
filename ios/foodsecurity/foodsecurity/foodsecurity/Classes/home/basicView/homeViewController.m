@@ -7,7 +7,6 @@
 //
 
 #import "homeViewController.h"
-#import "AFNetworking.h"
 #import "communicateViewController.h"
 #import "cookbookViewController.h"
 #import "videoViewController.h"

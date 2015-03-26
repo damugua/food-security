@@ -7,22 +7,22 @@
 //
 
 #import "loginViewController.h"
-#import "AFNetworking.h"
 #import "API.h"
 #import "registOne.h"
 #import "loginModel.h"
 #import "homeViewController.h"
 #import "commonNavigation.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "commonModel.h"
 
 
-@interface loginViewController ()
+@interface loginViewController ()<commonConnectDelegate>
 
 @end
 
 @implementation loginViewController
 {
-    loginModel *model;//返回信息
+    loginModel *logmodel;//返回信息
 }
 
 - (void)viewDidLoad {
@@ -128,49 +128,52 @@
     NSString *url = [NSString stringWithFormat:@"%@%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"url"],LOGIN,paramater];
 
     NSLog(@"%@",url);
+    commonModel *connect = [[commonModel alloc]initWithUrl:url];
+    connect.delegate = self;
 
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        model = [[loginModel alloc]init];
-
-        [model setModel:responseObject];
-        //返回处理
-        [self dealResponse];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
-    }];
-
-    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@
+//    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@
 
 
 }
 
-//返回处理
+-(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
+{
+    logmodel = [[loginModel alloc]init];
+    [logmodel setParameter:dataDic];
+    [self dealResponse];
+}
+
+-(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
+{
+    NSLog(@"%@",errorMessage);
+}
+
+-(void)connectError:(commonModel *)connect
+{
+
+}
+
+//界面跳转
 -(void)dealResponse
 {
-//    if (model.statue) {
+    if (logmodel.statue) {
         UIApplication *application=[UIApplication sharedApplication];
         UIWindow *window=application.keyWindow;
         homeViewController *home = [[homeViewController alloc]init];
         commonNavigation *nav = [[commonNavigation alloc]initWithRootViewController:home];
         window.rootViewController=nav;
-//    }
-
-    
-
+    }
 
 }
 
 
 - (IBAction)canNotLoginClick:(id)sender {
+
 }
 
 
 - (IBAction)regist:(id)sender {
-    NSLog(@"aaa");
     registOne *regist = [[registOne alloc]init];
-
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:regist];
     [self presentViewController:nav animated:YES completion:nil];
 }

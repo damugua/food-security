@@ -11,22 +11,7 @@
 @implementation loginModel
 
 
--(void)setModel:(NSData *)data
-{
-    NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
-    if ([[dataDic objectForKey:@"Data"] isKindOfClass:[NSNull class]]) {
-        NSData *errorData = [[dataDic objectForKey:@"ResponseInstance"] dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *errorDic = [NSJSONSerialization JSONObjectWithData:errorData options:NSJSONReadingMutableContainers error:nil];
-        NSString *errorMessage = [[errorDic objectForKey:@"BusinessExceptionInstance"] objectForKey:@"Message"];
-        NSLog(@"%@",errorMessage);
-    }else{
-        NSData *data = [[dataDic objectForKey:@"Data"] dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *userData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"%@",userData);
-        [self setParameter:userData];
-    }
-}
 
 -(void)setParameter:(NSDictionary *)userData
 {
@@ -34,7 +19,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[userData objectForKey:@"Phone"] forKey:@"username"];
 
-
+    [defaults setObject:[userData objectForKey:@"Code"] forKey:@"userCode"];
     _statue = [userData objectForKey:@"Status"];
 
 }

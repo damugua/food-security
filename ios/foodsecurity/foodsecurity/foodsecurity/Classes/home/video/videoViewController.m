@@ -7,8 +7,9 @@
 //
 
 #import "videoViewController.h"
-
-@interface videoViewController ()
+#import "API.h"
+#import "commonModel.h"
+@interface videoViewController ()<commonConnectDelegate>
 
 @end
 
@@ -17,7 +18,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self getCameraList];
 }
+
+-(void)getCameraList
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@?parentCode=%@",BASE_URL,CAMERA_LIST,[[NSUserDefaults standardUserDefaults] objectForKey:@"userCode"]];
+    NSLog(@"%@",url);
+    commonModel *cameraConnect = [[commonModel alloc]initWithUrl:url];
+    cameraConnect.delegate = self;
+}
+
+-(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
+{
+    NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
+    
+}
+
+-(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
+{
+
+}
+
+-(void)connectError:(commonModel *)connect
+{
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
