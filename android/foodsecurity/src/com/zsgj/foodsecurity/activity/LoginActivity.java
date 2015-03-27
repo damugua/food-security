@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
 		sp = getSharedPreferences("user_info", MODE_PRIVATE);
 		initView();
@@ -54,6 +56,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 						Editor editor = sp.edit();
 						editor.putString("phone", phone);
 						editor.putString("password", password);
+						editor.putBoolean("firstLogin", false);
 						editor.commit();
 						finish();
 						startActivity(new Intent(LoginActivity.this, MainActivity.class));

@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context="com.zsgj.foodsecurity.activity.Regist1Activity" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#234567"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/back"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="注册（一）"
+            android:textColor="#e2ffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp" >
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:background="@drawable/shape_touming"
+            android:hint="手机号"
+            android:inputType="text"
+            android:paddingLeft="63dip"
+            android:paddingRight="5dip"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_alignLeft="@+id/login_et_userName"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/login_iv_userid" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="25dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:background="@color/white" />
+    </RelativeLayout>
+
+    <Button
+        android:onClick="next"
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_btn_back"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>
