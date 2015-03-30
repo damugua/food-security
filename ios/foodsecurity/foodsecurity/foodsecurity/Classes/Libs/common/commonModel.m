@@ -7,29 +7,32 @@
 //
 
 #import "commonModel.h"
-#import "AFNetworking.h"
-
-
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 
 @implementation commonModel
 
 
 //get
--(id)initWithUrl:(NSString *)url
+-(id)initWithUrl:(NSString *)url getPath:(NSString *)path parameters:(NSDictionary *)parameters
 {
     if (self = [super init]) {
-        [self getTheDataWithUrl:url];
+        [self getTheDataWithUrl:url getPath:path parameters:parameters];
     }
     return self;
 
 }
 
--(void)getTheDataWithUrl:(NSString *)url
+-(void)getTheDataWithUrl:(NSString *)url getPath:(NSString *)path parameters:(NSDictionary *)parameters
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURL *baseURL = [NSURL URLWithString:url];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+
+    [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
+
+    [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation*operation, id responseObject) {
         NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
 
         if ([[dataDic objectForKey:@"Data"] isKindOfClass:[NSNull class]]) {
@@ -42,27 +45,34 @@
             NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             [self.delegate gotTheData:dataDic and:self];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
         [self.delegate connectError:self];
+
     }];
+
+
+
 }
 
 //post
--(id)initWithUrl:(NSString *)url parameters:(NSDictionary *)parameter
+-(id)initWithUrl:(NSString *)url postpath:(NSString *)path parameters:(NSDictionary *)parameter
 {
     if (self = [super init]) {
-        [self getTheDataWithUrl:url parameters:parameter];
+        [self postTheDataWithUrl:url path:path parameters:parameter];
     }
     return self;
 }
 
--(void)getTheDataWithUrl:(NSString *)url parameters:(NSDictionary *)parameter
+-(void)postTheDataWithUrl:(NSString *)url path:(NSString *)path parameters:(NSDictionary *)parameter
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    [manager POST:url parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
+    NSURL *baseURL = [NSURL URLWithString:url];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+
+    [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
+    [client postPath:path parameters:parameter success:^(AFHTTPRequestOperation*operation, id responseObject) {
         NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
 
         if ([[dataDic objectForKey:@"Data"] isKindOfClass:[NSNull class]]) {
@@ -75,11 +85,14 @@
             NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             [self.delegate gotTheData:dataDic and:self];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.delegate connectError:self];
 
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate connectError:self];
     }];
 }
+
+
+
 
 
 

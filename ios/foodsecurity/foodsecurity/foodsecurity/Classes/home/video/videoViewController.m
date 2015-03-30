@@ -9,7 +9,13 @@
 #import "videoViewController.h"
 #import "API.h"
 #import "commonModel.h"
-@interface videoViewController ()<commonConnectDelegate>
+#import "YSPlayerController.h"
+
+#import <CoreMotion/CoreMotion.h>
+#import <OpenAL/al.h>
+#import <OpenAL/alc.h>
+
+@interface videoViewController ()<commonConnectDelegate,YSPlayerControllerDelegate>
 
 @end
 
@@ -19,28 +25,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self getCameraList];
+    [self playTheVideo];
 }
 
 -(void)getCameraList
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@?parentCode=%@",BASE_URL,CAMERA_LIST,[[NSUserDefaults standardUserDefaults] objectForKey:@"userCode"]];
-    NSLog(@"%@",url);
-    commonModel *cameraConnect = [[commonModel alloc]initWithUrl:url];
+    NSDictionary *parameters = @{@"parentCode":[[NSUserDefaults standardUserDefaults] objectForKey:@"userCode"]};
+    commonModel *cameraConnect = [[commonModel alloc]initWithUrl:BASE_URL getPath:CAMERA_LIST parameters:parameters];
     cameraConnect.delegate = self;
 }
 
 -(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
 {
     NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
+    NSLog(@"%@",cameraList);
+
+}
+
+//at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz
+
+-(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
+{
     
 }
 
--(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
+-(void)connectError:(commonModel *)connect
 {
 
 }
 
--(void)connectError:(commonModel *)connect
+
+-(void)playTheVideo
+{
+    YSPlayerController *controller = [[YSPlayerController alloc]initWithDelegate:self];
+
+    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz" fromTime:12543253 toTime:3254362 inView:_videoView];
+}
+
+-(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value
 {
 
 }

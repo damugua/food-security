@@ -44,50 +44,10 @@
         _cellphoneNumber.text =[defaults objectForKey:@"username"];
     }
 
-    //键盘监听
-    if (iPhone4) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    }
+
 
 
 }
-
-
-//键盘回调
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.view endEditing:YES];
-}
-
-- (void)keyboardWillShow:(NSNotification *)aNotification {
-    // the keyboard is showing so resize the my height
-    CGRect keyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey] CGRectValue];
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-
-    CGRect bounds = self.view.bounds;
-    bounds.origin.y += 120;
-
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    self.view.bounds = bounds;
-    [UIView commitAnimations];
-}
-
-- (void)keyboardWillHide:(NSNotification *)aNotification {
-    // the keyboard is hiding reset the table's height
-    CGRect keyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey] CGRectValue];
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect bounds = self.view.bounds;
-    bounds.origin.y -= 120;
-
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    self.view.bounds = bounds;
-    [UIView commitAnimations];
-}
-
-
 
 
 - (IBAction)loginClick:(id)sender {
@@ -98,8 +58,6 @@
         NSLog(@"error");
         return;
     }
-
-
 
     [self loginConnectWithMd5Password:[self md5:_password.text]];
 
@@ -123,12 +81,10 @@
 -(void)loginConnectWithMd5Password:(NSString *)password
 {
     //参数后缀
-    NSString *paramater = [NSString stringWithFormat:@"?phone=%@&password=%@",_cellphoneNumber.text,password];
+    NSDictionary *paramater = @{@"phone":_cellphoneNumber.text,@"password":password};
     //地址
-    NSString *url = [NSString stringWithFormat:@"%@%@%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"url"],LOGIN,paramater];
 
-    NSLog(@"%@",url);
-    commonModel *connect = [[commonModel alloc]initWithUrl:url];
+    commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:LOGIN parameters:paramater];
     connect.delegate = self;
 
 //    [self dealResponse];//临时测试。。。。。。。。。。。。。。。。。）（！！）*￥（@）！*（￥）@

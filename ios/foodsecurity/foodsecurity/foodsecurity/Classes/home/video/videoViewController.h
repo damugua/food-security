@@ -10,4 +10,6 @@
 
 @interface videoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *videoView;
+
 @end

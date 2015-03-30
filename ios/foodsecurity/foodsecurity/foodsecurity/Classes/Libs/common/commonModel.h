@@ -14,8 +14,8 @@
 @interface commonModel : NSObject
 
 
--(id)initWithUrl:(NSString *)url;
--(id)initWithUrl:(NSString *)url parameters:(NSDictionary *)parameter;
+-(id)initWithUrl:(NSString *)url getPath:(NSString *)path parameters:(NSDictionary *)parameters;
+-(id)initWithUrl:(NSString *)url postpath:(NSString *)path parameters:(NSDictionary *)parameter;
 
 @property(nonatomic,assign)id<commonConnectDelegate> delegate;
 
