@@ -39,7 +39,7 @@
 -(void)togoRequest
 {
     
-    [self gotNoticeListTime:@"" SyjID:@"" pageIndex:@"0" pageSize:@"10"];
+    [self gotNoticeListTime:@"" SyjID:@"" pageIndex:@"1" pageSize:@"10"];
 }
 
 //网络请求
