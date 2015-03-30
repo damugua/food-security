@@ -23,6 +23,6 @@
 #define LOGIN @"/ParentInfoWcfService.svc/CheckLogin"
 #define GET_ACCESS_TOKEN @"/InvokeYs7ServiceWcfService.svc/GetAccessToken"
 #define CAMERA_LIST @"/CameraWcfService.svc/GetCameraInfoByParentCode"  //要用户id
-#define GET_COOKBOOK @"RecipeWcfService.svc/GetInfoByKindergartenId(long @"%ld",int @"%d",int @"%d")" //食谱
+#define GET_COOKBOOK @"RecipeWcfService.svc/GetInfoByKindergartenId" //食谱
 
 @end

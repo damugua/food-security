@@ -16,16 +16,13 @@
 		3B04F93A1AC3A26200831F41 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F92E1AC3A26200831F41 /* UIView+Hierarchy.m */; };
 		3B04F93B1AC3A26200831F41 /* UIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9301AC3A26200831F41 /* UIView+IQKeyboardToolbar.m */; };
 		3B04F93C1AC3A26200831F41 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */; };
-		3B04F93E1AC3E0A300831F41 /* cookbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */; };
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
 		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
 		82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BC11ABFADF6004DA4E8 /* loginModel.m */; };
 		82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BCA1ABFB69D004DA4E8 /* registOne.m */; };
-		82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BCB1ABFB69D004DA4E8 /* registOne.xib */; };
 		82519C0F1AC10781008422D2 /* menuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82519C0E1AC10781008422D2 /* menuView.m */; };
 		8264F75A1AC3E00C009F5C72 /* commonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8264F7591AC3E00C009F5C72 /* commonModel.m */; };
-		8264F8B11AC78971009F5C72 /* EzvizOpenSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8264F8891AC78971009F5C72 /* EzvizOpenSDKBundle.bundle */; };
 		8264F8B21AC78971009F5C72 /* libEzvizRealPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264F88A1AC78971009F5C72 /* libEzvizRealPlay.a */; };
 		8264F8B31AC78971009F5C72 /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264F88B1AC78971009F5C72 /* libPods-AFNetworking.a */; };
 		8264F8B41AC78971009F5C72 /* libPods-SSKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264F88C1AC78971009F5C72 /* libPods-SSKeychain.a */; };
@@ -44,19 +41,15 @@
 		8264F8CC1AC8DDAF009F5C72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264F8521AC64E1C009F5C72 /* UIKit.framework */; };
 		82AABC171ABBF5590004306C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC161ABBF5590004306C /* main.m */; };
 		82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC191ABBF5590004306C /* AppDelegate.m */; };
-		82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC1B1ABBF5590004306C /* Images.xcassets */; };
 		82AABC2B1ABBF5590004306C /* foodsecurityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC2A1ABBF5590004306C /* foodsecurityTests.m */; };
 		82AABC421ABC022E0004306C /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC401ABC022E0004306C /* homeViewController.m */; };
 		82AABC431ABC022E0004306C /* homeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC411ABC022E0004306C /* homeViewController.xib */; };
 		82AABC481ABC02A30004306C /* commonNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC461ABC02A30004306C /* commonNavigation.m */; };
-		82AABC491ABC02A30004306C /* commonNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC471ABC02A30004306C /* commonNavigation.xib */; };
 		82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC821ABC0EB60004306C /* communicateViewController.m */; };
 		82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC831ABC0EB60004306C /* communicateViewController.xib */; };
 		82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC871ABC0ED10004306C /* cookbookViewController.m */; };
 		82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC8C1ABC0EE00004306C /* videoViewController.m */; };
-		82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC8D1ABC0EE00004306C /* videoViewController.xib */; };
 		82F645FF1AC29879004EB124 /* accountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F645FD1AC29879004EB124 /* accountManager.m */; };
-		82F646001AC29879004EB124 /* accountManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F645FE1AC29879004EB124 /* accountManager.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -690,7 +683,6 @@
 				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				3B04F9331AC3A26200831F41 /* IQKeyboardManager.bundle in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,8 +776,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -859,8 +851,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -884,7 +876,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
