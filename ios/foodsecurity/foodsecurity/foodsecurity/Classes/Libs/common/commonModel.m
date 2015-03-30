@@ -34,7 +34,6 @@
 
     [client getPath:path parameters:parameters success:^(AFHTTPRequestOperation*operation, id responseObject) {
         NSDictionary * dataDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-
         if ([[dataDic objectForKey:@"Data"] isKindOfClass:[NSNull class]]) {
             NSData *errorData = [[dataDic objectForKey:@"ResponseInstance"] dataUsingEncoding:NSUTF8StringEncoding];
             NSDictionary *errorDic = [NSJSONSerialization JSONObjectWithData:errorData options:NSJSONReadingMutableContainers error:nil];

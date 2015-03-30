@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "API.h"
 #import "loginViewController.h"
+#import "YSPlayerController.h"
+#import "YSHTTPClient.h"
 @interface AppDelegate ()
 
 @end
@@ -33,6 +35,13 @@
     loginViewController *login = [[loginViewController alloc]init];
     self.window.rootViewController = login;
 
+
+
+    NSMutableDictionary *dictServers = [NSMutableDictionary dictionary];
+    [dictServers setObject:@"https://auth.ys7.com" forKey:kAuthServer];
+    [dictServers setObject:@"https://open.ys7.com" forKey:kApiServer];
+    [YSPlayerController loadSDKWithPlatfromServers:dictServers];
+    [[YSHTTPClient sharedInstance] setClientAppKey:@"47241934c70249cb9c086284e707e49a" secret:@"b4d83fee6a755c3a7697c35f1a79a285"];
 
 
     self.window.backgroundColor = [UIColor whiteColor];

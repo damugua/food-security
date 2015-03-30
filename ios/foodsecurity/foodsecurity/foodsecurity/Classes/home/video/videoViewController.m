@@ -10,6 +10,7 @@
 #import "API.h"
 #import "commonModel.h"
 #import "YSPlayerController.h"
+#import "YSHTTPClient.h"
 
 #import <CoreMotion/CoreMotion.h>
 #import <OpenAL/al.h>
@@ -23,6 +24,9 @@
 {
     commonModel *getToken;
     commonModel *cameraConnect;
+    NSString *accessToken;
+    YSPlayerController *controller;
+
 }
 
 
@@ -30,11 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%f",_videoView.frame.size.height);
 
     [self getCameraList];
     [self getToken];
-    [self playTheVideo];
 }
 
 
@@ -59,7 +61,13 @@
 //        NSLog(@"%@",cameraList);
     }
     if (connect==getToken) {
-//        NSLog(@"%@",dataDic);
+        NSString *message = [dataDic objectForKey:@"Message"];
+        NSData *messageData = [message dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *messageDic = [NSJSONSerialization JSONObjectWithData:messageData options:NSJSONReadingMutableContainers error:nil];
+        accessToken = [[[messageDic objectForKey:@"result"] objectForKey:@"data"] objectForKey:@"accessToken"];
+        [[YSHTTPClient sharedInstance] setClientAccessToken:accessToken];
+
+        [self playTheVideo];
     }
 
 }
@@ -78,30 +86,26 @@
 
 -(void)playTheVideo
 {
-    YSPlayerController *controller = [[YSPlayerController alloc]initWithDelegate:self];
-
-
-    NSDate *date = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-
-    NSString *strStartTime = [formatter stringFromDate:date];
-    NSDate   *startTime    = [formatter dateFromString:strStartTime];
-    NSTimeInterval fStartTime = [startTime timeIntervalSince1970];
-    NSTimeInterval fStopTime  = fStartTime - 23 * 3600.0 - 59 * 60 - 59;
+    controller = [[YSPlayerController alloc]initWithDelegate:self];
 
 //    NSLog(@"%f,%f",fStartTime,fStopTime);
+    NSLog(@"%@",accessToken);
+    [controller startRealPlayWithCamera:@"1fc581e773a54bbc9b8052ba593f5a92" accessToken:accessToken inView:_videoView];
 
-//    [controller startRealPlayWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" inView:_videoView];
-
-    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
+//    [controller startPlaybackWithCamera:@"4" accessToken:accessToken fromTime:fStopTime toTime:fStartTime inView:_videoView];
 }
 
 -(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value
 {
-
+    NSLog(@"%ld",(long)msgType);
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [controller stopRealPlay];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
