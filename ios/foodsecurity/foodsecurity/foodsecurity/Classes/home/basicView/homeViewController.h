@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *videoBtn;
 @property (weak, nonatomic) IBOutlet UIButton *communicateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *cookbookBtn;
+@property (weak, nonatomic) IBOutlet UIButton *noticeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *adviceBtn;
 
 @end

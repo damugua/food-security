@@ -20,34 +20,44 @@
 @end
 
 @implementation videoViewController
+{
+    commonModel *getToken;
+    commonModel *cameraConnect;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self getCameraList];
+    [self getToken];
     [self playTheVideo];
 }
 
 -(void)getCameraList
 {
     NSDictionary *parameters = @{@"parentCode":[[NSUserDefaults standardUserDefaults] objectForKey:@"userCode"]};
-    commonModel *cameraConnect = [[commonModel alloc]initWithUrl:BASE_URL getPath:CAMERA_LIST parameters:parameters];
+    cameraConnect = [[commonModel alloc]initWithUrl:BASE_URL getPath:CAMERA_LIST parameters:parameters];
     cameraConnect.delegate = self;
 }
 
 -(void)getToken
 {
-    
+    getToken = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_ACCESS_TOKEN parameters:nil];
+    getToken.delegate = self;
 }
 
 -(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
 {
-    NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
-    NSLog(@"%@",cameraList);
+    if (connect==cameraConnect) {
+        NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
+        NSLog(@"%@",cameraList);
+    }
+    if (connect==getToken) {
+        NSLog(@"%@",dataDic);
+    }
 
 }
 
-//at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz
 
 -(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
 {
@@ -71,11 +81,12 @@
 
     NSString *strStartTime = [formatter stringFromDate:date];
     NSDate   *startTime    = [formatter dateFromString:strStartTime];
-    NSString * m_sCurDay = [formatter stringFromDate:date];
     NSTimeInterval fStartTime = [startTime timeIntervalSince1970];
-    NSTimeInterval fStopTime  = fStartTime + 23 * 3600.0 + 59 * 60 + 59;
+    NSTimeInterval fStopTime  = fStartTime - 23 * 3600.0 - 59 * 60 - 59;
 
-    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz" fromTime:fStartTime toTime:fStopTime inView:_videoView];
+    NSLog(@"%f,%f",fStartTime,fStopTime);
+
+    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
 }
 
 -(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value

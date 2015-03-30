@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="homeViewController">
             <connections>
+                <outlet property="adviceBtn" destination="fki-HV-mmn" id="bj7-eM-sy3"/>
                 <outlet property="communicateBtn" destination="D9V-Qv-6hw" id="75B-Q1-E9p"/>
                 <outlet property="cookbookBtn" destination="37o-Kr-4K4" id="Rml-nu-uzp"/>
+                <outlet property="noticeBtn" destination="Db4-Jb-1hK" id="5CL-2D-WOc"/>
                 <outlet property="videoBtn" destination="dTG-tu-rdt" id="XFh-fe-4J7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -92,6 +95,50 @@
                         <action selector="cookbookClick:" destination="-1" eventType="touchUpInside" id="0Pj-ag-Xyb"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db4-Jb-1hK">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="h1L-JS-1fR"/>
+                    </constraints>
+                    <state key="normal" title="公告">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="h1L-JS-1fR"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="h1L-JS-1fR"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="noticeClick:" destination="-1" eventType="touchUpInside" id="LcO-ff-Nnl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fki-HV-mmn">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="5Th-oB-vtS"/>
+                    </constraints>
+                    <state key="normal" title="投诉建议">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5Th-oB-vtS"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="5Th-oB-vtS"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="adviceClick:" destination="-1" eventType="touchUpInside" id="4sg-TB-IWx"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -99,22 +146,34 @@
                 <constraint firstItem="dTG-tu-rdt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1SE-hX-4VZ"/>
                 <constraint firstItem="dTG-tu-rdt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="EkW-fy-dVQ"/>
                 <constraint firstItem="37o-Kr-4K4" firstAttribute="leading" secondItem="D9V-Qv-6hw" secondAttribute="trailing" constant="18" id="JlF-Ql-MaC"/>
+                <constraint firstItem="Db4-Jb-1hK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="PU4-xg-TEG">
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="fki-HV-mmn" firstAttribute="top" secondItem="D9V-Qv-6hw" secondAttribute="bottom" constant="65" id="XKW-Jc-QQH"/>
                 <constraint firstItem="D9V-Qv-6hw" firstAttribute="leading" secondItem="dTG-tu-rdt" secondAttribute="trailing" constant="27" id="eLV-yt-8J1"/>
+                <constraint firstItem="Db4-Jb-1hK" firstAttribute="top" secondItem="dTG-tu-rdt" secondAttribute="bottom" constant="65" id="gmU-PM-bEE"/>
                 <constraint firstItem="37o-Kr-4K4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="h3v-A0-T9a"/>
+                <constraint firstItem="fki-HV-mmn" firstAttribute="leading" secondItem="Db4-Jb-1hK" secondAttribute="trailing" constant="25" id="w0X-CP-4kU"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="dTG-tu-rdt"/>
                     <exclude reference="D9V-Qv-6hw"/>
                     <exclude reference="37o-Kr-4K4"/>
+                    <exclude reference="Db4-Jb-1hK"/>
+                    <exclude reference="fki-HV-mmn"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="JlF-Ql-MaC"/>
-                    <exclude reference="h3v-A0-T9a"/>
-                    <exclude reference="1E4-b7-Z67"/>
-                    <exclude reference="eLV-yt-8J1"/>
                     <exclude reference="1SE-hX-4VZ"/>
                     <exclude reference="EkW-fy-dVQ"/>
+                    <exclude reference="1E4-b7-Z67"/>
+                    <exclude reference="eLV-yt-8J1"/>
+                    <exclude reference="PU4-xg-TEG"/>
+                    <exclude reference="gmU-PM-bEE"/>
+                    <exclude reference="XKW-Jc-QQH"/>
+                    <exclude reference="w0X-CP-4kU"/>
+                    <exclude reference="JlF-Ql-MaC"/>
+                    <exclude reference="h3v-A0-T9a"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -122,14 +181,20 @@
                     <include reference="dTG-tu-rdt"/>
                     <include reference="D9V-Qv-6hw"/>
                     <include reference="37o-Kr-4K4"/>
+                    <include reference="Db4-Jb-1hK"/>
+                    <include reference="fki-HV-mmn"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="JlF-Ql-MaC"/>
-                    <include reference="h3v-A0-T9a"/>
-                    <include reference="1E4-b7-Z67"/>
-                    <include reference="eLV-yt-8J1"/>
                     <include reference="1SE-hX-4VZ"/>
                     <include reference="EkW-fy-dVQ"/>
+                    <include reference="1E4-b7-Z67"/>
+                    <include reference="eLV-yt-8J1"/>
+                    <include reference="PU4-xg-TEG"/>
+                    <include reference="gmU-PM-bEE"/>
+                    <include reference="XKW-Jc-QQH"/>
+                    <include reference="w0X-CP-4kU"/>
+                    <include reference="JlF-Ql-MaC"/>
+                    <include reference="h3v-A0-T9a"/>
                 </mask>
             </variation>
         </view>

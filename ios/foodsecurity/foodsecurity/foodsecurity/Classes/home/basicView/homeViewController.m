@@ -12,6 +12,8 @@
 #import "videoViewController.h"
 #import "menuView.h"
 #import "accountManager.h"
+#import "adviceViewController.h"
+#import "noticeViewController.h"
 
 @interface homeViewController ()<sendButtonClickEvent>
 
@@ -97,6 +99,16 @@
     cookbookViewController *cookbook = [[cookbookViewController alloc]init];
     [self.navigationController pushViewController:cookbook animated:YES];
 
+}
+- (IBAction)noticeClick:(id)sender {
+    noticeViewController *notice = [[noticeViewController alloc]init];
+    [self.navigationController pushViewController:notice animated:YES];
+}
+
+
+- (IBAction)adviceClick:(id)sender {
+    adviceViewController *advice = [[adviceViewController alloc]init];
+    [self.navigationController pushViewController: advice animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
