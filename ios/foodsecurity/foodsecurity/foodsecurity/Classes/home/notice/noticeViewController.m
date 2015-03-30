@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBar];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)setNavigationBar
+{
+    self.navigationItem.title = @"公告";
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [backButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barbtn = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = barbtn;
+}
+
+
+-(void)buttonClicked:(UIButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
