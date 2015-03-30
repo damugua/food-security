@@ -39,7 +39,7 @@
             android:layout_width="fill_parent"
             android:layout_height="40dip"
             android:background="@drawable/shape_touming"
-            android:hint="用户名"
+            android:hint="手机号"
             android:inputType="text"
             android:paddingLeft="63dip"
             android:paddingRight="5dip"
