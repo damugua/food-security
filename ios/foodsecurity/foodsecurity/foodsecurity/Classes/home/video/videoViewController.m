@@ -35,6 +35,11 @@
     cameraConnect.delegate = self;
 }
 
+-(void)getToken
+{
+    
+}
+
 -(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
 {
     NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
@@ -59,7 +64,18 @@
 {
     YSPlayerController *controller = [[YSPlayerController alloc]initWithDelegate:self];
 
-    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz" fromTime:12543253 toTime:3254362 inView:_videoView];
+
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    NSString *strStartTime = [formatter stringFromDate:date];
+    NSDate   *startTime    = [formatter dateFromString:strStartTime];
+    NSString * m_sCurDay = [formatter stringFromDate:date];
+    NSTimeInterval fStartTime = [startTime timeIntervalSince1970];
+    NSTimeInterval fStopTime  = fStartTime + 23 * 3600.0 + 59 * 60 + 59;
+
+    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7j26kiaj8glny81n96o40bne6ccp2dqj-1sb6qmatf6-1ntulkv-thg5xpdsz" fromTime:fStartTime toTime:fStopTime inView:_videoView];
 }
 
 -(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value
