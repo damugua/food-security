@@ -108,7 +108,7 @@
 
 - (IBAction)adviceClick:(id)sender {
     adviceViewController *advice = [[adviceViewController alloc]init];
-    [self.navigationController pushViewController: advice animated:YES];
+    [self.navigationController pushViewController:advice animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

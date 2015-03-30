@@ -86,7 +86,9 @@
 
     NSLog(@"%f,%f",fStartTime,fStopTime);
 
-    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
+    [controller startRealPlayWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" inView:_videoView];
+
+//    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
 }
 
 -(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value
