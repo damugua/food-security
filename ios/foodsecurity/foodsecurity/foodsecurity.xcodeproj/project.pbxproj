@@ -16,6 +16,7 @@
 		3B04F93A1AC3A26200831F41 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F92E1AC3A26200831F41 /* UIView+Hierarchy.m */; };
 		3B04F93B1AC3A26200831F41 /* UIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9301AC3A26200831F41 /* UIView+IQKeyboardToolbar.m */; };
 		3B04F93C1AC3A26200831F41 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */; };
+		3B04F93E1AC3E0A300831F41 /* cookbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */; };
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
 		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
@@ -52,7 +53,6 @@
 		82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC821ABC0EB60004306C /* communicateViewController.m */; };
 		82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC831ABC0EB60004306C /* communicateViewController.xib */; };
 		82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC871ABC0ED10004306C /* cookbookViewController.m */; };
-		82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC881ABC0ED10004306C /* cookbookViewController.xib */; };
 		82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AABC8C1ABC0EE00004306C /* videoViewController.m */; };
 		82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AABC8D1ABC0EE00004306C /* videoViewController.xib */; };
 		82F645FF1AC29879004EB124 /* accountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F645FD1AC29879004EB124 /* accountManager.m */; };
@@ -92,6 +92,7 @@
 		3B04F9301AC3A26200831F41 /* UIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		3B04F9311AC3A26200831F41 /* UIWindow+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Hierarchy.h"; sourceTree = "<group>"; };
 		3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = cookbookViewController.xib; path = foodsecurity/Classes/home/cookbookViewController.xib; sourceTree = SOURCE_ROOT; };
 		82201BB51ABE9E1C004DA4E8 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		82201BB61ABE9E1C004DA4E8 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
@@ -175,7 +176,6 @@
 		82AABC831ABC0EB60004306C /* communicateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = communicateViewController.xib; sourceTree = "<group>"; };
 		82AABC861ABC0ED10004306C /* cookbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookbookViewController.h; sourceTree = "<group>"; };
 		82AABC871ABC0ED10004306C /* cookbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cookbookViewController.m; sourceTree = "<group>"; };
-		82AABC881ABC0ED10004306C /* cookbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cookbookViewController.xib; sourceTree = "<group>"; };
 		82AABC8B1ABC0EE00004306C /* videoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoViewController.h; sourceTree = "<group>"; };
 		82AABC8C1ABC0EE00004306C /* videoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videoViewController.m; sourceTree = "<group>"; };
 		82AABC8D1ABC0EE00004306C /* videoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videoViewController.xib; sourceTree = "<group>"; };
@@ -544,7 +544,7 @@
 			children = (
 				82AABC861ABC0ED10004306C /* cookbookViewController.h */,
 				82AABC871ABC0ED10004306C /* cookbookViewController.m */,
-				82AABC881ABC0ED10004306C /* cookbookViewController.xib */,
+				3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */,
 			);
 			path = cookbook;
 			sourceTree = "<group>";
@@ -690,13 +690,7 @@
 				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				3B04F9331AC3A26200831F41 /* IQKeyboardManager.bundle in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
-				82201BCD1ABFB69D004DA4E8 /* registOne.xib in Resources */,
-				82AABC491ABC02A30004306C /* commonNavigation.xib in Resources */,
-				82AABC8F1ABC0EE00004306C /* videoViewController.xib in Resources */,
-				82F646001AC29879004EB124 /* accountManager.xib in Resources */,
-				82AABC1C1ABBF5590004306C /* Images.xcassets in Resources */,
-				8264F8B11AC78971009F5C72 /* EzvizOpenSDKBundle.bundle in Resources */,
-				82AABC8A1ABC0ED10004306C /* cookbookViewController.xib in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
