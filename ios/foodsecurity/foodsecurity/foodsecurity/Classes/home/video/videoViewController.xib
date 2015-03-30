@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="videoViewController">
             <connections>
-                <outlet property="videoView" destination="d8b-2R-rR3" id="Yd1-Dn-nb6"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="videoView" destination="d8b-2R-rR3" id="xdw-Ma-m8G"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="p9a-xZ-woX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,7 +34,7 @@
                         </mask>
                     </variation>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8b-2R-rR3">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8b-2R-rR3" userLabel="videoView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

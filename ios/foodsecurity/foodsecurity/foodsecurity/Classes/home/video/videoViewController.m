@@ -25,13 +25,19 @@
     commonModel *cameraConnect;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"%f",_videoView.frame.size.height);
+
     [self getCameraList];
     [self getToken];
     [self playTheVideo];
 }
+
+
 
 -(void)getCameraList
 {
@@ -50,10 +56,10 @@
 {
     if (connect==cameraConnect) {
         NSArray *cameraList = [dataDic objectForKey:@"Cameras"];
-        NSLog(@"%@",cameraList);
+//        NSLog(@"%@",cameraList);
     }
     if (connect==getToken) {
-        NSLog(@"%@",dataDic);
+//        NSLog(@"%@",dataDic);
     }
 
 }
@@ -84,11 +90,11 @@
     NSTimeInterval fStartTime = [startTime timeIntervalSince1970];
     NSTimeInterval fStopTime  = fStartTime - 23 * 3600.0 - 59 * 60 - 59;
 
-    NSLog(@"%f,%f",fStartTime,fStopTime);
+//    NSLog(@"%f,%f",fStartTime,fStopTime);
 
-    [controller startRealPlayWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" inView:_videoView];
+//    [controller startRealPlayWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" inView:_videoView];
 
-//    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
+    [controller startPlaybackWithCamera:@"4" accessToken:@"at.7l17ok9n9m1bbdizdanfgfsq2cbfudjf-706hn8h9xj-16gwwpl-gkxg61tvx" fromTime:fStopTime toTime:fStartTime inView:_videoView];
 }
 
 -(void)playerOperationMessage:(YSPlayerMessageType)msgType withValue:(id)value
