@@ -21,6 +21,8 @@
 		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
 		82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BC11ABFADF6004DA4E8 /* loginModel.m */; };
 		82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BCA1ABFB69D004DA4E8 /* registOne.m */; };
+		824983DB1AC9108D00912514 /* cookBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD93D941AC902B4005D11E4 /* cookBookModel.m */; };
+		824983DC1AC910C300912514 /* adviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828780201AC90A91004CC253 /* adviceViewController.m */; };
 		82519C0F1AC10781008422D2 /* menuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82519C0E1AC10781008422D2 /* menuView.m */; };
 		8264F75A1AC3E00C009F5C72 /* commonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8264F7591AC3E00C009F5C72 /* commonModel.m */; };
 		8264F8B21AC78971009F5C72 /* libEzvizRealPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264F88A1AC78971009F5C72 /* libEzvizRealPlay.a */; };
@@ -735,6 +737,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824983DC1AC910C300912514 /* adviceViewController.m in Sources */,
+				824983DB1AC9108D00912514 /* cookBookModel.m in Sources */,
 				3B04F9391AC3A26200831F41 /* NSArray+Sort.m in Sources */,
 				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
 				828780271AC90A9B004CC253 /* noticeViewController.m in Sources */,
