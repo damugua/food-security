@@ -7,10 +7,15 @@
 //
 
 #import "cookbookViewController.h"
+#import "commonModel.h"
+#import "API.h"
+#import "cookBookModel.h"
 #define FRAME ([[UIScreen mainScreen] bounds])
 
-@interface cookbookViewController ()
-
+@interface cookbookViewController ()<commonConnectDelegate>
+{
+    cookBookModel *cookBookModels;
+}
 @end
 
 @implementation cookbookViewController
@@ -59,6 +64,37 @@
 {
     NSLog(@"周 %d",button.tag);
 }
+
+
+-(void)gotCookBookId:(NSString *)Id page:(NSString *)page pageSize:(NSString *)pageSize
+{
+    //参数后缀  接口给的类型不是字符串
+    NSDictionary *paramater = @{@"kindergartenId":Id,@"pageIndex":page,@"pageSize":pageSize};
+    //地址
+    
+    commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_COOKBOOK parameters:paramater];
+    connect.delegate = self;
+
+}
+
+
+-(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect
+{
+    cookBookModels = [[cookBookModel alloc]init];
+    [cookBookModels setParameter:dataDic];
+}
+
+-(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
+{
+    NSLog(@"%@",errorMessage);
+}
+
+-(void)connectError:(commonModel *)connect
+{
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

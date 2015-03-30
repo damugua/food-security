@@ -16,6 +16,7 @@
 		3B04F93A1AC3A26200831F41 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F92E1AC3A26200831F41 /* UIView+Hierarchy.m */; };
 		3B04F93B1AC3A26200831F41 /* UIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9301AC3A26200831F41 /* UIView+IQKeyboardToolbar.m */; };
 		3B04F93C1AC3A26200831F41 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */; };
+
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
 		82201BBF1ABEBA75004DA4E8 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BBE1ABEBA75004DA4E8 /* API.m */; };
@@ -90,6 +91,8 @@
 		3B04F9311AC3A26200831F41 /* UIWindow+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Hierarchy.h"; sourceTree = "<group>"; };
 		3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Hierarchy.m"; sourceTree = "<group>"; };
 		3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = cookbookViewController.xib; path = foodsecurity/Classes/home/cookbookViewController.xib; sourceTree = SOURCE_ROOT; };
+		3BD93D931AC902B4005D11E4 /* cookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookBookModel.h; sourceTree = "<group>"; };
+		3BD93D941AC902B4005D11E4 /* cookBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cookBookModel.m; sourceTree = "<group>"; };
 		82201BB51ABE9E1C004DA4E8 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		82201BB61ABE9E1C004DA4E8 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginViewController.xib; sourceTree = "<group>"; };
@@ -570,6 +573,8 @@
 				82AABC861ABC0ED10004306C /* cookbookViewController.h */,
 				82AABC871ABC0ED10004306C /* cookbookViewController.m */,
 				3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */,
+				3BD93D931AC902B4005D11E4 /* cookBookModel.h */,
+				3BD93D941AC902B4005D11E4 /* cookBookModel.m */,
 			);
 			path = cookbook;
 			sourceTree = "<group>";
@@ -716,7 +721,7 @@
 				828780281AC90A9B004CC253 /* noticeViewController.xib in Resources */,
 				3B04F9331AC3A26200831F41 /* IQKeyboardManager.bundle in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
-				828780231AC90A91004CC253 /* adviceViewController.xib in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +751,7 @@
 				3B04F9351AC3A26200831F41 /* IQSegmentedNextPrevious.m in Sources */,
 				3B04F9341AC3A26200831F41 /* IQKeyboardManager.m in Sources */,
 				82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */,
-				828780221AC90A91004CC253 /* adviceViewController.m in Sources */,
+
 				3B04F9371AC3A26200831F41 /* IQTitleBarButtonItem.m in Sources */,
 				82AABC171ABBF5590004306C /* main.m in Sources */,
 				82AABC8E1ABC0EE00004306C /* videoViewController.m in Sources */,
@@ -812,8 +817,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -887,8 +892,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 惟一 王 (N77TUKS7NH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -912,7 +917,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 赵 (55V4Z7XQX4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = foodsecurity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
