@@ -54,7 +54,6 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 		mTitleBar = (TitleBar) findViewById(R.id.title_bar);
 		mTitleBar.setTitle(R.string.homepage);
 		mTitleBar.addRightButton(R.drawable.common_title_more_selector, new OnClickListener() {
-			
 			@Override
 			public void onClick(View arg0) {
 				if (mDropDownMenu == null) {
