@@ -22,13 +22,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:text="开始时间" 
-            android:textColor="@color/time_color_selector"/>
-        <TextView 
+            android:text="开始时间"
+            android:textColor="@color/time_color_selector" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="到"/>
+            android:text="到" />
 
         <Button
             android:id="@+id/btn_endtime"
@@ -36,23 +37,36 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:textColor="@color/time_color_selector"
             android:focusableInTouchMode="false"
-            android:text="结束时间" />
+            android:text="结束时间"
+            android:textColor="@color/time_color_selector" />
 
         <Button
             android:id="@+id/btn_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:textColor="@color/time_color_selector"
-            android:text="筛选" />
+            android:text="筛选"
+            android:textColor="@color/time_color_selector" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#fff" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" >
+
+        <com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView
+            android:id="@+id/pl_inspections"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" >
+        </com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView>
 
         <LinearLayout
             android:id="@+id/ll_selectdate"
@@ -60,8 +74,8 @@
             android:layout_height="match_parent"
             android:background="#4ebcd3"
             android:gravity="center"
-            android:visibility="gone"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:visibility="gone" >
 
             <com.zsgj.mobileinspect.widget.CalendarView
                 android:id="@+id/calendarview"
@@ -89,6 +103,7 @@
                     android:text="取消"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
+
                 <Button
                     android:id="@+id/btn_submit"
                     android:layout_width="0dp"

@@ -1,115 +1,346 @@
 package com.zsgj.foodsecurity.utils;
 
-import android.text.*;
-import android.text.style.CharacterStyle;
-import android.text.style.ForegroundColorSpan;
-
-import java.text.DecimalFormat;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
- * Created by mwqi on 2014/6/8.
+ * 字符串操作工具包
  */
 public class StringUtils {
-	public final static String UTF_8 = "utf-8";
+	private final static Pattern emailer = Pattern
+			.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
 
-	/** 判断字符串是否有值，如果为null或者是空字符串或者只有空格或者为"null"字符串，则返回true，否则则返回false */
-	public static boolean isEmpty(String value) {
-		if (value != null && !"".equalsIgnoreCase(value.trim()) && !"null".equalsIgnoreCase(value.trim())) {
-			return false;
-		} else {
-			return true;
+	private final static ThreadLocal<SimpleDateFormat> dateFormater = new ThreadLocal<SimpleDateFormat>() {
+		@Override
+		protected SimpleDateFormat initialValue() {
+			return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		}
+	};
+
+	private final static ThreadLocal<SimpleDateFormat> dateFormater2 = new ThreadLocal<SimpleDateFormat>() {
+		@Override
+		protected SimpleDateFormat initialValue() {
+			return new SimpleDateFormat("yyyy-MM-dd");
+		}
+	};
+
+	/**
+	 * 将字符串转位日期类型
+	 * 
+	 * @param sdate
+	 * @return
+	 */
+	public static Date toDate(String sdate) {
+		try {
+			return dateFormater.get().parse(sdate);
+		} catch (ParseException e) {
+			return null;
 		}
 	}
 
-	/** 判断多个字符串是否相等，如果其中有一个为空字符串或者null，则返回false，只有全相等才返回true */
-	public static boolean isEquals(String... agrs) {
-		String last = null;
-		for (int i = 0; i < agrs.length; i++) {
-			String str = agrs[i];
-			if (isEmpty(str)) {
+	/**
+	 * 以友好的方式显示时间
+	 * 
+	 * @param sdate
+	 * @return
+	 */
+	public static String friendly_time(String sdate) {
+
+		Date time = toDate(sdate);
+
+		if (time == null) {
+			return "Unknown";
+		}
+		String ftime = "";
+		Calendar cal = Calendar.getInstance();
+
+		// 判断是否是同一天
+		String curDate = dateFormater2.get().format(cal.getTime());
+		String paramDate = dateFormater2.get().format(time);
+		if (curDate.equals(paramDate)) {
+			int hour = (int) ((cal.getTimeInMillis() - time.getTime()) / 3600000);
+			if (hour == 0)
+				ftime = Math.max(
+						(cal.getTimeInMillis() - time.getTime()) / 60000, 1)
+						+ "分钟前";
+			else
+				ftime = hour + "小时前";
+			return ftime;
+		}
+
+		long lt = time.getTime() / 86400000;
+		long ct = cal.getTimeInMillis() / 86400000;
+		int days = (int) (ct - lt);
+		if (days == 0) {
+			int hour = (int) ((cal.getTimeInMillis() - time.getTime()) / 3600000);
+			if (hour == 0)
+				ftime = Math.max(
+						(cal.getTimeInMillis() - time.getTime()) / 60000, 1)
+						+ "分钟前";
+			else
+				ftime = hour + "小时前";
+		} else if (days == 1) {
+			ftime = "昨天";
+		} else if (days == 2) {
+			ftime = "前天";
+		} else if (days > 2 && days < 31) {
+			ftime = days + "天前";
+		} else if (days >= 31 && days <= 2 * 31) {
+			ftime = "一个月前";
+		} else if (days > 2 * 31 && days <= 3 * 31) {
+			ftime = "2个月前";
+		} else if (days > 3 * 31 && days <= 4 * 31) {
+			ftime = "3个月前";
+		} else {
+			ftime = dateFormater2.get().format(time);
+		}
+		return ftime;
+	}
+
+	/**
+	 * 以友好的方式显示时间
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static String friendly_time(Date date) {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return friendly_time(f.format(date));
+	}
+
+	/**
+	 * 判断给定字符串时间是否为今日
+	 * 
+	 * @param sdate
+	 * @return boolean
+	 */
+	public static boolean isToday(String sdate) {
+		boolean b = false;
+		Date time = toDate(sdate);
+		Date today = new Date();
+		if (time != null) {
+			String nowDate = dateFormater2.get().format(today);
+			String timeDate = dateFormater2.get().format(time);
+			if (nowDate.equals(timeDate)) {
+				b = true;
+			}
+		}
+		return b;
+	}
+
+	/**
+	 * 返回long类型的今天的日期
+	 * 
+	 * @return
+	 */
+	public static long getToday() {
+		Calendar cal = Calendar.getInstance();
+		String curDate = dateFormater2.get().format(cal.getTime());
+		curDate = curDate.replace("-", "");
+		return Long.parseLong(curDate);
+	}
+
+	/**
+	 * 判断给定字符串是否空白串。 空白串是指由空格、制表符、回车符、换行符组成的字符串 若输入字符串为null或空字符串，返回true
+	 * 
+	 * @param input
+	 * @return boolean
+	 */
+	public static boolean isEmpty(String input) {
+		if (input == null || "".equals(input))
+			return true;
+
+		for (int i = 0; i < input.length(); i++) {
+			char c = input.charAt(i);
+			if (c != ' ' && c != '\t' && c != '\r' && c != '\n') {
 				return false;
 			}
-			if (last != null && !str.equalsIgnoreCase(last)) {
-				return false;
-			}
-			last = str;
 		}
 		return true;
 	}
 
 	/**
-	 * 返回一个高亮spannable
-	 * @param content 文本内容
-	 * @param color   高亮颜色
-	 * @param start   起始位置
-	 * @param end     结束位置
-	 * @return 高亮spannable
+	 * 判断是不是一个合法的电子邮件地址
+	 * 
+	 * @param email
+	 * @return
 	 */
-	public static CharSequence getHighLightText(String content, int color, int start, int end) {
-		if (TextUtils.isEmpty(content)) {
-			return "";
-		}
-		start = start >= 0 ? start : 0;
-		end = end <= content.length() ? end : content.length();
-		SpannableString spannable = new SpannableString(content);
-		CharacterStyle span = new ForegroundColorSpan(color);
-		spannable.setSpan(span, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-		return spannable;
+	public static boolean isEmail(String email) {
+		if (email == null || email.trim().length() == 0)
+			return false;
+		return emailer.matcher(email).matches();
 	}
 
 	/**
-	 * 获取链接样式的字符串，即字符串下面有下划线
-	 * @param resId 文字资源
-	 * @return 返回链接样式的字符串
+	 * 验证IP地址是否正确
+	 * 
+	 * @param mobiles
+	 * @return boolean
 	 */
-	public static Spanned getHtmlStyleString(int resId) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("<a href=\"\"><u><b>").append(UIUtils.getString(resId)).append(" </b></u></a>");
-		return Html.fromHtml(sb.toString());
-	}
-
-	/** 格式化文件大小，不保留末尾的0 */
-	public static String formatFileSize(long len) {
-		return formatFileSize(len, false);
-	}
-
-	/** 格式化文件大小，保留末尾的0，达到长度一致 */
-	public static String formatFileSize(long len, boolean keepZero) {
-		String size;
-		DecimalFormat formatKeepTwoZero = new DecimalFormat("#.00");
-		DecimalFormat formatKeepOneZero = new DecimalFormat("#.0");
-		if (len < 1024) {
-			size = String.valueOf(len + "B");
-		} else if (len < 10 * 1024) {
-			// [0, 10KB)，保留两位小数
-			size = String.valueOf(len * 100 / 1024 / (float) 100) + "KB";
-		} else if (len < 100 * 1024) {
-			// [10KB, 100KB)，保留一位小数
-			size = String.valueOf(len * 10 / 1024 / (float) 10) + "KB";
-		} else if (len < 1024 * 1024) {
-			// [100KB, 1MB)，个位四舍五入
-			size = String.valueOf(len / 1024) + "KB";
-		} else if (len < 10 * 1024 * 1024) {
-			// [1MB, 10MB)，保留两位小数
-			if (keepZero) {
-				size = String.valueOf(formatKeepTwoZero.format(len * 100 / 1024 / 1024 / (float) 100)) + "MB";
-			} else {
-				size = String.valueOf(len * 100 / 1024 / 1024 / (float) 100) + "MB";
-			}
-		} else if (len < 100 * 1024 * 1024) {
-			// [10MB, 100MB)，保留一位小数
-			if (keepZero) {
-				size = String.valueOf(formatKeepOneZero.format(len * 10 / 1024 / 1024 / (float) 10)) + "MB";
-			} else {
-				size = String.valueOf(len * 10 / 1024 / 1024 / (float) 10) + "MB";
-			}
-		} else if (len < 1024 * 1024 * 1024) {
-			// [100MB, 1GB)，个位四舍五入
-			size = String.valueOf(len / 1024 / 1024) + "MB";
-		} else {
-			// [1GB, ...)，保留两位小数
-			size = String.valueOf(len * 100 / 1024 / 1024 / 1024 / (float) 100) + "GB";
+	public static boolean isIPAddress(String address) {
+		boolean flag = false;
+		try {
+			String check = "^(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])$";
+			Pattern regex = Pattern.compile(check);
+			Matcher matcher = regex.matcher(address);
+			flag = matcher.matches();
+		} catch (Exception e) {
+			flag = false;
 		}
-		return size;
+		return flag;
+	}
+
+	/**
+	 * 字符串转整数
+	 * 
+	 * @param str
+	 * @param defValue
+	 * @return
+	 */
+	public static int toInt(String str, int defValue) {
+		try {
+			return Integer.parseInt(str);
+		} catch (Exception e) {
+		}
+		return defValue;
+	}
+
+	/**
+	 * 对象转整数
+	 * 
+	 * @param obj
+	 * @return 转换异常返回 0
+	 */
+	public static int toInt(Object obj) {
+		if (obj == null)
+			return 0;
+		return toInt(obj.toString(), 0);
+	}
+
+	/**
+	 * 对象转整数
+	 * 
+	 * @param obj
+	 * @return 转换异常返回 0
+	 */
+	public static long toLong(String obj) {
+		try {
+			return Long.parseLong(obj);
+		} catch (Exception e) {
+		}
+		return 0;
+	}
+
+	/**
+	 * 字符串转布尔值
+	 * 
+	 * @param b
+	 * @return 转换异常返回 false
+	 */
+	public static boolean toBool(String b) {
+		try {
+			return Boolean.parseBoolean(b);
+		} catch (Exception e) {
+		}
+		return false;
+	}
+
+	/**
+	 * 将一个InputStream流转换成字符串
+	 * 
+	 * @param is
+	 * @return
+	 */
+	public static String toConvertString(InputStream is) {
+		StringBuffer res = new StringBuffer();
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader read = new BufferedReader(isr);
+		try {
+			String line;
+			line = read.readLine();
+			while (line != null) {
+				res.append(line);
+				line = read.readLine();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (null != isr) {
+					isr.close();
+					isr.close();
+				}
+				if (null != read) {
+					read.close();
+					read = null;
+				}
+				if (null != is) {
+					is.close();
+					is = null;
+				}
+			} catch (IOException e) {
+			}
+		}
+		return res.toString();
+	}
+
+	/*
+	 * MD5加密
+	 */
+	public static String getMD5Str(String str) {
+		MessageDigest messageDigest = null;
+		try {
+			messageDigest = MessageDigest.getInstance("MD5");
+			messageDigest.reset();
+			messageDigest.update(str.getBytes("UTF-8"));
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("NoSuchAlgorithmException caught!");
+			System.exit(-1);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		byte[] byteArray = messageDigest.digest();
+
+		StringBuffer md5StrBuff = new StringBuffer();
+
+		for (int i = 0; i < byteArray.length; i++) {
+			if (Integer.toHexString(0xFF & byteArray[i]).length() == 1)
+				md5StrBuff.append("0").append(
+						Integer.toHexString(0xFF & byteArray[i]));
+			else
+				md5StrBuff.append(Integer.toHexString(0xFF & byteArray[i]));
+		}
+		// 16位加密，从第9位到25位
+		return md5StrBuff.substring(8, 24).toString();
+	}
+	/**
+	 * 验证手机号码是否正确
+	 * 
+	 * @param mobiles
+	 * @return boolean
+	 */
+	public static boolean isMobileNO(String mobiles) {
+		boolean flag = false;
+		try {
+			String check = "[1-9][0-9]{10}";
+			Pattern regex = Pattern.compile(check);
+			Matcher matcher = regex.matcher(mobiles);
+			flag = matcher.matches();
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
 	}
 }

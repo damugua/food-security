@@ -33,11 +33,23 @@
         </activity>
         <activity android:name="com.zsgj.mobileinspect.ui.LoginTroubleActivity" >
         </activity>
-        <activity android:name="com.zsgj.mobileinspect.ui.RoutineInspectActivity" >
+        <activity android:name="com.zsgj.mobileinspect.ui.GeneralInspectionsActivity" >
         </activity>
-        <activity android:name="com.zsgj.mobileinspect.ui.InspectActivity" >
+        <activity android:name="com.zsgj.mobileinspect.ui.AddInspectActivity" >
         </activity>
         <activity android:name="com.zsgj.mobileinspect.ui.SchoolSelectActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.VideoMonitoringActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.MessageActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.SuggestionsActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.SuggestionsDetailsActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.NoticesActivity" >
+        </activity>
+        <activity android:name="com.zsgj.mobileinspect.ui.NoticesDetailsActivity" >
         </activity>
     </application>
 

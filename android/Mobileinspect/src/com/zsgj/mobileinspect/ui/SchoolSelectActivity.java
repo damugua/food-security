@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.lidroid.xutils.exception.HttpException;
@@ -24,14 +29,15 @@ import com.zsgj.mobileinspect.pullrefreshview.PullToRefreshBase;
 import com.zsgj.mobileinspect.pullrefreshview.PullToRefreshBase.OnRefreshListener;
 import com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView;
 import com.zsgj.mobileinspect.util.MyHttpUtils;
-import com.zsgj.mobileinspect.widget.MyListView;
 import com.zsgj.mobileinspect.widget.TitleBar;
 import com.zsgj.mobileinspect.widget.TitleBar.TitleOnClickListener;
 
 public class SchoolSelectActivity extends BaseActivity implements
-		TitleOnClickListener, OnRefreshListener<ListView> {
+		TitleOnClickListener, OnRefreshListener<ListView>, OnClickListener, TextWatcher {
 	private List<Kindergarten> totalSchoolList = new ArrayList<Kindergarten>();//总的集合
 	private TitleBar mTitleBar;
+	private EditText etSchoolName;
+	private Button btnFilter;
 	private PullToRefreshListView schoolListView;
 	public static final int REQUEST_TYPE_FIRST = 0;
 	public static final int REQUEST_TYPE_REFRESH = 1;
@@ -39,6 +45,8 @@ public class SchoolSelectActivity extends BaseActivity implements
 	private int mRequestType = REQUEST_TYPE_FIRST;
 	private SchoolsAdapter adapter;
 	private int pageIndex=1;
+	private String schoolName;
+	
 
 	@Override
 	protected void initView() {
@@ -46,8 +54,17 @@ public class SchoolSelectActivity extends BaseActivity implements
 		mTitleBar = (TitleBar) findViewById(R.id.titlebar);
 		mTitleBar.setTitle("选择学校");
 		mTitleBar.setLeftIcon(R.drawable.activity_back_normal);
-		mTitleBar.setLeftClickListener(this);
+		btnFilter=(Button) findViewById(R.id.btn_filter);
+		etSchoolName=(EditText) findViewById(R.id.et_shoolname);
 		schoolListView=(PullToRefreshListView) findViewById(R.id.pl_schools);
+		
+	}
+
+	@Override
+	protected void initData() {
+		mTitleBar.setLeftClickListener(this);
+		btnFilter.setOnClickListener(this);
+		etSchoolName.addTextChangedListener(this);
 		schoolListView.setOnRefreshListener(this);
 		adapter = new SchoolsAdapter(this, totalSchoolList);
 		schoolListView.getRefreshableView().setAdapter(adapter);
@@ -55,16 +72,14 @@ public class SchoolSelectActivity extends BaseActivity implements
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				
+				Intent intent = new Intent();
+				intent.putExtra("name", totalSchoolList.get(position).getName());
+				intent.putExtra("Id", totalSchoolList.get(position).getId());
+				SchoolSelectActivity.this.setResult(RESULT_OK, intent);
+				SchoolSelectActivity.this.finish();
 			}
-			
 		});
-	}
-
-	@Override
-	protected void initData() {
 		requestData();
-		
 	}
 
 	private void requestData() {
@@ -76,16 +91,17 @@ public class SchoolSelectActivity extends BaseActivity implements
 			startActivity(new Intent(this,LoginActivity.class));
 			finish();
 		}
+		params.addQueryStringParameter("name", schoolName);
 		params.addQueryStringParameter("pageIndex", pageIndex+"");
 		params.addQueryStringParameter("pageSize", "10");
 
+		boolean isShowDialog=mRequestType == REQUEST_TYPE_FIRST;
 		MyHttpUtils.send(this, HttpRequest.HttpMethod.GET,AppConfig.SERVER
-				+ AppConfig.QUERYSCHOOL_URL, params, Kindergartens.class, new MyRequestCallBack<Kindergartens>() {
+				+ AppConfig.QUERYSCHOOL_URL, params, Kindergartens.class, isShowDialog,new MyRequestCallBack<Kindergartens>() {
 
 					@Override
 					public void onFailure(HttpException error, String msg) {
 					}
-
 					@Override
 					public void onSuccess(Kindergartens bean) {
 						schoolListView.onPullDownRefreshComplete();
@@ -102,14 +118,15 @@ public class SchoolSelectActivity extends BaseActivity implements
 		switch (mRequestType) {
 		case REQUEST_TYPE_FIRST:
 		case REQUEST_TYPE_REFRESH:
-			adapter.setList(kindergartens);
+			totalSchoolList=kindergartens;
 			break;
 		case REQUEST_TYPE_MORE:
-			adapter.addList(kindergartens);
+			totalSchoolList.addAll(kindergartens);
 			break;
 		default:
 			break;
 		}
+		adapter.setList(kindergartens);
 	}
 
 	@Override
@@ -134,6 +151,40 @@ public class SchoolSelectActivity extends BaseActivity implements
 		mRequestType=REQUEST_TYPE_MORE;
 		requestData();
 		
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_filter:
+			schoolName=etSchoolName.getText().toString().trim();
+			mRequestType=REQUEST_TYPE_FIRST;
+			pageIndex=1;
+			requestData();
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence s, int start, int count,
+			int after) {
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+		
+	}
+
+	@Override
+	public void afterTextChanged(Editable s) {
+		schoolName=etSchoolName.getText().toString().trim();
+		mRequestType=REQUEST_TYPE_FIRST;
+		pageIndex=1;
+		requestData();
 	}
 
 }

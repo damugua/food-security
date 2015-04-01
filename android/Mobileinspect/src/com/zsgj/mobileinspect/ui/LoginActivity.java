@@ -46,7 +46,6 @@ public class LoginActivity extends BaseActivity {
 	protected void initData() {
 		etUserName.setText(loginName);
 		etPwd.setText(password);
-		etUserName.setBackgroundResource(R.id.btn_begintime);
 	}
 
 	public void onBtnClicked(View view) {
@@ -133,6 +132,8 @@ public class LoginActivity extends BaseActivity {
 					UIHelper.ToastMessage(LoginActivity.this, "连接超时");;//可能是服务器ip有误
 				}else if(msg.contains("HttpHostConnectException")){
 					UIHelper.ToastMessage(LoginActivity.this, "网络不可用");
+				}else{
+					UIHelper.ToastMessage(LoginActivity.this, msg);
 				}
 				Log.i("TAG", "onFailure--message" + error.getMessage());
 				Log.i("TAG", "onFailure--code" + error.getExceptionCode());

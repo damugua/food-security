@@ -125,7 +125,23 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 		switch (position) {
 		case 0:
 			startActivity(new Intent(MainActivity.this,
-					RoutineInspectActivity.class));
+					GeneralInspectionsActivity.class));
+			break;
+		case 1:
+			startActivity(new Intent(MainActivity.this,
+					VideoMonitoringActivity.class));
+			break;
+		case 2:
+			startActivity(new Intent(MainActivity.this,
+					MessageActivity.class));
+			break;
+		case 3:
+			startActivity(new Intent(MainActivity.this,
+					SuggestionsActivity.class));
+			break;
+		case 4:
+			startActivity(new Intent(MainActivity.this,
+					NoticesActivity.class));
 			break;
 		}
 

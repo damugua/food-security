@@ -9,7 +9,6 @@ import android.widget.Adapter;
 import android.widget.ListView;
 
 import com.zsgj.mobileinspect.pullrefreshview.ILoadingLayout.State;
-import com.zsgj.mobileinspect.widget.MyListView;
 
 /**
  * 这个类实现了ListView下拉刷新，上拉加载更多和滑到底部自动加载
@@ -21,7 +20,7 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView>
 		implements OnScrollListener {
 
 	/** ListView */
-	private MyListView mListView;
+	private ListView mListView;
 	/** 用于滑到底部自动加载的Footer */
 	private LoadingLayout mLoadMoreFooterLayout;
 	/** 滚动的监听器 */
@@ -84,8 +83,8 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView>
 	}
 
 	@Override
-	protected MyListView createRefreshableView(Context context, AttributeSet attrs) {
-		MyListView listView = new MyListView(context, attrs);
+	protected ListView createRefreshableView(Context context, AttributeSet attrs) {
+		ListView listView = new ListView(context, attrs);
 		listView.setId(android.R.id.list);
 		mListView = listView;
 		// mListView.setFooterDividersEnabled(true);
@@ -200,7 +199,7 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView>
 			}
 		}
 		
-		mListView.scrolling(scrollState != 0);
+//		mListView.scrolling(scrollState != 0);
 		
 		if (null != mScrollListener) {
 			mScrollListener.onScrollStateChanged(view, scrollState);
@@ -210,7 +209,7 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView>
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
-		mListView.setFistVisibleItem(firstVisibleItem + 1);
+//		mListView.setFistVisibleItem(firstVisibleItem + 1);
 		if (null != mScrollListener) {
 			mScrollListener.onScroll(view, firstVisibleItem, visibleItemCount,
 					totalItemCount);

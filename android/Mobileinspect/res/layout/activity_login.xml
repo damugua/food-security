@@ -86,8 +86,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal" >
 
@@ -96,8 +96,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
-            android:layout_marginLeft="5dip"
-            android:layout_marginRight="5dip"
             android:layout_marginTop="10dip"
             android:background="@drawable/button_login_bg"
             android:gravity="center"

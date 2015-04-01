@@ -57,57 +57,21 @@
             android:text="巡查结果"
             android:textSize="18sp" />
 
-        <TextView
+        <com.zsgj.mobileinspect.widget.PinnedSectionListView
+            android:id="@+id/pinnedSectionlist"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="15dp"
-            android:gravity="center_vertical"
-            android:text="类别1"
-            android:textSize="18sp" />
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="30dp"
-            android:gravity="center_vertical"
-            android:text="选项1" />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="30dp"
-            android:gravity="center_vertical"
-            android:text="选项2" />
-
-       
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="15dp"
-            android:gravity="center_vertical"
-            android:text="类别2"
-            android:textSize="18sp" />
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="30dp"
-            android:gravity="center_vertical"
-            android:text="选项1" />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="30dp"
-            android:gravity="center_vertical"
-            android:text="选项2" />
+            android:layout_height="wrap_content"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false" />
     </LinearLayout>
-     <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:background="#fff"
-       android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:paddingLeft="15dp" >
 
@@ -117,13 +81,14 @@
             android:gravity="center_vertical"
             android:text="备注"
             android:textSize="18sp" />
-        <EditText 
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="top"
-            android:focusableInTouchMode="true"
-            
             android:background="@null"
-            android:padding="10dp"/>
+            android:focusableInTouchMode="true"
+            android:gravity="top"
+            android:padding="10dp" />
     </LinearLayout>
+
 </LinearLayout>

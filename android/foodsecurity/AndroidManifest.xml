@@ -5,19 +5,42 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
     <application
-        android:name=".application.BaseApplication"
+        android:name="com.zsgj.foodsecurity.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.zsgj.foodsecurity.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +48,57 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name="com.zsgj.foodsecurity.activity.Regist1Activity" />
-        <activity android:name="com.zsgj.foodsecurity.activity.Regist2Activity" />
-        <activity android:name="com.zsgj.foodsecurity.activity.Regist3Activity" />
-        <activity android:name="com.zsgj.foodsecurity.activity.Regist4Activity" />
+        <activity android:name="com.zsgj.foodsecurity.activity.LoginActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.AccountManagerActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.ChangePwdActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.Regist1Activity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.Regist2Activity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.MessageActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.RecipeWcfActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.NoticesActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.NoticesDetailsActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.SuggestionsActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.SuggestionsDetailsActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.VideoMonitoringActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.videogo.ui.cameralist.CameraListActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.videogo.ui.realplay.SimpleRealPlayActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.videogo.ui.message.MessageActivity" >
+        </activity>
+        <activity android:name="com.zsgj.foodsecurity.videogo.ui.remoteplayback.RemotePlayBackActivity" >
+        </activity>
+        <activity
+            android:name="com.zsgj.foodsecurity.videogo.ui.realplay.RealPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.videogo.main.EzvizWebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <receiver
+            android:name="com.zsgj.foodsecurity.EzvizBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.vedeogo.action.OAUTH_SUCCESS_ACTION" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

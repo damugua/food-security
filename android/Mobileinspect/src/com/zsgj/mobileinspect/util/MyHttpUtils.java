@@ -146,29 +146,35 @@ public class MyHttpUtils {
 	public static <T> void send(final Context context,
 			HttpRequest.HttpMethod httpMethod, String url,
 			RequestParams params, final Class<T> classOfT,
-			final MyRequestCallBack<T> callBack) {
+			final boolean isShowDialog, final MyRequestCallBack<T> callBack) {
 		instance = MyHttpUtils.getInstance();
 		instance.configCurrentHttpCacheExpiry(1000 * 10);
-		pDialog = new ProgressDialog(context);
-		pDialog.setCanceledOnTouchOutside(false);
-		pDialog.setMessage("加载中...");
+		if (isShowDialog) {
+			pDialog = new ProgressDialog(context);
+			pDialog.setCanceledOnTouchOutside(false);
+			pDialog.setMessage("加载中...");
+		}
 
 		instance.send(httpMethod, url, params, new RequestCallBack<String>() {
 			@Override
 			public void onFailure(HttpException error, String msg) {
-				pDialog.dismiss();
+				if (isShowDialog)
+					pDialog.dismiss();
 				if (msg.contains("ConnectTimeoutException")) {
 					UIHelper.ToastMessage(context, "连接超时");
 					;// 可能是服务器ip有误
 				} else if (msg.contains("HttpHostConnectException")) {
 					UIHelper.ToastMessage(context, "网络不可用");
+				}else{
+					UIHelper.ToastMessage(context, msg);
 				}
 				callBack.onFailure(error, msg);
 			}
 
 			@Override
 			public void onSuccess(ResponseInfo<String> responseInfo) {
-				pDialog.dismiss();
+				if (isShowDialog)
+					pDialog.dismiss();
 				Log.i("TAG", "result->" + responseInfo.result);
 				Gson gson = new Gson();
 				Response response = gson.fromJson(responseInfo.result,
@@ -189,7 +195,8 @@ public class MyHttpUtils {
 			@Override
 			public void onStart() {
 				Log.i("TAG", getRequestUrl());
-				pDialog.show();
+				if (isShowDialog)
+					pDialog.show();
 			}
 
 		});

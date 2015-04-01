@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f0eb"
+    android:orientation="vertical" >
+    <com.zsgj.mobileinspect.widget.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#fff" />
+
+    <com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView
+        android:id="@+id/pl_schools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" >
+    </com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView>
+</LinearLayout>

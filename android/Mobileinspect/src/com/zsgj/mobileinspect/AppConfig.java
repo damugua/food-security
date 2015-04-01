@@ -12,7 +12,13 @@ public class AppConfig {
     public static boolean isLogin = false;
     //日常巡查
     public static final String ROUTINE_URL="/GeneralInspectionWcfService.svc/QueryByUserIdCNameAndTime";
-    //日常巡查
+    //添加日常巡查
+    public static final String ADDINSPECT_URL="/GeneralInspectionWcfService.svc/CreateGeneralInspection";
+    //查询学校
     public static final String QUERYSCHOOL_URL="/KindergartenWcfService.svc/QueryBySyjIdAndName";
+    //查询投诉建议
+    public static final String SUGGESTION_URL="/ComplaintWcfService.svc/GetByTimeAndStatus";
+    // 获取日常巡查结果类型
+    public static final String INSPECTRESULTTYPE_URL="/InspectResultTypeWcfService.svc/FindAll";
 
 }

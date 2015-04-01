@@ -10,7 +10,7 @@ public class BusinessWarning {
 
     public void setExceptionType(int exceptionType) {
         ExceptionType = exceptionType;
-    } 
+    }
 
     public String getMessage() {
         return Message;
