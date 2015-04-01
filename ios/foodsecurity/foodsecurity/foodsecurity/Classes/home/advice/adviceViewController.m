@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBar];
+    [self setToolBar];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,6 +35,23 @@
     [backButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barbtn = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = barbtn;
+    
+}
+
+//创建工具栏
+-(void)setToolBar
+{
+    self.navigationController.toolbarHidden=NO;
+    UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"我要投诉" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarClicked)];
+    UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    self.toolbarItems=@[space,item,space];
+    
+}
+
+-(void)toolbarClicked
+{
+    NSLog(@"tool bar clicked");
+    
 }
 
 //去做网络请求
