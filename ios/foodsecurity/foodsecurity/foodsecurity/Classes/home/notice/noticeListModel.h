@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NoticesModel.h"
 @interface noticeListModel : NSObject
+
+@property(nonatomic,strong)NSMutableArray *noticesArray;
+@property(nonatomic,strong)NoticesModel *noticesModel;
+
+
 -(void)setParameter:(NSDictionary *)noticeListData;
 @end

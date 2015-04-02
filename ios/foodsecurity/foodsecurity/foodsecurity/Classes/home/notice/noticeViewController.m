@@ -10,9 +10,12 @@
 #import "commonModel.h"
 #import "API.h"
 #import "noticeListModel.h"
-@interface noticeViewController ()<commonConnectDelegate>
+#import "NoticesModel.h"
+#define FRAME ([[UIScreen mainScreen] bounds])
+@interface noticeViewController ()<commonConnectDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     noticeListModel *noticeListModels;
+    UITableView *noticeTableView;
 }
 @end
 
@@ -22,7 +25,7 @@
     [super viewDidLoad];
     [self setNavigationBar];
     [self togoRequest];
-    
+    [self createTableView];
 }
 
 //添加导航条的标题和返回按钮
@@ -39,15 +42,24 @@
 -(void)togoRequest
 {
     
-    [self gotNoticeListTime:@"" SyjID:@"" pageIndex:@"1" pageSize:@"10"];
+    [self gotNoticeListparentCode:[[NSUserDefaults standardUserDefaults] stringForKey:@"userCode"] pageIndex:@"1" pageSize:@"10"];
+}
+
+//创建 tableView
+-(void)createTableView
+{
+    noticeTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, FRAME.size.width, FRAME.size.height) style:UITableViewStylePlain];
+    noticeTableView.delegate=self;
+    noticeTableView.dataSource=self;
+    [self.view addSubview:noticeTableView];
 }
 
 //网络请求
 ///GetByTimeAndSyjID(string time, long SyjID, int pageIndex, int pageSize)
--(void)gotNoticeListTime:(NSString *)time SyjID:(NSString *)SyjID pageIndex:(NSString *)pageIndex pageSize:(NSString *)pageSize
+-(void)gotNoticeListparentCode:(NSString *)parentCode pageIndex:(NSString *)pageIndex pageSize:(NSString *)pageSize
 {
     //参数后缀  接口给的类型不是字符串
-    NSDictionary *paramater = @{@"pageIndex":pageIndex,@"pageSize":pageSize};
+    NSDictionary *paramater = @{@"parentCode":parentCode,@"pageIndex":pageIndex,@"pageSize":pageSize};
     commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_NOTICE_LIST parameters:paramater];
     connect.delegate = self;
     
@@ -58,6 +70,7 @@
 {
     noticeListModels = [[noticeListModel alloc]init];
     [noticeListModels setParameter:dataDic];
+    [noticeTableView reloadData];
 }
 
 -(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
@@ -68,6 +81,36 @@
 -(void)connectError:(commonModel *)connect
 {
     
+}
+
+//tableView的协议方法
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return noticeListModels.noticesArray.count;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *nameCell=@"nameCell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:nameCell];
+    if (nil==cell) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nameCell];
+    }
+    NoticesModel *noticesModel=[noticeListModels.noticesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text=noticesModel.Content;
+    cell.textLabel.numberOfLines=0;
+    cell.detailTextLabel.text=noticesModel.Time;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%d",indexPath.row);
 }
 
 //做导航按钮返回的点击事件

@@ -10,6 +10,7 @@
 #import "commonModel.h"
 #import "API.h"
 #import "cookBookModel.h"
+#import "YSHTTPClient.h"
 #define FRAME ([[UIScreen mainScreen] bounds])
 
 @interface cookbookViewController ()<commonConnectDelegate>

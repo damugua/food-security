@@ -17,6 +17,7 @@
 		3B04F93B1AC3A26200831F41 /* UIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9301AC3A26200831F41 /* UIView+IQKeyboardToolbar.m */; };
 		3B04F93C1AC3A26200831F41 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9321AC3A26200831F41 /* UIWindow+Hierarchy.m */; };
 		3B3C48051AC95694005C895D /* noticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C48041AC95694005C895D /* noticeListModel.m */; };
+		3BD5819E1ACCF67D006A60F3 /* NoticesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5819D1ACCF67D006A60F3 /* NoticesModel.m */; };
 		3BD5955B1ACA324700C56BD4 /* adviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5955A1ACA324700C56BD4 /* adviceModel.m */; };
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
@@ -96,6 +97,8 @@
 		3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = cookbookViewController.xib; path = foodsecurity/Classes/home/cookbookViewController.xib; sourceTree = SOURCE_ROOT; };
 		3B3C48031AC95694005C895D /* noticeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noticeListModel.h; sourceTree = "<group>"; };
 		3B3C48041AC95694005C895D /* noticeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noticeListModel.m; sourceTree = "<group>"; };
+		3BD5819C1ACCF67D006A60F3 /* NoticesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticesModel.h; sourceTree = "<group>"; };
+		3BD5819D1ACCF67D006A60F3 /* NoticesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticesModel.m; sourceTree = "<group>"; };
 		3BD595591ACA324700C56BD4 /* adviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adviceModel.h; sourceTree = "<group>"; };
 		3BD5955A1ACA324700C56BD4 /* adviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adviceModel.m; sourceTree = "<group>"; };
 		3BD93D931AC902B4005D11E4 /* cookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookBookModel.h; sourceTree = "<group>"; };
@@ -430,6 +433,8 @@
 				824983E71AC926BB00912514 /* noticeViewController.xib */,
 				3B3C48031AC95694005C895D /* noticeListModel.h */,
 				3B3C48041AC95694005C895D /* noticeListModel.m */,
+				3BD5819C1ACCF67D006A60F3 /* NoticesModel.h */,
+				3BD5819D1ACCF67D006A60F3 /* NoticesModel.m */,
 			);
 			path = notice;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				3B04F9381AC3A26200831F41 /* IQToolbar.m in Sources */,
 				82201BC21ABFADF6004DA4E8 /* loginModel.m in Sources */,
 				82AABC421ABC022E0004306C /* homeViewController.m in Sources */,
+				3BD5819E1ACCF67D006A60F3 /* NoticesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
