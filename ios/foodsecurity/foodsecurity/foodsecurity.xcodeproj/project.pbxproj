@@ -28,6 +28,7 @@
 		3BD581B71ACD2085006A60F3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581AF1ACD2085006A60F3 /* UIView+MJExtension.m */; };
 		3BD581BB1ACD276E006A60F3 /* noticeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581B91ACD276E006A60F3 /* noticeDetailViewController.m */; };
 		3BD581BC1ACD276E006A60F3 /* noticeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD581BA1ACD276E006A60F3 /* noticeDetailViewController.xib */; };
+		3BD581BF1ACD3861006A60F3 /* DayCookBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581BE1ACD3861006A60F3 /* DayCookBookModel.m */; };
 		3BD5955B1ACA324700C56BD4 /* adviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5955A1ACA324700C56BD4 /* adviceModel.m */; };
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
@@ -128,6 +129,8 @@
 		3BD581B81ACD276E006A60F3 /* noticeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noticeDetailViewController.h; sourceTree = "<group>"; };
 		3BD581B91ACD276E006A60F3 /* noticeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noticeDetailViewController.m; sourceTree = "<group>"; };
 		3BD581BA1ACD276E006A60F3 /* noticeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noticeDetailViewController.xib; sourceTree = "<group>"; };
+		3BD581BD1ACD3861006A60F3 /* DayCookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayCookBookModel.h; sourceTree = "<group>"; };
+		3BD581BE1ACD3861006A60F3 /* DayCookBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayCookBookModel.m; sourceTree = "<group>"; };
 		3BD595591ACA324700C56BD4 /* adviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adviceModel.h; sourceTree = "<group>"; };
 		3BD5955A1ACA324700C56BD4 /* adviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adviceModel.m; sourceTree = "<group>"; };
 		3BD93D931AC902B4005D11E4 /* cookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookBookModel.h; sourceTree = "<group>"; };
@@ -644,6 +647,8 @@
 				3B04F93D1AC3E0A300831F41 /* cookbookViewController.xib */,
 				3BD93D931AC902B4005D11E4 /* cookBookModel.h */,
 				3BD93D941AC902B4005D11E4 /* cookBookModel.m */,
+				3BD581BD1ACD3861006A60F3 /* DayCookBookModel.h */,
+				3BD581BE1ACD3861006A60F3 /* DayCookBookModel.m */,
 			);
 			path = cookbook;
 			sourceTree = "<group>";
@@ -831,6 +836,7 @@
 				3B04F9371AC3A26200831F41 /* IQTitleBarButtonItem.m in Sources */,
 				3BD581BB1ACD276E006A60F3 /* noticeDetailViewController.m in Sources */,
 				82AABC171ABBF5590004306C /* main.m in Sources */,
+				3BD581BF1ACD3861006A60F3 /* DayCookBookModel.m in Sources */,
 				82AABC481ABC02A30004306C /* commonNavigation.m in Sources */,
 				82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */,
 				82F645FF1AC29879004EB124 /* accountManager.m in Sources */,

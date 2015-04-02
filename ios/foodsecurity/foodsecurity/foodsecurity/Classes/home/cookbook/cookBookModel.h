@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface cookBookModel : NSObject
-
+@property(nonatomic,strong)NSMutableArray *RecipesArray;
 -(void)setParameter:(NSDictionary *)cookBookData;
 
 @end

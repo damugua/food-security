@@ -11,11 +11,14 @@
 #import "API.h"
 #import "cookBookModel.h"
 #import "YSHTTPClient.h"
+#import "DayCookBookModel.h"
 #define FRAME ([[UIScreen mainScreen] bounds])
 
 @interface cookbookViewController ()<commonConnectDelegate>
 {
     cookBookModel *cookBookModels;
+    UIScrollView *scrollView;
+    UILabel *contentLabel;
 }
 @end
 
@@ -25,9 +28,13 @@
     [super viewDidLoad];
     [self createNavigationBar];
     [self createWeekButtons];
+    [self createScrollView];
+    [self createCookBookContent];
+    [self gotCookBookparentCode:[[NSUserDefaults standardUserDefaults] stringForKey:@"userCode"] pageIndex:@"1" pageSize:@"10"];
     // Do any additional setup after loading the view from its nib.
 }
 
+//创建导航内容
 -(void)createNavigationBar
 {
     self.navigationItem.title = @"食谱";
@@ -38,6 +45,7 @@
     self.navigationItem.leftBarButtonItem = leftButtonItem;
 }
 
+//创建星期的button
 -(void)createWeekButtons
 {
     NSLog(@"kuan %f",FRAME.size.width);
@@ -56,21 +64,51 @@
     
 }
 
+//创建一个滚动试图
+-(void)createScrollView
+{
+    scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 104, FRAME.size.width, FRAME.size.height-104)];
+    [self.view addSubview:scrollView];
+}
+
+//创建食谱的内容
+-(void)createCookBookContent
+{
+    //食谱内容
+    contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 10, FRAME.size.width, 30)];
+    contentLabel.numberOfLines=0;
+    contentLabel.textColor=[UIColor blackColor];
+    contentLabel.font=[UIFont systemFontOfSize:20];
+}
+
+//左导航按钮的点击事件
 -(void)leftButtonClicked:(UIButton *)button
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//星期button的点击事件
 -(void)weekButtonClicked:(UIButton *)button
 {
-    NSLog(@"周 %d",button.tag);
+    [self freshCookBookContent:button.tag];
 }
 
+-(void)freshCookBookContent:(NSInteger)day
+{
+    
+    DayCookBookModel *dayCookBookModel=[cookBookModels.RecipesArray objectAtIndex:day];
+    NSString *str=dayCookBookModel.Explain;
+    CGRect rect=[str boundingRectWithSize:CGSizeMake(FRAME.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine attributes:nil context:nil];
+    contentLabel.text=str;
+    contentLabel.frame=CGRectMake(0, 15, FRAME.size.width, rect.size.height);
+    [scrollView addSubview:contentLabel];
 
--(void)gotCookBookId:(NSString *)Id page:(NSString *)page pageSize:(NSString *)pageSize
+}
+
+-(void)gotCookBookparentCode:(NSString *)parentCode pageIndex:(NSString *)pageIndex pageSize:(NSString *)pageSize
 {
     //参数后缀  接口给的类型不是字符串
-    NSDictionary *paramater = @{@"kindergartenId":Id,@"pageIndex":page,@"pageSize":pageSize};
+    NSDictionary *paramater = @{@"parentCode":parentCode,@"pageIndex":pageIndex,@"pageSize":pageSize};
     //地址
     
     commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_COOKBOOK parameters:paramater];
@@ -83,6 +121,8 @@
 {
     cookBookModels = [[cookBookModel alloc]init];
     [cookBookModels setParameter:dataDic];
+    UIButton *button=(UIButton *)[self.view viewWithTag:1];
+    [self weekButtonClicked:button];
 }
 
 -(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect
