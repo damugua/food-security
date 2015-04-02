@@ -15,7 +15,6 @@
     self.noticesArray=[[NSMutableArray alloc]init];
     NSLog(@"noticeListData %@",noticeListData);
     NSArray *noticeArray=[noticeListData valueForKey:@"Notices"];
-    NSLog(@"noticeArray %@",noticeArray[0]);
     for (int i=0; i<noticeArray.count;i++) {
         
         NSDictionary *noticeDict=[noticeArray objectAtIndex:i];

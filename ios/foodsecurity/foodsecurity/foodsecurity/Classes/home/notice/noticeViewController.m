@@ -11,11 +11,14 @@
 #import "API.h"
 #import "noticeListModel.h"
 #import "NoticesModel.h"
+#import "MJRefresh.h"
 #define FRAME ([[UIScreen mainScreen] bounds])
 @interface noticeViewController ()<commonConnectDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     noticeListModel *noticeListModels;
     UITableView *noticeTableView;
+    NSMutableArray *dataArray;
+    NSInteger page;
 }
 @end
 
@@ -23,9 +26,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     [self setNavigationBar];
     [self togoRequest];
     [self createTableView];
+    [self setupRefresh];
+}
+
+//初始化
+-(void)initData
+{
+    dataArray=[[NSMutableArray alloc]init];
+    page=0;
 }
 
 //添加导航条的标题和返回按钮
@@ -41,8 +53,9 @@
 //去做网络请求
 -(void)togoRequest
 {
-    
-    [self gotNoticeListparentCode:[[NSUserDefaults standardUserDefaults] stringForKey:@"userCode"] pageIndex:@"1" pageSize:@"10"];
+    NSString *pages=[NSString stringWithFormat:@"%d",page];
+    [self gotNoticeListparentCode:[[NSUserDefaults standardUserDefaults] stringForKey:@"userCode"] pageIndex:pages pageSize:@"10"];
+    NSLog(@"pages  %@",pages);
 }
 
 //创建 tableView
@@ -70,6 +83,7 @@
 {
     noticeListModels = [[noticeListModel alloc]init];
     [noticeListModels setParameter:dataDic];
+    [dataArray addObjectsFromArray:noticeListModels.noticesArray];
     [noticeTableView reloadData];
 }
 
@@ -86,7 +100,7 @@
 //tableView的协议方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return noticeListModels.noticesArray.count;
+    return dataArray.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,7 +110,7 @@
     if (nil==cell) {
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nameCell];
     }
-    NoticesModel *noticesModel=[noticeListModels.noticesArray objectAtIndex:indexPath.row];
+    NoticesModel *noticesModel=[dataArray objectAtIndex:indexPath.row];
     cell.textLabel.text=noticesModel.Content;
     cell.textLabel.numberOfLines=0;
     cell.detailTextLabel.text=noticesModel.Time;
@@ -118,6 +132,60 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [noticeTableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    //warning 自动刷新(一进入程序就下拉刷新)
+    //[self.scrollView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [noticeTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    noticeTableView.headerPullToRefreshText = @"下拉可以刷新了";
+    noticeTableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    noticeTableView.headerRefreshingText = @"正在刷新中...";
+    noticeTableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    noticeTableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    noticeTableView.footerRefreshingText = @"正在加载中...";
+    
+}
+
+
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        NSLog(@"下拉刷新了。。。。。。");
+        [dataArray removeAllObjects];
+        page=0;
+        [self togoRequest];
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [noticeTableView headerEndRefreshing];
+    });
+    
+}
+
+- (void)footerRereshing
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        NSLog(@"上拉刷新了。。。。。。");
+        page++;
+        [self togoRequest];
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [noticeTableView footerEndRefreshing];
+    });
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
