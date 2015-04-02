@@ -12,7 +12,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.videogo.openapi.EzvizAPI;
 import com.zsgj.foodsecurity.activity.MainActivity;
 import com.zsgj.foodsecurity.bean.InvokeYs7;
-import com.zsgj.foodsecurity.bean.Message;
+import com.zsgj.foodsecurity.bean.TokenMessage;
 import com.zsgj.foodsecurity.bean.ParentInfo;
 import com.zsgj.foodsecurity.interfaces.MyRequestCallBack;
 import com.zsgj.foodsecurity.utils.MyHttpUtils;
@@ -64,7 +64,7 @@ public class MyApplication extends Application {
 					@Override
 					public void onSuccess(InvokeYs7 bean) {
 						Gson gson=new Gson();
-						Message message = gson.fromJson(bean.getMessage(), Message.class);
+						TokenMessage message = gson.fromJson(bean.getMessage(), TokenMessage.class);
 						String accessToken = message.getResult().getData().getAccessToken();
 						Log.i("TAG", accessToken);
 						EzvizAPI.getInstance().setAccessToken(accessToken);

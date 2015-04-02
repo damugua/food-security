@@ -6,42 +6,26 @@ import android.view.View.OnClickListener;
 import com.videogo.widget.TitleBar;
 import com.zsgj.foodsecurity.R;
 
-public class Regist2Activity extends BaseActivity {
-	private TitleBar mTitleBar = null;
+public class KindergartenSelectActivity extends BaseActivity {
+	private TitleBar mTitleBar;
 
 	@Override
 	protected void initView() {
-		setContentView(R.layout.activity_regist2);
+		setContentView(R.layout.activity_kindergartensele);
 		mTitleBar = (TitleBar) findViewById(R.id.title_bar);
-		mTitleBar.setTitle(R.string.register2);
+		mTitleBar.setTitle(R.string.kindergartenselect);
 		mTitleBar.addBackButton(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				finish();
 			}
 		});
+
 	}
+
 	@Override
 	protected void initData() {
-	}
-	public void onClick(View v){
-		switch (v.getId()) {
-		case R.id.ll_kindengartenselect:
-			
-			break;
-		case R.id.ll_classselect:
-			
-			break;
-		case R.id.ll_studentselect:
-			
-			break;
-		case R.id.btn_submit:
-			
-			break;
 
-		default:
-			break;
-		}
 	}
-	
+
 }
