@@ -91,7 +91,7 @@
 
 
 
-//做导航按钮返回的点击事件
+//左导航按钮返回的点击事件
 -(void)buttonClicked:(UIButton *)button
 {
     [self.navigationController popViewControllerAnimated:YES];

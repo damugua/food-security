@@ -12,6 +12,7 @@
 #import "noticeListModel.h"
 #import "NoticesModel.h"
 #import "MJRefresh.h"
+#import "noticeDetailViewController.h"
 #define FRAME ([[UIScreen mainScreen] bounds])
 @interface noticeViewController ()<commonConnectDelegate,UITableViewDataSource,UITableViewDelegate>
 {
@@ -111,7 +112,7 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nameCell];
     }
     NoticesModel *noticesModel=[dataArray objectAtIndex:indexPath.row];
-    cell.textLabel.text=noticesModel.Content;
+    cell.textLabel.text=noticesModel.Title;
     cell.textLabel.numberOfLines=0;
     cell.detailTextLabel.text=noticesModel.Time;
     return cell;
@@ -124,10 +125,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    noticeDetailViewController *ndVC=[[noticeDetailViewController alloc]init];
+    ndVC.noticeModel=[dataArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:ndVC animated:YES];
     NSLog(@"%d",indexPath.row);
 }
 
-//做导航按钮返回的点击事件
+//左导航按钮返回的点击事件
 -(void)buttonClicked:(UIButton *)button
 {
     [self.navigationController popViewControllerAnimated:YES];

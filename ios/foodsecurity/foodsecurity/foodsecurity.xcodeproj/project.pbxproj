@@ -26,6 +26,8 @@
 		3BD581B51ACD2085006A60F3 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581AB1ACD2085006A60F3 /* UIScrollView+MJExtension.m */; };
 		3BD581B61ACD2085006A60F3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581AD1ACD2085006A60F3 /* UIScrollView+MJRefresh.m */; };
 		3BD581B71ACD2085006A60F3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581AF1ACD2085006A60F3 /* UIView+MJExtension.m */; };
+		3BD581BB1ACD276E006A60F3 /* noticeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD581B91ACD276E006A60F3 /* noticeDetailViewController.m */; };
+		3BD581BC1ACD276E006A60F3 /* noticeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD581BA1ACD276E006A60F3 /* noticeDetailViewController.xib */; };
 		3BD5955B1ACA324700C56BD4 /* adviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5955A1ACA324700C56BD4 /* adviceModel.m */; };
 		82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82201BB61ABE9E1C004DA4E8 /* loginViewController.m */; };
 		82201BB91ABE9E1C004DA4E8 /* loginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82201BB71ABE9E1C004DA4E8 /* loginViewController.xib */; };
@@ -123,6 +125,9 @@
 		3BD581AD1ACD2085006A60F3 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		3BD581AE1ACD2085006A60F3 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		3BD581AF1ACD2085006A60F3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		3BD581B81ACD276E006A60F3 /* noticeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noticeDetailViewController.h; sourceTree = "<group>"; };
+		3BD581B91ACD276E006A60F3 /* noticeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noticeDetailViewController.m; sourceTree = "<group>"; };
+		3BD581BA1ACD276E006A60F3 /* noticeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noticeDetailViewController.xib; sourceTree = "<group>"; };
 		3BD595591ACA324700C56BD4 /* adviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adviceModel.h; sourceTree = "<group>"; };
 		3BD5955A1ACA324700C56BD4 /* adviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adviceModel.m; sourceTree = "<group>"; };
 		3BD93D931AC902B4005D11E4 /* cookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cookBookModel.h; sourceTree = "<group>"; };
@@ -478,6 +483,9 @@
 				824983E51AC926BB00912514 /* noticeViewController.h */,
 				824983E61AC926BB00912514 /* noticeViewController.m */,
 				824983E71AC926BB00912514 /* noticeViewController.xib */,
+				3BD581B81ACD276E006A60F3 /* noticeDetailViewController.h */,
+				3BD581B91ACD276E006A60F3 /* noticeDetailViewController.m */,
+				3BD581BA1ACD276E006A60F3 /* noticeDetailViewController.xib */,
 				3B3C48031AC95694005C895D /* noticeListModel.h */,
 				3B3C48041AC95694005C895D /* noticeListModel.m */,
 				3BD5819C1ACCF67D006A60F3 /* NoticesModel.h */,
@@ -781,6 +789,7 @@
 				82AABC851ABC0EB60004306C /* communicateViewController.xib in Resources */,
 				3B04F9331AC3A26200831F41 /* IQKeyboardManager.bundle in Resources */,
 				824983F31AC9271C00912514 /* videoViewController.xib in Resources */,
+				3BD581BC1ACD276E006A60F3 /* noticeDetailViewController.xib in Resources */,
 				824983E91AC926BB00912514 /* noticeViewController.xib in Resources */,
 				3BD581B01ACD2085006A60F3 /* MJRefresh.bundle in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
@@ -820,6 +829,7 @@
 				3BD581B21ACD2085006A60F3 /* MJRefreshConst.m in Sources */,
 				82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */,
 				3B04F9371AC3A26200831F41 /* IQTitleBarButtonItem.m in Sources */,
+				3BD581BB1ACD276E006A60F3 /* noticeDetailViewController.m in Sources */,
 				82AABC171ABBF5590004306C /* main.m in Sources */,
 				82AABC481ABC02A30004306C /* commonNavigation.m in Sources */,
 				82201BCC1ABFB69D004DA4E8 /* registOne.m in Sources */,
