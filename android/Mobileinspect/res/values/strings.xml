@@ -8,7 +8,8 @@
     <string name="login">登录</string>
     <string name="Is_landing">正在登录...</string>
     <string name="network_isnot_available">网络不可用</string>
-    
+      <string name="notice">公告</string>  
+      <string name="noticedetail">公告详情</string>  
     
       <string name="message_no_data_text">无消息记录</string>  
   <string name="xlistview_header_hint_normal">下拉刷新</string>  

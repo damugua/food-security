@@ -1,6 +1,9 @@
 package com.zsgj.mobileinspect.ui;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
+
+import org.apache.http.entity.StringEntity;
 
 import android.content.Intent;
 import android.util.Log;
@@ -75,15 +78,20 @@ public class AddInspectActivity extends BaseActivity implements TitleOnClickList
 	@Override
 	public void rightClick() {
 		GeneralInspection generalInspection = new GeneralInspection();
-		generalInspection.getCateringUnit().getKindergarten().setId(id);
+		generalInspection.getCateringUnit().getKindergarten().setId((long) 1);
 		generalInspection.setSyjUser(MyApplication.instance.getSyjUser());
 		generalInspection.setRemark("测试");
-		RequestParams params = new RequestParams();
-		
 		System.out.println(new Gson().toJson(generalInspection));
-//		params.add
+		
+		RequestParams params = new RequestParams();
+		 params.addHeader("Content-Type", "application/json");
+			try {
+				params.setBodyEntity(new StringEntity(new Gson().toJson(generalInspection),"utf-8"));
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
 		MyHttpUtils.send(this, HttpRequest.HttpMethod.POST,AppConfig.SERVER
-				+ AppConfig.QUERYSCHOOL_URL, params, Kindergartens.class, true,new MyRequestCallBack<Kindergartens>() {
+				+ AppConfig.ADDINSPECT_URL, params, Kindergartens.class, true,new MyRequestCallBack<Kindergartens>() {
 
 					@Override
 					public void onFailure(HttpException error, String msg) {

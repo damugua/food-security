@@ -51,13 +51,19 @@
         android:layout_height="0.7dp"
         android:background="#fff" />
 
-    <com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView
-        android:id="@+id/pl_schools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" >
-    </com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView>
+    <com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshListView
+        android:id="@+id/lv_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="3dp"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerPadding="10dp"
+        android:drawingCacheQuality="high"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@null"
+        android:overScrollFooter="@null"
+        android:scrollingCache="true" />
 
 </LinearLayout>

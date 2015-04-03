@@ -60,13 +60,13 @@
         android:layout_height="match_parent"
         android:layout_marginTop="10dp" >
 
-        <com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView
+        <com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshListView
             android:id="@+id/pl_inspections"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp" >
-        </com.zsgj.mobileinspect.pullrefreshview.PullToRefreshListView>
+        </com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshListView>
 
         <LinearLayout
             android:id="@+id/ll_selectdate"

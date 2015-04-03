@@ -94,7 +94,12 @@ public class MyHttpUtils {
 
 			@Override
 			public void onSuccess(ResponseInfo<String> result) {
+				Log.i("TAG", "onsuccess->"+result.result);
 				checkBackState(result.result);
+			}
+			@Override
+			public void onStart() {
+				Log.i("TAG", getRequestUrl());
 			}
 		});
 	}

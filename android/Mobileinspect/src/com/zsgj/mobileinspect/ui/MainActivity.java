@@ -146,41 +146,4 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 		}
 
 	}
-
-	public void login(String userName, String password) {
-		String Pwdmd5 = StringUtils.getMD5Str(password);
-		RequestParams params = new RequestParams();
-		params.addQueryStringParameter("userName", userName);
-		params.addQueryStringParameter("password", Pwdmd5);
-
-		HttpUtils http = new HttpUtils();
-		http.configCurrentHttpCacheExpiry(1000 * 10);
-		http.send(HttpRequest.HttpMethod.GET, AppConfig.SERVER
-				+ AppConfig.LOGIN_URL, params, new RequestCallBack<String>() {
-
-			@Override
-			public void onSuccess(ResponseInfo<String> responseInfo) {
-				Gson gson = new Gson();
-				Response response = gson.fromJson(responseInfo.result,
-						Response.class);
-				SyjUser syjUser = gson.fromJson(response.getData(),
-						SyjUser.class);
-				ResponseInstance responseInstance = gson.fromJson(
-						response.getResponseInstance(), ResponseInstance.class);
-				if (syjUser == null) {
-					UIHelper.ToastMessage(MainActivity.this, responseInstance
-							.getBusinessExceptionInstance().getMessage());
-				} else {
-					MyApplication.instance.setSyjUser(syjUser);
-					AppConfig.isLogin = true;
-				}
-			}
-
-			@Override
-			public void onFailure(HttpException error, String msg) {
-				Log.i("TAG", "onFailure" + error.getMessage());
-			}
-		});
-	}
-
 }

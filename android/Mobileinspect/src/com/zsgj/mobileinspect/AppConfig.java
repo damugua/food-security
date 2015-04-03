@@ -22,5 +22,7 @@ public class AppConfig {
     public static final String SUGGESTIONDETAIL_URL="/ComplaintWcfService.svc/GetById";
     // 获取日常巡查结果类型
     public static final String INSPECTRESULTTYPE_URL="/InspectResultTypeWcfService.svc/FindAll";
+    // 获取公告消息
+    public static final String NOTICES_URL="/NoticeWcfService.svc/GetBySyjCode";
 
 }

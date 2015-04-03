@@ -1,15 +1,20 @@
 package com.zsgj.mobileinspect.ui;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -17,24 +22,35 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.zsgj.mobileinspect.AppConfig;
 import com.zsgj.mobileinspect.MyApplication;
 import com.zsgj.mobileinspect.R;
-import com.zsgj.mobileinspect.adapter.SchoolsAdapter;
+import com.zsgj.mobileinspect.adapter.KindergartensAdapter;
+import com.zsgj.mobileinspect.bean.Complaints;
 import com.zsgj.mobileinspect.bean.Kindergarten;
 import com.zsgj.mobileinspect.bean.Kindergartens;
 import com.zsgj.mobileinspect.common.UIHelper;
 import com.zsgj.mobileinspect.interfaces.MyRequestCallBack;
 import com.zsgj.mobileinspect.util.MyHttpUtils;
+import com.zsgj.mobileinspect.widget.PullToRefreshFooter;
+import com.zsgj.mobileinspect.widget.PullToRefreshFooter.Style;
+import com.zsgj.mobileinspect.widget.PullToRefreshHeader;
 import com.zsgj.mobileinspect.widget.TitleBar;
 import com.zsgj.mobileinspect.widget.TitleBar.TitleOnClickListener;
+import com.zsgj.mobileinspect.widget.pulltorefresh.IPullToRefresh.Mode;
+import com.zsgj.mobileinspect.widget.pulltorefresh.IPullToRefresh.OnRefreshListener;
+import com.zsgj.mobileinspect.widget.pulltorefresh.LoadingLayout;
+import com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshBase;
+import com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshBase.LoadingLayoutCreator;
+import com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshBase.Orientation;
+import com.zsgj.mobileinspect.widget.pulltorefresh.PullToRefreshListView;
 
 public class SchoolSelectActivity extends BaseActivity implements
 		TitleOnClickListener, OnClickListener, TextWatcher {
-	private List<Kindergarten> totalSchoolList = new ArrayList<Kindergarten>();//总的集合
 	private TitleBar mTitleBar;
 	private EditText etSchoolName;
 	private Button btnFilter;
-	private SchoolsAdapter adapter;
+	private KindergartensAdapter mAdapter;
 	private int pageIndex=1;
 	private String schoolName;
+	private PullToRefreshListView mListView = null;
 	
 
 	@Override
@@ -45,19 +61,57 @@ public class SchoolSelectActivity extends BaseActivity implements
 		mTitleBar.setLeftIcon(R.drawable.activity_back_normal);
 		btnFilter=(Button) findViewById(R.id.btn_filter);
 		etSchoolName=(EditText) findViewById(R.id.et_shoolname);
-//		schoolListView=(PullToRefreshListView) findViewById(R.id.pl_schools);
+		
+		mListView=(PullToRefreshListView) findViewById(R.id.lv_listview);
+		mListView.setLoadingLayoutCreator(new LoadingLayoutCreator() {
+
+			@Override
+			public LoadingLayout create(Context context,
+					boolean headerOrFooter, Orientation orientation) {
+				if (headerOrFooter)
+					return new PullToRefreshHeader(context);
+				else
+					return new PullToRefreshFooter(context, Style.MORE);
+			}
+		});
+		mListView.setMode(Mode.BOTH);
+		mListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView,
+					boolean headerOrFooter) {
+				getNoticesInfoList(headerOrFooter);
+			}
+		});
+		mListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				  Kindergarten kindergarten = mAdapter.getList().get(position-1);
+				 Intent intent = new Intent();
+					intent.putExtra("name", kindergarten.getName());
+					intent.putExtra("Id", kindergarten.getId());
+					SchoolSelectActivity.this.setResult(RESULT_OK, intent);
+					SchoolSelectActivity.this.finish();
+			}
+		});
+		mAdapter = new KindergartensAdapter(this);
+		mListView.setAdapter(mAdapter);
+		mListView.setMode(Mode.BOTH);
+		mListView.setRefreshing();
 		
 	}
 
-	@Override
-	protected void initData() {
-		mTitleBar.setLeftClickListener(this);
-		btnFilter.setOnClickListener(this);
-		etSchoolName.addTextChangedListener(this);
-		adapter = new SchoolsAdapter(this, totalSchoolList);
-	}
-
-	private void requestData() {
+	/**
+	 * 从服务器获取最新事件消息
+	 */
+	private void getNoticesInfoList(final boolean headerOrFooter) {
+		if (this.isFinishing()) {
+			return;
+		}
+		if (headerOrFooter)
+			pageIndex = 1;
 		RequestParams params = new RequestParams();
 		if(AppConfig.isLogin){
 			params.addQueryStringParameter("syjId", MyApplication.instance.getSyjId()+"");
@@ -69,21 +123,50 @@ public class SchoolSelectActivity extends BaseActivity implements
 		params.addQueryStringParameter("name", schoolName);
 		params.addQueryStringParameter("pageIndex", pageIndex+"");
 		params.addQueryStringParameter("pageSize", "10");
+		
+		MyHttpUtils.send(this, HttpRequest.HttpMethod.GET, AppConfig.SERVER
+				+ AppConfig.QUERYSCHOOL_URL, params, Kindergartens.class, false,
+				new MyRequestCallBack<Kindergartens>() {
 
-		MyHttpUtils.send(this, HttpRequest.HttpMethod.GET,AppConfig.SERVER
-				+ AppConfig.QUERYSCHOOL_URL, params, Kindergartens.class, false,new MyRequestCallBack<Kindergartens>() {
-
+					@Override
+					public void onSuccess(Kindergartens bean) {
+						mListView.onRefreshComplete();
+						if (headerOrFooter) {
+							CharSequence dateText = DateFormat.format(
+									"yyyy-MM-dd kk:mm:ss", new Date());
+							for (LoadingLayout layout : mListView
+									.getLoadingLayoutProxy(true, false)
+									.getLayouts()) {
+								((PullToRefreshHeader) layout)
+										.setLastRefreshTime(":" + dateText);
+							}
+							mAdapter.clearItem();
+						}
+						if (mAdapter.getCount() == 0
+								&& bean.getKindergartens().size() == 0) {
+							// mListView.setVisibility(View.GONE);
+							// mNoCameraTipLy.setVisibility(View.VISIBLE);
+							// mGetCameraFailTipLy.setVisibility(View.GONE);
+						} else if (bean.getKindergartens().size() < 5) {
+							mListView.setFooterRefreshEnabled(false);
+						} else if (headerOrFooter) {
+							mListView.setFooterRefreshEnabled(true);
+						}
+						pageIndex++;
+						mAdapter.addList(bean.getKindergartens());
+					}
 					@Override
 					public void onFailure(HttpException error, String msg) {
 					}
-					@Override
-					public void onSuccess(Kindergartens bean) {
-//						Log.i("TAG",bean.getTotalCount()+"");
-						pageIndex++;
-						List<Kindergarten> kindergartens = bean.getKindergartens();
-//						setData(kindergartens);
-					}
 				});
+	}
+
+
+	@Override
+	protected void initData() {
+		mTitleBar.setLeftClickListener(this);
+		btnFilter.setOnClickListener(this);
+		etSchoolName.addTextChangedListener(this);
 	}
 
 
@@ -104,7 +187,7 @@ public class SchoolSelectActivity extends BaseActivity implements
 		case R.id.btn_filter:
 			schoolName=etSchoolName.getText().toString().trim();
 			pageIndex=1;
-			requestData();
+			mListView.setRefreshing();
 			break;
 
 		default:
@@ -127,7 +210,7 @@ public class SchoolSelectActivity extends BaseActivity implements
 	public void afterTextChanged(Editable s) {
 		schoolName=etSchoolName.getText().toString().trim();
 		pageIndex=1;
-		requestData();
+		mListView.setRefreshing();
 	}
 
 }
