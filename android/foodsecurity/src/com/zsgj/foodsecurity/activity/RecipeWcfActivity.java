@@ -5,6 +5,7 @@ import android.view.View.OnClickListener;
 
 import com.videogo.widget.TitleBar;
 import com.zsgj.foodsecurity.R;
+import com.zsgj.foodsecurity.utils.MyHttpUtils;
 
 public class RecipeWcfActivity extends BaseActivity {
 	private TitleBar mTitleBar = null;

@@ -1,12 +1,14 @@
 package com.zsgj.foodsecurity.activity;
 
 import java.util.Date;
-import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.lidroid.xutils.exception.HttpException;
@@ -14,27 +16,30 @@ import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.videogo.widget.TitleBar;
 import com.zsgj.foodsecurity.AppConfig;
+import com.zsgj.foodsecurity.MyApplication;
 import com.zsgj.foodsecurity.R;
 import com.zsgj.foodsecurity.adapter.NoticesAdapter;
 import com.zsgj.foodsecurity.bean.Notice;
 import com.zsgj.foodsecurity.bean.Notices;
 import com.zsgj.foodsecurity.interfaces.MyRequestCallBack;
 import com.zsgj.foodsecurity.utils.MyHttpUtils;
+import com.zsgj.foodsecurity.utils.UIHelper;
 import com.zsgj.foodsecurity.widget.PullToRefreshFooter;
-import com.zsgj.foodsecurity.widget.PullToRefreshHeader;
 import com.zsgj.foodsecurity.widget.PullToRefreshFooter.Style;
-import com.zsgj.foodsecurity.widget.pulltorefresh.LoadingLayout;
-import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshBase;
-import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshListView;
+import com.zsgj.foodsecurity.widget.PullToRefreshHeader;
 import com.zsgj.foodsecurity.widget.pulltorefresh.IPullToRefresh.Mode;
 import com.zsgj.foodsecurity.widget.pulltorefresh.IPullToRefresh.OnRefreshListener;
+import com.zsgj.foodsecurity.widget.pulltorefresh.LoadingLayout;
+import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshBase;
 import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshBase.LoadingLayoutCreator;
 import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshBase.Orientation;
+import com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshListView;
 
 public class NoticesActivity extends BaseActivity {
 	private TitleBar mTitleBar = null;
 	private PullToRefreshListView mListView = null;
-	NoticesAdapter mAdapter;
+	private NoticesAdapter mAdapter;
+	private int pageIndex=1;
 
 	@Override
 	protected void initView() {
@@ -70,8 +75,22 @@ public class NoticesActivity extends BaseActivity {
 				getNoticesInfoList(headerOrFooter);
 			}
 		});
+		mListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Notice notice = mAdapter.getList().get(position-1);
+				Intent intent=new Intent(NoticesActivity.this,NoticesDetailsActivity.class);
+				intent.putExtra("content", notice.getContent());
+				intent.putExtra("title", notice.getTitle());
+				intent.putExtra("time", notice.getTime());
+				startActivity(intent);
+			}
+		});
 		mAdapter=new NoticesAdapter(this);
 		mListView.setAdapter(mAdapter);
+		mListView.setRefreshing();
 
 	}
 
@@ -82,8 +101,17 @@ public class NoticesActivity extends BaseActivity {
 		if (this.isFinishing()) {
 			return;
 		}
+		if (headerOrFooter)
+			pageIndex=1;
 		RequestParams params = new RequestParams();
-		params.addQueryStringParameter("pageIndex", "1");
+		if(AppConfig.isLogin){
+			params.addQueryStringParameter("parentCode", MyApplication.instance.getParentInfo().getCode());
+		}else{
+			UIHelper.ToastMessage(this, "请登录");
+			startActivity(new Intent(this,LoginActivity.class));
+			finish();
+		}
+		params.addQueryStringParameter("pageIndex", pageIndex+"");
 		params.addQueryStringParameter("pageSize", "10");
 		MyHttpUtils.send(this, HttpRequest.HttpMethod.GET, AppConfig.SERVER
 				+ AppConfig.NOTICES_URL, params, Notices.class, false,
@@ -104,7 +132,6 @@ public class NoticesActivity extends BaseActivity {
 							mAdapter.clearItem();
 						}
 						if (mAdapter.getCount() == 0 && bean.getNotices().size()==0) {
-							
 //							mListView.setVisibility(View.GONE);
 //							mNoCameraTipLy.setVisibility(View.VISIBLE);
 //							mGetCameraFailTipLy.setVisibility(View.GONE);
@@ -113,10 +140,12 @@ public class NoticesActivity extends BaseActivity {
 						} else if (headerOrFooter) {
 							mListView.setFooterRefreshEnabled(true);
 						}
+						pageIndex++;
 						mAdapter.addList(bean.getNotices());
 					}
 					@Override
 					public void onFailure(HttpException error, String msg) {
+						
 					}
 				});
 	}
@@ -130,7 +159,7 @@ public class NoticesActivity extends BaseActivity {
 	protected void onResume() {
 		super.onResume();
 		mListView.setMode(Mode.BOTH);
-		mListView.setRefreshing();
+//		mListView.setRefreshing();
 	}
 
 }

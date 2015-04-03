@@ -1391,10 +1391,10 @@ public class RemotePlayBackActivity extends Activity implements OnClickListener,
         setRemotePlayBackLoadingUI();
         updateLoadingProgress(0);
         
-//        if(mCloudFileList == null) {
-//            searchCloudFileList(seletedTime);
-//            return;
-//        }
+        if(mCloudFileList == null) {
+        	searchCloudFileList(seletedTime);
+        	return;
+        }
         
         mRemotePlayBackMgr = new RemotePlayBackManager(this);
         mRemotePlayBackMgr.setHandler(mHandler);

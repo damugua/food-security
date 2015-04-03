@@ -1,6 +1,8 @@
 package com.zsgj.foodsecurity.bean;
 
-public class Notice {
+import java.io.Serializable;
+
+public class Notice implements Serializable{
 	private Syj Syj = new Syj(); // 所属食药局所
 	private long Id;// / 主键
 	private String Title; // / 标题

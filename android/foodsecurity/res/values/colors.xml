@@ -2,6 +2,7 @@
 <resources>
      <color name="white_transparent_bg">#33ffffff</color>
      <color name="btnselect">#3d95ea</color>
+     <color name="pressed_item">#e2e0e0</color>
      <color name="common_top_bar_blue">#4ebcd3</color>
       <color name="btn_login_normal">#007086</color>
     <color name="btn_login_pressed">#303744</color>

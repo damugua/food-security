@@ -1241,7 +1241,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
     }
 
     public void setFooterRefreshEnabled(boolean enable) {
-        if (enable != mFooterRefreshEnabled) {
+//        if (enable != mFooterRefreshEnabled) {
             mFooterRefreshEnabled = enable;
             if (mFooterRefreshEnabled) {
                 setState(State.RESET);
@@ -1252,7 +1252,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
                 if (mFooterLayout != null)
                     mFooterLayout.disableRefresh();
             }
-        }
+//        }
     }
 
     // ===========================================================

@@ -31,6 +31,9 @@ public class NoticesAdapter extends BaseAdapter {
 		this.data = list;
 		notifyDataSetChanged();
 	}
+	public List<Notice> getList(){
+		return data;
+	}
 
 	public void addList(List<Notice> list) {
 		this.data.addAll(list);
