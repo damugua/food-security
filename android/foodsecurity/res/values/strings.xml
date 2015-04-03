@@ -18,6 +18,7 @@
       <string name="homepage">主页</string>  
       <string name="recipe">查看食谱</string>  
       <string name="notice">公告</string>  
+      <string name="noticedetail">公告详情</string>  
       <string name="register1">注册（一）</string>  
       <string name="register2">注册（二）</string>  
       <string name="message">信息互通</string>  
@@ -100,7 +101,7 @@
   <string name="xlistview_header_hint_loading">正在加载，请稍候...</string>  
   <string name="xlistview_header_last_time">最近更新</string>  
   <string name="xlistview_footer_hint_normal">上拉加载更多...</string>  
-  <string name="xlistview_footer_hint_no_more_device">无更多设备</string>  
+  <string name="xlistview_footer_hint_no_more_device">无更多内容</string>  
   <string name="xlistview_footer_hint_ready">松开载入更多</string>  
   <string name="xlistview_footer_no_more">无更多</string>  
   <string name="xlistview_footer_no_more_msg">无更多消息</string>  

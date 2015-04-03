@@ -70,6 +70,8 @@
         </activity>
         <activity android:name="com.zsgj.foodsecurity.activity.SuggestionsDetailsActivity" >
         </activity>
+        <activity android:name="com.zsgj.foodsecurity.activity.AddSuggestionActivity" >
+        </activity>
         <activity android:name="com.zsgj.foodsecurity.activity.VideoMonitoringActivity" >
         </activity>
         <activity android:name="com.zsgj.foodsecurity.videogo.ui.cameralist.CameraListActivity" >

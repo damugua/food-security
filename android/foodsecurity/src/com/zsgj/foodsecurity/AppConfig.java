@@ -14,7 +14,9 @@ public class AppConfig {
 	 //是否已经登陆
     public static boolean isLogin = false;
     //公告查询
-    public static final String NOTICES_URL="NoticeWcfService.svc/GetByTimeAndSyjID";
+    public static final String NOTICES_URL="NoticeWcfService.svc/GetByParentCode";
+  //查询详情
+    public static final String NOTICESDETAIL_URL="NoticeWcfService.svc/GetById";
     
     //添加日常巡查
     public static final String ADDINSPECT_URL="GeneralInspectionWcfService.svc/CreateGeneralInspection";

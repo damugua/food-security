@@ -25,6 +25,7 @@
         android:fastScrollEnabled="false"
         android:listSelector="@null"
         android:overScrollFooter="@null"
-        android:scrollingCache="true" />
+        android:scrollingCache="true"
+        android:dividerPadding="10dp"/>
 
 </LinearLayout>

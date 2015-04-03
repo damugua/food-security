@@ -170,8 +170,8 @@ public class CameraListActivity extends Activity implements
 			@Override
 			public void onDeleteClick(BaseAdapter adapter, View view,
 					int position) {
-				mCameraInfo = mAdapter.getItem(position);
-				showDialog(SHOW_DIALOG_DEL_DEVICE);
+//				mCameraInfo = mAdapter.getItem(position);
+//				showDialog(SHOW_DIALOG_DEL_DEVICE);
 			}
 
 			@Override

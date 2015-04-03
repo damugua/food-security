@@ -18,8 +18,26 @@
         android:id="@+id/pl_schools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp" >
     </com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshListView>
+     <LinearLayout
+        android:id="@+id/ll_addsuggest"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/play_button_selector"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:onClick="onClick" >
+
+        <TextView
+            android:id="@+id/camera_list_gc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我要投诉"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/title_text_size" />
+    </LinearLayout>
 </LinearLayout>
