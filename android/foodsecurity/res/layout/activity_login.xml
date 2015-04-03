@@ -3,25 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/application_bg"
+    android:gravity="center"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp" 
-        android:gravity="center">
-        <ImageView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"/>
-    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:gravity="bottom"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="1"
+        android:text="食安校园"
+        android:textColor="#444444"
+        android:textSize="35dip"
+        android:typeface="serif" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:gravity="bottom"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="1"
+        android:text="v1.01"
+        android:textColor="#444444"
+        android:textSize="20dip"
+        android:typeface="serif" >
+    </TextView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginTop="25dp" >
+        android:layout_marginTop="40dp" >
 
         <ImageView
             android:id="@+id/iv_username"
@@ -112,31 +133,39 @@
         android:layout_height="match_parent" >
 
         <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/line"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:onClick="onBtnClicked"
+            android:text="注册"
+            android:padding="5dp"
+            android:textColor="@color/text_color_selector"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:layout_toLeftOf="@+id/btn_logintrouble"
+            android:background="@color/common_line"
+            android:layout_marginTop="10dp"/>
+
+        <Button
             android:id="@+id/btn_logintrouble"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="5dip"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="22dp"
+            android:padding="5dp"
             android:background="@null"
             android:gravity="center"
             android:onClick="onBtnClicked"
             android:text="无法登录？"
-            android:paddingLeft="5dip"
             android:textColor="@color/text_color_selector"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="5dip"
-            android:background="@null"
-            android:gravity="center"
-            android:onClick="onBtnClicked"
-            android:text="注册"
-           android:textColor="@color/text_color_selector"
             android:textSize="15sp" />
     </RelativeLayout>
 
