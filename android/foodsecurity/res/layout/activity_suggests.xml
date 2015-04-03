@@ -4,32 +4,35 @@
     android:layout_height="match_parent"
     android:background="@color/application_bg"
     android:orientation="vertical" >
-    <!-- 标题栏 -->
+
     <com.videogo.widget.TitleBar
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-     <View
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="#fff" />
 
     <com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshListView
-        android:id="@+id/pl_schools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/lv_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="3dp"
         android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" >
-    </com.zsgj.foodsecurity.widget.pulltorefresh.PullToRefreshListView>
-     <LinearLayout
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerPadding="10dp"
+        android:drawingCacheQuality="high"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@null"
+        android:overScrollFooter="@null"
+        android:scrollingCache="true" />
+
+    <LinearLayout
         android:id="@+id/ll_addsuggest"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_gravity="bottom"
         android:background="@drawable/play_button_selector"
         android:gravity="center"
-        android:layout_gravity="bottom"
         android:onClick="onClick" >
 
         <TextView
@@ -40,4 +43,5 @@
             android:textColor="@color/common_text"
             android:textSize="@dimen/title_text_size" />
     </LinearLayout>
+
 </LinearLayout>

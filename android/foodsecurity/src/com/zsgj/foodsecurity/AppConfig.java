@@ -22,14 +22,16 @@ public class AppConfig {
     //发表投诉建议
     public static final String ADDSUGGESTION_URL="ComplaintWcfService.svc/CreateNewComplaint";
     
+    //查询投诉建议
+    public static final String SUGGESTION_URL="ComplaintWcfService.svc/QueryByParentIdAndTitle";
+    //投诉建议详情
+    public static final String SUGGESTIONDETAIL_URL="ComplaintWcfService.svc/GetById";
     
     
     //添加日常巡查
     public static final String ADDINSPECT_URL="GeneralInspectionWcfService.svc/CreateGeneralInspection";
     //查询学校
     public static final String QUERYSCHOOL_URL="KindergartenWcfService.svc/QueryBySyjIdAndName";
-    //查询投诉建议
-    public static final String SUGGESTION_URL="ComplaintWcfService.svc/GetByTimeAndStatus";
    
     // 获取日常巡查结果类型
     public static final String INSPECTRESULTTYPE_URL="InspectResultTypeWcfService.svc/FindAll";
