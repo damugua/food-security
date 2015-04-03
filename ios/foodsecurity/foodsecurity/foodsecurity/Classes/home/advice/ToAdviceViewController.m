@@ -84,8 +84,10 @@
     complaint.Title=titleTextField.text;
     complaint.Content=contentTextView.text;
     complaint.ByComplainant=targetTextField.text;
-    complaint.Complainant=[[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-   // complaint.Status=@"false";
+    complaint.Complainant=[[NSUserDefaults standardUserDefaults] stringForKey:@"Name"];
+//    complaint.Status=@"false";
+//    NSDate *date=[[NSDate alloc]init];
+//    complaint.Time=[NSString stringWithFormat:@"%@",date];
     [self gotNoticeListTitle:complaint.Title Content:complaint.Content Complainant:complaint.Complainant ByComplainant:complaint.ByComplainant Time:complaint.Complainant Status:complaint.Complainant];
 }
 
