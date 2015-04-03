@@ -18,6 +18,8 @@ public class AppConfig {
     public static final String QUERYSCHOOL_URL="/KindergartenWcfService.svc/QueryBySyjIdAndName";
     //查询投诉建议
     public static final String SUGGESTION_URL="/ComplaintWcfService.svc/GetByTimeAndStatus";
+    //获取一条投诉举报信息
+    public static final String SUGGESTIONDETAIL_URL="/ComplaintWcfService.svc/GetById";
     // 获取日常巡查结果类型
     public static final String INSPECTRESULTTYPE_URL="/InspectResultTypeWcfService.svc/FindAll";
 
