@@ -25,6 +25,7 @@
     [super viewDidLoad];
     [self setNavigationBar];
     [self setToolBar];
+    [self togoRequest];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -76,12 +77,11 @@
 }
 
 //网络请求
-///GetByTimeAndSyjID(string time, long SyjID, int pageIndex, int pageSize)
--(void)gotNoticeListTime:(NSString *)time SyjID:(NSString *)SyjID pageIndex:(NSString *)pageIndex pageSize:(NSString *)pageSize
+-(void)gotAdviceListpageIndex:(NSString *)pageIndex pageSize:(NSString *)pageSize
 {
     //参数后缀  接口给的类型不是字符串
     NSDictionary *paramater = @{@"pageIndex":pageIndex,@"pageSize":pageSize};
-    commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_NOTICE_LIST parameters:paramater];
+    commonModel *connect = [[commonModel alloc]initWithUrl:BASE_URL getPath:GET_ADVICE_LIST parameters:paramater];
     connect.delegate = self;
     
 }

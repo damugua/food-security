@@ -14,8 +14,8 @@
 @property(nonatomic,strong)NSString *Content;//内容
 @property(nonatomic,strong)NSString *Complainant;//投诉方
 @property(nonatomic,strong)NSString *ByComplainant;//被投诉方
-//@property(nonatomic,strong)NSString *Time;//时间
-//@property(nonatomic,assign)NSString *Status;//是否处理
+@property(nonatomic,strong)NSString *Time;//时间
+@property(nonatomic,assign)NSString *Status;//是否处理
 
 -(void)setParameter:(NSDictionary *)toAdviceData;
 @end

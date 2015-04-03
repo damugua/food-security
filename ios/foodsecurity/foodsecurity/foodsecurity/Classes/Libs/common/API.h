@@ -26,4 +26,5 @@
 #define GET_COOKBOOK @"RecipeWcfService.svc/GetInfoByParentCode" //食谱
 #define GET_NOTICE_LIST @"NoticeWcfService.svc/GetByParentCode"  //公告列表
 #define POST_ADVICE @"ComplaintWcfService.svc/CreateNewComplaint" //投诉建议
+#define GET_ADVICE_LIST @"ComplaintWcfService.svc" //投诉建议列表
 @end
