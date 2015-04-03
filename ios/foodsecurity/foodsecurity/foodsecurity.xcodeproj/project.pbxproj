@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B023A811ACE2FF9008E3ED4 /* ToAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B023A7F1ACE2FF9008E3ED4 /* ToAdviceViewController.m */; };
+		3B023A821ACE2FF9008E3ED4 /* ToAdviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B023A801ACE2FF9008E3ED4 /* ToAdviceViewController.xib */; };
+		3B023A851ACE37FF008E3ED4 /* ToAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B023A841ACE37FF008E3ED4 /* ToAdviceModel.m */; };
+		3B023A8B1ACE6656008E3ED4 /* PrintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B023A8A1ACE6656008E3ED4 /* PrintObject.m */; };
 		3B04F9331AC3A26200831F41 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B04F91D1AC3A26200831F41 /* IQKeyboardManager.bundle */; };
 		3B04F9341AC3A26200831F41 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F91F1AC3A26200831F41 /* IQKeyboardManager.m */; };
 		3B04F9351AC3A26200831F41 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04F9231AC3A26200831F41 /* IQSegmentedNextPrevious.m */; };
@@ -83,6 +87,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B023A7E1ACE2FF9008E3ED4 /* ToAdviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToAdviceViewController.h; sourceTree = "<group>"; };
+		3B023A7F1ACE2FF9008E3ED4 /* ToAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToAdviceViewController.m; sourceTree = "<group>"; };
+		3B023A801ACE2FF9008E3ED4 /* ToAdviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToAdviceViewController.xib; sourceTree = "<group>"; };
+		3B023A831ACE37FF008E3ED4 /* ToAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToAdviceModel.h; sourceTree = "<group>"; };
+		3B023A841ACE37FF008E3ED4 /* ToAdviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToAdviceModel.m; sourceTree = "<group>"; };
+		3B023A891ACE6656008E3ED4 /* PrintObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintObject.h; sourceTree = "<group>"; };
+		3B023A8A1ACE6656008E3ED4 /* PrintObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintObject.m; sourceTree = "<group>"; };
 		3B04F91D1AC3A26200831F41 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		3B04F91E1AC3A26200831F41 /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
 		3B04F91F1AC3A26200831F41 /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
@@ -474,8 +485,13 @@
 				824983EA1AC9270000912514 /* adviceViewController.h */,
 				824983EB1AC9270000912514 /* adviceViewController.m */,
 				824983EC1AC9270000912514 /* adviceViewController.xib */,
+				3B023A7E1ACE2FF9008E3ED4 /* ToAdviceViewController.h */,
+				3B023A7F1ACE2FF9008E3ED4 /* ToAdviceViewController.m */,
+				3B023A801ACE2FF9008E3ED4 /* ToAdviceViewController.xib */,
 				3BD595591ACA324700C56BD4 /* adviceModel.h */,
 				3BD5955A1ACA324700C56BD4 /* adviceModel.m */,
+				3B023A831ACE37FF008E3ED4 /* ToAdviceModel.h */,
+				3B023A841ACE37FF008E3ED4 /* ToAdviceModel.m */,
 			);
 			path = advice;
 			sourceTree = "<group>";
@@ -696,6 +712,8 @@
 				82201BBE1ABEBA75004DA4E8 /* API.m */,
 				8264F7581AC3E00C009F5C72 /* commonModel.h */,
 				8264F7591AC3E00C009F5C72 /* commonModel.m */,
+				3B023A891ACE6656008E3ED4 /* PrintObject.h */,
+				3B023A8A1ACE6656008E3ED4 /* PrintObject.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -796,6 +814,7 @@
 				824983F31AC9271C00912514 /* videoViewController.xib in Resources */,
 				3BD581BC1ACD276E006A60F3 /* noticeDetailViewController.xib in Resources */,
 				824983E91AC926BB00912514 /* noticeViewController.xib in Resources */,
+				3B023A821ACE2FF9008E3ED4 /* ToAdviceViewController.xib in Resources */,
 				3BD581B01ACD2085006A60F3 /* MJRefresh.bundle in Resources */,
 				82AABC431ABC022E0004306C /* homeViewController.xib in Resources */,
 			);
@@ -820,6 +839,7 @@
 				3B04F9391AC3A26200831F41 /* NSArray+Sort.m in Sources */,
 				82AABC841ABC0EB60004306C /* communicateViewController.m in Sources */,
 				824983F21AC9271C00912514 /* videoViewController.m in Sources */,
+				3B023A811ACE2FF9008E3ED4 /* ToAdviceViewController.m in Sources */,
 				8264F75A1AC3E00C009F5C72 /* commonModel.m in Sources */,
 				82201BB81ABE9E1C004DA4E8 /* loginViewController.m in Sources */,
 				82519C0F1AC10781008422D2 /* menuView.m in Sources */,
@@ -829,10 +849,12 @@
 				82AABC891ABC0ED10004306C /* cookbookViewController.m in Sources */,
 				3B04F93C1AC3A26200831F41 /* UIWindow+Hierarchy.m in Sources */,
 				824983ED1AC9270000912514 /* adviceViewController.m in Sources */,
+				3B023A851ACE37FF008E3ED4 /* ToAdviceModel.m in Sources */,
 				3B04F9351AC3A26200831F41 /* IQSegmentedNextPrevious.m in Sources */,
 				3B04F9341AC3A26200831F41 /* IQKeyboardManager.m in Sources */,
 				3BD581B21ACD2085006A60F3 /* MJRefreshConst.m in Sources */,
 				82AABC1A1ABBF5590004306C /* AppDelegate.m in Sources */,
+				3B023A8B1ACE6656008E3ED4 /* PrintObject.m in Sources */,
 				3B04F9371AC3A26200831F41 /* IQTitleBarButtonItem.m in Sources */,
 				3BD581BB1ACD276E006A60F3 /* noticeDetailViewController.m in Sources */,
 				82AABC171ABBF5590004306C /* main.m in Sources */,

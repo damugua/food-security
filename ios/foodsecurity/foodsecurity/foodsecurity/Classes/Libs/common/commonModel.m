@@ -86,6 +86,7 @@
         }
 
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"post error ：%@",error);
         [self.delegate connectError:self];
     }];
 }

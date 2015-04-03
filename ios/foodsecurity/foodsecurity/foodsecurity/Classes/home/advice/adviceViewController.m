@@ -11,6 +11,7 @@
 #import "commonModel.h"
 #import "API.h"
 #import "adviceModel.h"
+#import "ToAdviceViewController.h"
 
 @interface adviceViewController ()<commonConnectDelegate>
 {
@@ -27,6 +28,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden=NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.toolbarHidden=YES;
+}
+
 //添加导航条的标题和返回按钮
 -(void)setNavigationBar
 {
@@ -41,7 +54,6 @@
 //创建工具栏
 -(void)setToolBar
 {
-    self.navigationController.toolbarHidden=NO;
     UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"我要投诉" style:UIBarButtonItemStylePlain target:self action:@selector(toolbarClicked)];
     UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     self.toolbarItems=@[space,item,space];
@@ -51,6 +63,8 @@
 -(void)toolbarClicked
 {
     NSLog(@"tool bar clicked");
+    ToAdviceViewController *toAdvieceVC=[[ToAdviceViewController alloc]init];
+    [self.navigationController pushViewController:toAdvieceVC animated:YES];
     
 }
 
