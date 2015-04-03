@@ -37,7 +37,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 	private GridView gvHome;
 	private MyAdapter adapter;
 	private static String names[] = { "日常巡查", "视频监控", "信息互通", "投诉建议", "公告" };
-	private static int ids[] = { R.drawable.notice_selector };
+	private static int ids[] = { R.drawable.play_video_start };
 	private SharedPreferences sp;
 
 	@Override

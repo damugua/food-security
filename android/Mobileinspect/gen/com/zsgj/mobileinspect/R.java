@@ -11,7 +11,6 @@ public final class R {
     public static final class anim {
         public static final int pop_enter_anim=0x7f040000;
         public static final int pop_exit_anim=0x7f040001;
-        public static final int update_loading_progressbar_anim=0x7f040002;
     }
     public static final class attr {
         /**  The CalendarView style. 
@@ -118,77 +117,105 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int cv_weekSeparatorLineColor=0x7f01000a;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+         */
+        public static final int ptrListViewExtrasEnabled=0x7f010012;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+         */
+        public static final int ptrOverScroll=0x7f010010;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int ptrRefreshableViewBackground=0x7f01000f;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+         */
+        public static final int ptrScrollingWhileRefreshingEnabled=0x7f010011;
     }
     public static final class color {
-        public static final int black_deep=0x7f050020;
-        public static final int bottom_bar_normal_bg=0x7f05000f;
-        public static final int bottom_text_color_normal=0x7f050010;
-        public static final int btn_blue_normal=0x7f050018;
-        public static final int btn_blue_pressed=0x7f050019;
-        public static final int btn_gray_normal=0x7f050015;
-        public static final int btn_gray_pressed=0x7f050017;
-        public static final int btn_gray_pressed_status=0x7f050016;
-        public static final int btn_green_noraml=0x7f050013;
-        public static final int btn_green_pressed=0x7f050014;
-        public static final int btn_login_normal=0x7f050001;
-        public static final int btn_login_pressed=0x7f050002;
-        public static final int btn_logout_normal=0x7f050003;
-        public static final int btn_logout_pressed=0x7f050004;
-        public static final int btn_pressed_green_solid=0x7f05000b;
-        public static final int btn_register_normal=0x7f050005;
-        public static final int btn_register_pressed=0x7f050006;
-        public static final int btn_white_normal=0x7f050011;
-        public static final int btn_white_pressed=0x7f050012;
-        public static final int common_bg=0x7f05000a;
-        public static final int common_bottom_bar_normal_bg=0x7f050007;
-        public static final int common_bottom_bar_selected_bg=0x7f050008;
-        public static final int common_botton_bar_blue=0x7f050009;
-        public static final int common_top_bar_blue=0x7f050000;
-        public static final int divider_list=0x7f05000c;
-        public static final int error_item_color=0x7f05000e;
-        public static final int gray_normal=0x7f05001c;
-        public static final int gray_pressed=0x7f05001b;
-        public static final int grid_state_focused=0x7f05001e;
-        public static final int grid_state_pressed=0x7f05001d;
-        public static final int orange=0x7f05001a;
-        public static final int text_color_selector=0x7f050021;
-        public static final int time_color_selector=0x7f050022;
-        public static final int top_bar_normal_bg=0x7f05000d;
-        public static final int voip_interface_text_color=0x7f05001f;
+        public static final int black_deep=0x7f050023;
+        public static final int bottom_bar_normal_bg=0x7f050012;
+        public static final int bottom_text_color_normal=0x7f050013;
+        public static final int btn_blue_normal=0x7f05001b;
+        public static final int btn_blue_pressed=0x7f05001c;
+        public static final int btn_gray_normal=0x7f050018;
+        public static final int btn_gray_pressed=0x7f05001a;
+        public static final int btn_gray_pressed_status=0x7f050019;
+        public static final int btn_green_noraml=0x7f050016;
+        public static final int btn_green_pressed=0x7f050017;
+        public static final int btn_login_normal=0x7f050004;
+        public static final int btn_login_pressed=0x7f050005;
+        public static final int btn_logout_normal=0x7f050006;
+        public static final int btn_logout_pressed=0x7f050007;
+        public static final int btn_pressed_green_solid=0x7f05000e;
+        public static final int btn_register_normal=0x7f050008;
+        public static final int btn_register_pressed=0x7f050009;
+        public static final int btn_white_normal=0x7f050014;
+        public static final int btn_white_pressed=0x7f050015;
+        public static final int common_bg=0x7f05000d;
+        public static final int common_bottom_bar_normal_bg=0x7f05000a;
+        public static final int common_bottom_bar_selected_bg=0x7f05000b;
+        public static final int common_botton_bar_blue=0x7f05000c;
+        public static final int common_hint_text=0x7f050001;
+        public static final int common_top_bar_blue=0x7f050003;
+        public static final int divider_list=0x7f05000f;
+        public static final int error_item_color=0x7f050011;
+        public static final int gray_normal=0x7f05001f;
+        public static final int gray_pressed=0x7f05001e;
+        public static final int grid_state_focused=0x7f050021;
+        public static final int grid_state_pressed=0x7f050020;
+        public static final int orange=0x7f05001d;
+        public static final int pressed_item=0x7f050000;
+        public static final int text_color_selector=0x7f050025;
+        public static final int time_color_selector=0x7f050026;
+        public static final int top_bar_normal_bg=0x7f050010;
+        public static final int transparent=0x7f050024;
+        public static final int voip_interface_text_color=0x7f050022;
+        public static final int white_transparent_bg=0x7f050002;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f060001;
         public static final int activity_vertical_margin=0x7f060002;
         public static final int bottom_tab_font_size=0x7f060003;
         public static final int height_top_bar=0x7f060000;
+        public static final int sub_button_text_size=0x7f060004;
     }
     public static final class drawable {
         public static final int activity_back_arrow=0x7f020000;
         public static final int activity_back_normal=0x7f020001;
-        public static final int button_login_bg=0x7f020002;
-        public static final int button_register_bg=0x7f020003;
-        public static final int button_unlogin_bg=0x7f020004;
-        public static final int common_tab_bg=0x7f020005;
-        public static final int day_picker_week_view_dayline_holo=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int icon_account=0x7f020008;
-        public static final int icon_pwd=0x7f020009;
-        public static final int list_divider_holo_dark=0x7f02000a;
-        public static final int list_divider_holo_light=0x7f02000b;
-        public static final int more_right_normal=0x7f02000c;
-        public static final int more_right_pressed=0x7f02000d;
-        public static final int notice=0x7f02000e;
-        public static final int notice_pressed=0x7f02000f;
-        public static final int notice_selector=0x7f020010;
-        public static final int pulldown=0x7f020011;
-        public static final int pulltotop=0x7f020012;
-        public static final int slidetab_bg_press=0x7f020013;
-        public static final int titlebar_selector=0x7f020014;
-        public static final int xsearch_loading=0x7f020015;
-        public static final int xsearch_msg_pull_arrow_down=0x7f020016;
+        public static final int arrow_down=0x7f020002;
+        public static final int arrow_selector=0x7f020003;
+        public static final int button_login_bg=0x7f020004;
+        public static final int button_register_bg=0x7f020005;
+        public static final int button_unlogin_bg=0x7f020006;
+        public static final int common_refresh=0x7f020007;
+        public static final int common_refresh_indeterminate=0x7f020008;
+        public static final int common_tab_bg=0x7f020009;
+        public static final int day_picker_week_view_dayline_holo=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int icon_account=0x7f02000c;
+        public static final int icon_pwd=0x7f02000d;
+        public static final int item_selector=0x7f02000e;
+        public static final int list_divider_holo_dark=0x7f02000f;
+        public static final int list_divider_holo_light=0x7f020010;
+        public static final int more_right_normal=0x7f020011;
+        public static final int more_right_pressed=0x7f020012;
+        public static final int notice=0x7f020013;
+        public static final int notice_pressed=0x7f020014;
+        public static final int notice_selector=0x7f020015;
+        public static final int play_video_start=0x7f020016;
+        public static final int slidetab_bg_press=0x7f020017;
+        public static final int titlebar_selector=0x7f020018;
     }
     public static final class id {
-        public static final int CheckBox01=0x7f09002a;
+        public static final int CheckBox01=0x7f090032;
         public static final int btn_begintime=0x7f09000f;
         public static final int btn_cancel=0x7f090015;
         public static final int btn_endtime=0x7f090010;
@@ -198,48 +225,56 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btn_logintrouble=0x7f090008;
         public static final int btn_submit=0x7f090016;
         public static final int calendarview=0x7f090014;
-        public static final int cv_day_names=0x7f09001a;
-        public static final int cv_divider=0x7f09001b;
-        public static final int cv_month_name=0x7f090019;
+        public static final int cv_day_names=0x7f09001f;
+        public static final int cv_divider=0x7f090020;
+        public static final int cv_month_name=0x7f09001e;
         public static final int et_password=0x7f090006;
         public static final int et_serverip=0x7f09000b;
         public static final int et_serverport=0x7f09000d;
         public static final int et_shoolname=0x7f090017;
         public static final int et_username=0x7f090004;
+        public static final int footer_hint=0x7f090026;
+        public static final int footer_hint_more=0x7f090027;
+        public static final int footer_loading_layout=0x7f090028;
+        public static final int footer_progress=0x7f090029;
         public static final int gv_home=0x7f09000e;
-        public static final int iv_icon=0x7f09001f;
+        public static final int header_arrow=0x7f09002b;
+        public static final int header_hint=0x7f09002d;
+        public static final int header_hint_more=0x7f09002e;
+        public static final int header_progress=0x7f09002c;
+        public static final int header_text_layout=0x7f09002a;
+        public static final int header_time=0x7f090030;
+        public static final int header_time_layout=0x7f09002f;
+        public static final int iv_icon=0x7f090025;
         public static final int iv_password=0x7f090005;
         public static final int iv_username=0x7f090003;
         public static final int ll_selectdate=0x7f090013;
+        public static final int lv_listview=0x7f09001d;
         public static final int pinnedSectionlist=0x7f090002;
         public static final int pl_inspections=0x7f090012;
         public static final int pl_schools=0x7f090018;
-        public static final int pull_to_load_footer_content=0x7f090021;
-        public static final int pull_to_load_footer_hint_textview=0x7f090023;
-        public static final int pull_to_load_footer_progressbar=0x7f090022;
-        public static final int pull_to_refresh_header_arrow=0x7f090027;
-        public static final int pull_to_refresh_header_content=0x7f090024;
-        public static final int pull_to_refresh_header_hint_textview=0x7f090026;
-        public static final int pull_to_refresh_header_progressbar=0x7f090028;
-        public static final int pull_to_refresh_header_text=0x7f090025;
-        public static final int rowTextView=0x7f090029;
-        public static final int title=0x7f09002b;
-        public static final int title_left=0x7f09002c;
-        public static final int title_left_btn=0x7f09002d;
-        public static final int title_right=0x7f09002e;
-        public static final int title_right_btn=0x7f090030;
-        public static final int title_right_text_view=0x7f090031;
-        public static final int title_text=0x7f09002f;
+        public static final int rowTextView=0x7f090031;
+        public static final int title=0x7f090033;
+        public static final int title_left=0x7f090034;
+        public static final int title_left_btn=0x7f090035;
+        public static final int title_right=0x7f090036;
+        public static final int title_right_btn=0x7f090038;
+        public static final int title_right_text_view=0x7f090039;
+        public static final int title_text=0x7f090037;
         public static final int titlebar=0x7f090000;
-        public static final int tv_inspectPerson=0x7f09001c;
-        public static final int tv_inspectTime=0x7f09001d;
-        public static final int tv_name=0x7f090020;
-        public static final int tv_schooladdress=0x7f09001e;
+        public static final int tv_Content=0x7f09001c;
+        public static final int tv_complainant=0x7f09001a;
+        public static final int tv_inspectPerson=0x7f090022;
+        public static final int tv_inspectTime=0x7f090023;
+        public static final int tv_name=0x7f090021;
+        public static final int tv_schooladdress=0x7f090024;
         public static final int tv_schoolname=0x7f090001;
         public static final int tv_serverip=0x7f09000a;
         public static final int tv_serverport=0x7f09000c;
-        public static final int update_progress=0x7f090032;
-        public static final int update_progress_text=0x7f090033;
+        public static final int tv_time=0x7f09001b;
+        public static final int tv_title=0x7f090019;
+        public static final int update_progress=0x7f09003a;
+        public static final int update_progress_text=0x7f09003b;
     }
     public static final class layout {
         public static final int activity_inspect=0x7f030000;
@@ -255,14 +290,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_suggests=0x7f03000a;
         public static final int activity_videomonitoring=0x7f03000b;
         public static final int calendar_view=0x7f03000c;
-        public static final int item_inspect_list=0x7f03000d;
-        public static final int item_school_list=0x7f03000e;
-        public static final int list_my_item=0x7f03000f;
-        public static final int pull_to_load_footer=0x7f030010;
-        public static final int pull_to_refresh_header=0x7f030011;
-        public static final int simplerow=0x7f030012;
-        public static final int title_bar=0x7f030013;
-        public static final int update_progress=0x7f030014;
+        public static final int item_complain_list=0x7f03000d;
+        public static final int item_inspect_list=0x7f03000e;
+        public static final int item_school_list=0x7f03000f;
+        public static final int list_my_item=0x7f030010;
+        public static final int pull_to_refresh_footer=0x7f030011;
+        public static final int pull_to_refresh_header=0x7f030012;
+        public static final int simplerow=0x7f030013;
+        public static final int title_bar=0x7f030014;
+        public static final int update_progress=0x7f030015;
     }
     public static final class string {
         public static final int Is_landing=0x7f07002a;
@@ -285,6 +321,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int load_ing=0x7f07000b;
         public static final int load_more=0x7f07000a;
         public static final int login=0x7f070029;
+        public static final int message_no_data_text=0x7f07002c;
         public static final int msg_load_audio_fail=0x7f070016;
         public static final int msg_load_is_null=0x7f070015;
         public static final int msg_login_email_error=0x7f070017;
@@ -302,6 +339,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int network_not_connected=0x7f070000;
         public static final int new_data_toast_message=0x7f07000f;
         public static final int new_data_toast_none=0x7f070010;
+        public static final int no_more_leave_tip=0x7f070037;
         public static final int notification_empty=0x7f070023;
         public static final int password=0x7f070028;
         public static final int search_empty=0x7f070022;
@@ -310,6 +348,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int submit_report=0x7f070013;
         public static final int sure=0x7f070007;
         public static final int user_name=0x7f070027;
+        public static final int xlistview_footer_hint_no_more_device=0x7f070033;
+        public static final int xlistview_footer_hint_normal=0x7f070032;
+        public static final int xlistview_footer_hint_ready=0x7f070034;
+        public static final int xlistview_footer_no_more=0x7f070035;
+        public static final int xlistview_footer_no_more_msg=0x7f070036;
+        public static final int xlistview_header_hint_loading=0x7f070030;
+        public static final int xlistview_header_hint_more=0x7f07002f;
+        public static final int xlistview_header_hint_normal=0x7f07002d;
+        public static final int xlistview_header_hint_ready=0x7f07002e;
+        public static final int xlistview_header_last_time=0x7f070031;
         public static final int xml_parser_failed=0x7f070001;
     }
     public static final class style {
@@ -585,6 +633,70 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.zsgj.mobileinspect:cv_weekSeparatorLineColor
         */
         public static final int CalendarView_cv_weekSeparatorLineColor = 9;
+        /** Attributes that can be used with a PullToRefresh.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PullToRefresh_ptrListViewExtrasEnabled com.zsgj.mobileinspect:ptrListViewExtrasEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #PullToRefresh_ptrOverScroll com.zsgj.mobileinspect:ptrOverScroll}</code></td><td></td></tr>
+           <tr><td><code>{@link #PullToRefresh_ptrRefreshableViewBackground com.zsgj.mobileinspect:ptrRefreshableViewBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #PullToRefresh_ptrScrollingWhileRefreshingEnabled com.zsgj.mobileinspect:ptrScrollingWhileRefreshingEnabled}</code></td><td></td></tr>
+           </table>
+           @see #PullToRefresh_ptrListViewExtrasEnabled
+           @see #PullToRefresh_ptrOverScroll
+           @see #PullToRefresh_ptrRefreshableViewBackground
+           @see #PullToRefresh_ptrScrollingWhileRefreshingEnabled
+         */
+        public static final int[] PullToRefresh = {
+            0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.zsgj.mobileinspect.R.attr#ptrListViewExtrasEnabled}
+          attribute's value can be found in the {@link #PullToRefresh} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+          @attr name com.zsgj.mobileinspect:ptrListViewExtrasEnabled
+        */
+        public static final int PullToRefresh_ptrListViewExtrasEnabled = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.zsgj.mobileinspect.R.attr#ptrOverScroll}
+          attribute's value can be found in the {@link #PullToRefresh} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+          @attr name com.zsgj.mobileinspect:ptrOverScroll
+        */
+        public static final int PullToRefresh_ptrOverScroll = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.zsgj.mobileinspect.R.attr#ptrRefreshableViewBackground}
+          attribute's value can be found in the {@link #PullToRefresh} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.zsgj.mobileinspect:ptrRefreshableViewBackground
+        */
+        public static final int PullToRefresh_ptrRefreshableViewBackground = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.zsgj.mobileinspect.R.attr#ptrScrollingWhileRefreshingEnabled}
+          attribute's value can be found in the {@link #PullToRefresh} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
+          @attr name com.zsgj.mobileinspect:ptrScrollingWhileRefreshingEnabled
+        */
+        public static final int PullToRefresh_ptrScrollingWhileRefreshingEnabled = 2;
         /**  Framework styleables are not public. 
            <p>Includes the following attributes:</p>
            <table>

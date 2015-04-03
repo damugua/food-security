@@ -11,31 +11,31 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.zsgj.mobileinspect.R;
-import com.zsgj.mobileinspect.bean.Complaint;
+import com.zsgj.mobileinspect.bean.Notice;
 
-public class ComplaintsAdapter extends BaseAdapter {
-	private List<Complaint> data;
+public class NoticesAdapter extends BaseAdapter {
+	private List<Notice> data;
 	private Context context;
 
 	// private ViewHolder holder;
 
-	public ComplaintsAdapter(Context context) {
+	public NoticesAdapter(Context context) {
 		this.context = context;
-		this.data = new ArrayList<Complaint>();
+		this.data = new ArrayList<Notice>();
 	}
 
 	/**
 	 * 处理listview数据变化
 	 */
-	public void setList(List<Complaint> list) {
+	public void setList(List<Notice> list) {
 		this.data = list;
 		notifyDataSetChanged();
 	}
-	public List<Complaint> getList(){
+	public List<Notice> getList(){
 		return data;
 	}
 
-	public void addList(List<Complaint> list) {
+	public void addList(List<Notice> list) {
 		this.data.addAll(list);
 		notifyDataSetChanged();
 	}
@@ -66,25 +66,22 @@ public class ComplaintsAdapter extends BaseAdapter {
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
 			convertView = LayoutInflater.from(context).inflate(
-					R.layout.item_complain_list, null);
-			viewHolder.tvTitle = (TextView) convertView
-					.findViewById(R.id.tv_title);
-			viewHolder.tvName = (TextView) convertView
-					.findViewById(R.id.tv_name);
-			viewHolder.tvTime = (TextView) convertView
-					.findViewById(R.id.tv_time);
+					R.layout.item_school_list, null);
+			viewHolder.tvNoticeTitle = (TextView) convertView
+					.findViewById(R.id.tv_schoolname);
+			viewHolder.tvNoticeTime = (TextView) convertView
+					.findViewById(R.id.tv_schooladdress);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		viewHolder.tvTitle.setText(data.get(position).getTitle());
-		viewHolder.tvName.setText(data.get(position).getContent());
-		viewHolder.tvTime.setText(data.get(position).getTime());
+		viewHolder.tvNoticeTitle.setText(data.get(position).getTitle());
+		viewHolder.tvNoticeTime.setText(data.get(position).getTime());
 		return convertView;
 	}
 
 	private class ViewHolder {
-		public TextView tvTitle, tvTime,tvName;
+		public TextView tvNoticeTitle, tvNoticeTime;
 	}
 
 }
